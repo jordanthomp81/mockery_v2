@@ -4,8 +4,12 @@
   </head>
   <body>
 
-    <h1>Im a new as tagline</h1>
+    <div id="app">
+      {{ message }}
+      <input v-model="message">
+    </div>
 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js"></script>
     <script src="./core.js"></script>
   </body>
 </html>
