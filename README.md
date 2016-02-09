@@ -7,7 +7,7 @@ Open a terminal
 
 run `git clone https://github.com/jordanthomp81/mockery_v2`
 
-Navigate to to root directory, should be the same folder as the `webpack.config.js` file
+Navigate to the root directory, should be the same folder as the `webpack.config.js` file
 
 run `webpack --watch`
 
