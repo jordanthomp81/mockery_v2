@@ -1,7 +1,7 @@
 # mockery_v2
 Wireframe Tool
 
-## Running the project
+### Running the project
 Open a terminal
 
 run `git clone https://github.com/jordanthomp81/mockery_v2`
