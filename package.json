@@ -1,0 +1,30 @@
+{
+  "name": "mockery",
+  "version": "1.0.0",
+  "description": "Simple Wireframe Tool",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanthomp81/mockery_v2.git"
+  },
+  "author": "mockery_team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordanthomp81/mockery_v2/issues"
+  },
+  "homepage": "https://github.com/jordanthomp81/mockery_v2#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-uglify": "^1.5.2",
+    "imagemin-pngquant": "^4.2.0",
+    "include-media": "^1.4.2",
+    "knapsack": "^0.2.5",
+    "node-reset-scss": "^1.0.1"
+  }
+}

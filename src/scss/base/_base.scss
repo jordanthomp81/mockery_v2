@@ -1,0 +1,47 @@
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $base-font;
+}
+
+button {
+  @include link-button();
+}
+
+// Utility classes
+.cf {
+  @include cf();
+}
+
+hr {
+  @include rule();
+}
+
+%hide-below-tablet {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.hide-below-tablet {
+  @media (max-width: 1040px) {
+    display: none;
+  }
+}
+
+nav { ul { @include reset-list(); } }
+
+// Some more resets
+input, textarea {
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

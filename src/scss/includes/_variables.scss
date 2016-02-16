@@ -1,0 +1,22 @@
+// General Settings
+$base-font-size: 16px;
+$global-border-radius: 3px;
+
+// Breakpoints to be used with include-media
+// Example Css: http://include-media.com/#features
+
+$mobile: 320px;
+$mobile-l: 640px;
+$tablet: 768px;
+$tablet-l: 1024px;
+$desktop: 1280px;
+$max-site-width: 1600px;
+
+$breakpoints: (
+  'mobile': $mobile,
+  'mobile-l': $mobile-l,
+  'tablet': $tablet,
+  'tablet-l': $tablet-l,
+  'desktop': $desktop,
+  'max-site-width': $max-site-width
+);
