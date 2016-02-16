@@ -1,12 +1,7 @@
-
-// #app {
-//   background-color: green;
-//   height: rem(100px);
-//   width: 100%;
-// }
-
 @mixin link-button() {
-  overflow: visible; // Shrinkwrap the text in IE7-
+  overflow: visib
+
+  le; // Shrinkwrap the text in IE7-
   margin: 0;
   padding: 0;
   border: 0;

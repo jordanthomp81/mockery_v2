@@ -34,7 +34,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['app/*.js', 'src/css/*.scss'], ['scripts', 'styles', 'images'])
+  gulp.watch(['app/*.js', 'src/scss/*.scss'], ['scripts', 'styles', 'images'])
 });
 
-gulp.task('default', ['scripts', 'styles', 'images', 'watch'])
+gulp.task('default', ['scripts', 'styles', 'images', 'watch']);
