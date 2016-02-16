@@ -1,0 +1,19 @@
+.green-strip {
+  height: rem(5px);
+  width: 100%;
+  background-color: $mockery-green;
+}
+
+.main-navigation {
+  height: rem(100px);
+  width: 100%;
+  background-color: $white;
+  border-bottom: 1px solid $dark-grey;
+}
+
+.action-bar {
+  height: rem(60px);
+  width: 100%;
+  background-color: $grey;
+  border-bottom: 1px solid $dark-grey;
+}
