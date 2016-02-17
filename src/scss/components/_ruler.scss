@@ -1,0 +1,30 @@
+$corner-width: rem(30px);
+
+.app {
+  height: calc(100% - 128x);
+}
+
+.ruler-corner {
+  width: $corner-width;
+  height: $corner-width;
+  float: left;
+  border-bottom: 1px solid $ruler-border;
+}
+
+.top-ruler {
+  width: calc(100% - #{$corner-width});
+  height: $corner-width;
+  background-color: $ruler;
+  float: right;
+  border-left: 1px solid $ruler-border;
+  border-bottom: 1px solid $ruler-border;
+}
+
+.left-ruler {
+  $height-before-ruler: 195px;
+  width: calc(#{$corner-width} + 1px);
+  height: calc(100vh - #{$height-before-ruler});
+  background-color: $ruler;
+  float: left;
+  border-right: 1px solid $ruler-border;
+}

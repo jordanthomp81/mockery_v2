@@ -5,6 +5,7 @@ var sass = require('gulp-sass');
 var cssnano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var svgmin = require('gulp-svgmin');
 
 gulp.task('scripts', function() {
   return gulp.src(['src/js/vendor/*.js', 'app/*.js'])
@@ -33,8 +34,14 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/src/img'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch(['app/*.js', 'src/scss/*.scss'], ['scripts', 'styles', 'images'])
+gulp.task('svg', function () {
+  return gulp.src('src/inc/vectors/*.svg')
+    .pipe(svgmin())
+    .pipe(gulp.dest('dist/src/inc/vectors'));
 });
 
-gulp.task('default', ['scripts', 'styles', 'images', 'watch']);
+gulp.task('watch', function() {
+  gulp.watch(['app/*.js', 'src/scss/*.scss'], ['scripts', 'styles', 'images', 'svg'])
+});
+
+gulp.task('default', ['scripts', 'styles', 'images', 'svg', 'watch']);
