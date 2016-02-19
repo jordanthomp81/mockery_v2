@@ -36,6 +36,16 @@ $corner-width: rem(30px);
     }
   }
 
+  .top-pointer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    background-color: $mockery-green;
+    z-index: 2;
+  }
+
   .ruler-five {
     float: left;
     margin-top: rem(26px);
@@ -65,10 +75,21 @@ $corner-width: rem(30px);
 }
 
 .left-ruler {
+  position: relative;
   $height-before-ruler: 195px;
   width: calc(#{$corner-width} + 1px);
   height: calc(100vh - #{$height-before-ruler});
   background-color: $ruler;
   float: left;
   border-right: 1px solid $ruler-border;
+
+  .left-pointer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $mockery-green;
+    z-index: 2;
+  }
 }
