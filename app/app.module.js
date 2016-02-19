@@ -6,12 +6,21 @@ new Vue({
   // Here we can register any values or collections that hold data
   // for the application
   data: {
-    message: 'Hello World()'
+
   },
 
   // Anything within the ready function will run when the application loads
   ready: function() {},
 
   // Methods we want to use in our application are registered here
-  methods: {}
+  methods: {
+    countTopRulerMarks : function (element) {
+      var elementName = element.charAt(0) == '#' || '.' ? document.getElementById('foo') : document.getElementsByClassName('foo')[0];
+      var elementInfo = element.getBoundingClientRect();
+      var elementheight = elementInfo.height;
+      var elementwidth = elementInfo.width;
+      return elementwidth;
+    }
+  }
+
 });

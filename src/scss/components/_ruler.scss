@@ -12,12 +12,56 @@ $corner-width: rem(30px);
 }
 
 .top-ruler {
+  position: relative;
   width: calc(100% - #{$corner-width});
   height: $corner-width;
   background-color: $ruler;
   float: right;
   border-left: 1px solid $ruler-border;
   border-bottom: 1px solid $ruler-border;
+  padding-left: rem(4px);
+
+  .number {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    font-size: 10px;
+    font-weight: bold;
+
+    color: darken($ruler-mark, 10%);
+
+    &:first-of-type {
+      top: 8px;
+      left: 5px;
+    }
+  }
+
+  .ruler-five {
+    float: left;
+    margin-top: rem(26px);
+    height: 13%;
+    width: 1px;
+    background-color: $ruler-mark;
+    margin-right: rem(4px);
+  }
+
+  .ruler-ten {
+    float: left;
+    margin-top: rem(21px);
+    height: 28%;
+    width: 1px;
+    background-color: $ruler-mark;
+    margin-right: rem(4px);
+  }
+
+  .ruler-hundred {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 1px;
+    background-color: $ruler-mark;
+    margin-right: rem(4px);
+  }
 }
 
 .left-ruler {
