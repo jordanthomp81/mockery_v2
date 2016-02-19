@@ -61,10 +61,12 @@ $(document).ready(function () {
   }
 
   $(document).on("mousemove", function(event) {
+    var leftCeiling = $('.left-ruler').offset().top;
     var offset = $('#app').offset();
     var relativeX = (event.pageX - offset.left);
     var relativeY = (event.pageY - offset.top);
-    console.log('moved')
+    // if( event.pageY - 2 >= leftCeiling)
+    console.log('moved');
     $('.top-pointer').css('left', relativeX - 33);
     $('.left-pointer').css('top', relativeY - 33);
   });

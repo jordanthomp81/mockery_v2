@@ -12,6 +12,12 @@ $corner-width: rem(30px);
 }
 
 .top-ruler {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  cursor: pointer;
   position: relative;
   width: calc(100% - #{$corner-width});
   height: $corner-width;
