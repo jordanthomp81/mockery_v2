@@ -1,60 +1,46 @@
-// ;(function($){
-//
-//   $(function(){
-//
-//     alert('ready')
-//     //
-//     // for (var i = 0; i <= ; i++) {
-//     //
-//     // }
-//
-//   });
-//
-// }(jQuery));
-
 $(document).ready(function () {
 
-  function buildTopRuler() {
-    $('.top-ruler').append('<div class="top-pointer"></div>').css('left', '0');
-    $('.left-ruler').append('<div class="left-pointer"></div>').css('top', '0');
-    var width = $('.top-ruler').width();
-    var numOfMarks = Math.round(width / 100);
-    var decimal = parseInt(String(width / 100).split('.')[1]) + 1;
+  function createRuler(side) {
+    var currSet = 0;
+    side = side == 'left' ? 'left' : 'top';
+    var ruler = document.getElementById(side + '-ruler');
+    // $ruler = $('#' + side + '-ruler');
+    ruler.innerHTML = "";
+    ruler.innerHTML = ruler.innerHTML + '<h6 class="number">' + currSet + '</h6>';
+    // $ruler.append('<div class="' + side + '-pointer"></div>').css(side, '0');
+    ruler.innerHTML = ruler.innerHTML + '<div class="' + side + '-pointer"></div>';
+    var size = side == 'left' ? ruler.clientHeight : ruler.clientWidth;
+    var marks = Math.floor(size / 100);
+    var decimal = (size / 100) % 1 != 0 ? parseInt(String(size / 100).split('.')[1].substring(0,1)) : 0;
     var currSet = 0;
 
-    for (var i = 0; i < numOfMarks; i++) {
-
+    for (var i = 0; i < marks; i++) {
       var sizeFlag = true;
       for (var x = 0; x <= 18; x++) {
         if(sizeFlag == true) {
           // create five
-          $('.top-ruler').append('<div class="ruler-five"></div>');
+          ruler.innerHTML = ruler.innerHTML + '<div class="ruler-five"></div>';
           sizeFlag = false;
         }else {
           // create ten
-          $('.top-ruler').append('<div class="ruler-ten"></div>');
+          ruler.innerHTML = ruler.innerHTML + '<div class="ruler-ten"></div>';
           sizeFlag = true;
         }
       }
 
       currSet += 100;
-      var next = i + 1;
-      if(next < numOfMarks) {
-        $('.top-ruler').append('<div class="ruler-hundred"><h6 class="number">' + currSet + '</h6></div>');
-      }else {
-        $('.top-ruler').append('<div class="ruler-hundred"></div>');
-      }
+      ruler.innerHTML = ruler.innerHTML + '<div class="ruler-hundred"><h6 class="number">' + currSet + '</h6></div>';
     }
 
     var sizeFlag = true;
-    for (var j = 0; j < decimal; j++) {
+    for (var j = 0; j < decimal * 2; j++) {
       if(sizeFlag == true) {
         // create five
-        $('.top-ruler').append('<div class="ruler-five"></div>');
+        ruler.innerHTML = ruler.innerHTML + '<div class="ruler-five"></div>';
         sizeFlag = false;
       }else {
         // create ten
-        // $('.top-ruler').append('<div class="ruler-ten"></div>');
+        ruler.innerHTML = ruler.innerHTML + '<div class="ruler-ten"></div>';
         sizeFlag = true;
       }
     }
@@ -66,10 +52,15 @@ $(document).ready(function () {
     var relativeX = (event.pageX - offset.left);
     var relativeY = (event.pageY - offset.top);
     // if( event.pageY - 2 >= leftCeiling)
-    console.log('moved');
     $('.top-pointer').css('left', relativeX - 33);
     $('.left-pointer').css('top', relativeY - 33);
   });
 
-  buildTopRuler()
+  $(window).resize(function() {
+    createRuler('left');
+    createRuler('top');
+  });
+
+  createRuler('left');
+  createRuler('top');
 });

@@ -4,6 +4,14 @@ $corner-width: rem(30px);
   height: calc(100% - 128x);
 }
 
+.red-box {
+  float: left;
+  background-color: red;
+  // 770
+  height: 700px;
+  width: 20px;
+}
+
 .ruler-corner {
   width: $corner-width;
   height: $corner-width;
@@ -12,6 +20,7 @@ $corner-width: rem(30px);
 }
 
 .top-ruler {
+  overflow: hidden;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
   -khtml-user-select: none;    /* Konqueror */
@@ -25,7 +34,18 @@ $corner-width: rem(30px);
   float: right;
   border-left: 1px solid $ruler-border;
   border-bottom: 1px solid $ruler-border;
-  padding-left: rem(4px);
+  // padding-left: rem(4px);
+
+  .top-ruler-svg {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: calc(#{$corner-width} - 1px);
+
+  }
+
+  // &::-webkit-scrollbar {
+  //   display: none;
+  // }
 
   .number {
     position: absolute;
@@ -58,7 +78,7 @@ $corner-width: rem(30px);
     height: 13%;
     width: 1px;
     background-color: $ruler-mark;
-    margin-right: rem(4px);
+    margin-left: rem(4px);
   }
 
   .ruler-ten {
@@ -67,7 +87,7 @@ $corner-width: rem(30px);
     height: 28%;
     width: 1px;
     background-color: $ruler-mark;
-    margin-right: rem(4px);
+    margin-left: rem(4px);
   }
 
   .ruler-hundred {
@@ -76,7 +96,7 @@ $corner-width: rem(30px);
     height: 100%;
     width: 1px;
     background-color: $ruler-mark;
-    margin-right: rem(4px);
+    margin-left: rem(4px);
   }
 }
 
@@ -89,6 +109,25 @@ $corner-width: rem(30px);
   float: left;
   border-right: 1px solid $ruler-border;
 
+  .number {
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 12px;
+    color: darken($ruler-mark, 10%);
+
+    span {
+      display: block;
+    }
+
+    &:first-of-type {
+      top: 8px;
+      left: 5px;
+    }
+  }
+
   .left-pointer {
     position: absolute;
     top: 0;
@@ -97,5 +136,48 @@ $corner-width: rem(30px);
     height: 1px;
     background-color: $mockery-green;
     z-index: 2;
+  }
+
+  .ruler-five {
+    clear: both;
+    float: right;
+    height: 1px;
+    width: 13%;
+    background-color: $ruler-mark;
+    margin-top: rem(4px);
+  }
+
+  .ruler-ten {
+    clear: both;
+    float: right;
+    height: 1px;
+    width: 28%;
+    background-color: $ruler-mark;
+    margin-top: rem(4px);
+  }
+
+  .ruler-hundred {
+    clear: both;
+    float: right;
+    position: relative;
+    height: 1px;
+    width: 100%;
+    background-color: $ruler-mark;
+    margin-top: rem(4px);
+
+    .number {
+      position: absolute;
+      top: 3px;
+      left: 10px;
+      font-size: 10px;
+      font-weight: bold;
+      color: darken($ruler-mark, 10%);
+      width: 50px;
+
+      &:first-of-type {
+        top: 8px;
+        left: 5px;
+      }
+    }
   }
 }
