@@ -197,6 +197,10 @@ $corner-width: rem(30px);
       color: darken($ruler-mark, 10%);
       width: 50px;
 
+      span {
+        display: block;
+      }
+
       &:first-of-type {
         top: 8px;
         left: 5px;

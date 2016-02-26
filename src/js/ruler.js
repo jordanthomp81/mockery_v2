@@ -30,8 +30,20 @@ $(document).ready(function () {
 
       currSet += 100;
       var setArray = ( "" + currSet).split("");
-      console.log(setArray.length);
-      ruler.innerHTML = ruler.innerHTML + '<div class="ruler-hundred"><div class="number">' + currSet + '</div></div>';
+      if (side == 'left') {
+        var tempRuler = '<div class="ruler-hundred"><h6 class="number">';
+        for (var x = 0; x < setArray.length; x++) {
+          tempRuler = tempRuler + '<span>' + setArray[x] + '</span>';
+          var nextItem = x + 1;
+
+          if(nextItem >= setArray.length) {
+            tempRuler = tempRuler + '</h6></div>';
+            ruler.innerHTML = ruler.innerHTML + tempRuler;
+          }
+        }
+      }else {
+        ruler.innerHTML = ruler.innerHTML + '<div class="ruler-hundred"><div class="number">' + currSet + '</div></div>';
+      }
       // for (var i = 0; i < setArray.length; i++) {
       //   // ruler.innerHTML = ruler.innerHTML + '<span><h6 class="number">' + setArray[i] + '</h6></span>';
       //   // console.log(i)
