@@ -1,0 +1,27 @@
+div#app {
+  height: calc(100% - 165px);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.inner-board {
+  background: url('../img/grid-bg.jpg');
+  background-repeat: repeat;
+  margin-left: 1px;
+  padding-left: 32px;
+  height: calc(100% - 30px);
+  width: calc(100% - 1px);
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: calc(100% - 1px);
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: .7;
+  }
+}

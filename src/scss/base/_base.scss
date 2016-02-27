@@ -1,13 +1,14 @@
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   font-family: $base-font;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 button {

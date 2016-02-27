@@ -15,21 +15,9 @@ $(document).ready(function () {
     var currSet = 0;
     //
     for (var i = 0; i < marks; i++) {
-      // var sizeFlag = true;
-      // for (var x = 0; x <= 18; x++) {
-      //   if(sizeFlag == true) {
-      //     // create five
-      //     ruler.innerHTML = ruler.innerHTML + '<div class="ruler-five"></div>';
-      //     sizeFlag = false;
-      //   }else {
-      //     // create ten
-      //     ruler.innerHTML = ruler.innerHTML + '<div class="ruler-ten"></div>';
-      //     sizeFlag = true;
-      //   }
-      // }
-
       currSet += 100;
       var setArray = ( "" + currSet).split("");
+
       if (side == 'left') {
         var tempRuler = '<div class="ruler-hundred"><h6 class="number">';
         for (var x = 0; x < setArray.length; x++) {
@@ -44,34 +32,25 @@ $(document).ready(function () {
       }else {
         ruler.innerHTML = ruler.innerHTML + '<div class="ruler-hundred"><div class="number">' + currSet + '</div></div>';
       }
-      // for (var i = 0; i < setArray.length; i++) {
-      //   // ruler.innerHTML = ruler.innerHTML + '<span><h6 class="number">' + setArray[i] + '</h6></span>';
-      //   // console.log(i)
-      // }
-      // ruler.innerHTML = ruler.innerHTML + '</div>';
     }
-    //
-    // var sizeFlag = true;
-    // for (var j = 0; j < decimal * 2; j++) {
-    //   if(sizeFlag == true) {
-    //     // create five
-    //     ruler.innerHTML = ruler.innerHTML + '<div class="ruler-five"></div>';
-    //     sizeFlag = false;
-    //   }else {
-    //     // create ten
-    //     ruler.innerHTML = ruler.innerHTML + '<div class="ruler-ten"></div>';
-    //     sizeFlag = true;
-    //   }
-    // }
+  }
+
+  function updateRulerPointer(side, event) {
+    var origin = side == 'left' ? event.pageY : event.pageX;
+    var offset = $('#app').offset();
+    var relative = (origin - offset.left);
+    if(side == 'left') {
+      // 197 made the position accurate
+      $('.' + side + '-pointer').css('top', relative - 197);
+    }else {
+      // 33 made the position accurate
+      $('.' + side + '-pointer').css('left', relative - 33);
+    }
   }
 
   $(document).on("mousemove", function(event) {
-    var leftCeiling = $('.left-ruler').offset().top;
-    var offset = $('#app').offset();
-    var relativeX = (event.pageX - offset.left);
-    var relativeY = (event.pageY - offset.top);
-    $('.top-pointer').css('left', relativeX - 33);
-    $('.left-pointer').css('top', relativeY - 33);
+    updateRulerPointer('left', event);
+    updateRulerPointer('top', event);
   });
 
   $(window).resize(function() {

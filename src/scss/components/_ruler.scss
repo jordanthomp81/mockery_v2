@@ -1,13 +1,8 @@
 $corner-width: rem(30px);
 
-.app {
-  height: calc(100% - 128x);
-}
-
 .red-box {
   float: left;
   background-color: red;
-  // 770
   height: 5px;
   width: 100px;
 }
@@ -31,6 +26,7 @@ $corner-width: rem(30px);
 }
 
 .top-ruler {
+  z-index: 50;
   overflow: hidden;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -61,9 +57,9 @@ $corner-width: rem(30px);
 
   .number {
     position: absolute;
-    top: 3px;
+    top: -2px;
     left: 5px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
 
     color: darken($ruler-mark, 10%);
@@ -113,6 +109,7 @@ $corner-width: rem(30px);
 }
 
 .left-ruler {
+  z-index: 50;
   overflow: hidden;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -132,9 +129,9 @@ $corner-width: rem(30px);
 
   .number {
     position: absolute;
-    top: 3px;
+    top: 2px;
     left: 10px;
-    font-size: 10px;
+    font-size: 12px;
     padding-left: 5px;
     font-weight: bold;
     line-height: 12px;
@@ -157,7 +154,7 @@ $corner-width: rem(30px);
     width: 100%;
     height: 1px;
     background-color: $mockery-green;
-    z-index: 2;
+    z-index: 100;
   }
 
   .ruler-five {
@@ -189,10 +186,10 @@ $corner-width: rem(30px);
 
     .number {
       position: absolute;
-      top: 3px;
+      top: 2px;
       left: 10px;
       padding-left: 5px;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: bold;
       color: darken($ruler-mark, 10%);
       width: 50px;
