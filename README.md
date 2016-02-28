@@ -11,6 +11,8 @@ checkout the `vue` branch
 
 Navigate to the root directory, should be the same folder as the `gulpfile.js` file
 
+run `npm i`
+
 run `gulp`
 
 Pull up a browser and open index.html
