@@ -15,10 +15,6 @@ $corner-width: rem(30px);
   -ms-user-select: none;       /* IE/Edge */
   user-drag: none;
   user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
   width: $corner-width;
   height: $corner-width;
   float: left;

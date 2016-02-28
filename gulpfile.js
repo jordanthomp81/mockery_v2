@@ -8,7 +8,7 @@ var pngquant = require('imagemin-pngquant');
 var svgmin = require('gulp-svgmin');
 
 gulp.task('scripts', function() {
-  return gulp.src(['src/js/*.js', 'src/js/vendor/*.js', 'app/*.js'])
+  return gulp.src(['src/js/*.js', 'app/*.js'])
     .pipe(concat('core.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist/src/js'));

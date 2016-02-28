@@ -1,19 +1,17 @@
-$(document).ready(function () {
+$(document).ready(function ($) {
 
   function createRuler(side) {
     var currSet = 0;
     side = side == 'left' ? 'left' : 'top';
     var ruler = document.getElementById(side + '-ruler');
-    // $ruler = $('#' + side + '-ruler');
     ruler.innerHTML = "";
     ruler.innerHTML = ruler.innerHTML + '<div class="number">' + currSet + '</div>';
-    // $ruler.append('<div class="' + side + '-pointer"></div>').css(side, '0');
     ruler.innerHTML = ruler.innerHTML + '<div class="' + side + '-pointer"></div>';
     var size = side == 'left' ? ruler.clientHeight : ruler.clientWidth;
     var marks = Math.floor(size / 100);
     var decimal = (size / 100) % 1 != 0 ? parseInt(String(size / 100).split('.')[1].substring(0,1)) : 0;
     var currSet = 0;
-    //
+
     for (var i = 0; i < marks; i++) {
       currSet += 100;
       var setArray = ( "" + currSet).split("");
@@ -40,10 +38,10 @@ $(document).ready(function () {
     var offset = $('#app').offset();
     var relative = (origin - offset.left);
     if(side == 'left') {
-      // 197 made the position accurate
+      // minus 197 made the mouse position accurate for X
       $('.' + side + '-pointer').css('top', relative - 197);
     }else {
-      // 33 made the position accurate
+      // minus 33 made the mouse position accurate for Y
       $('.' + side + '-pointer').css('left', relative - 33);
     }
   }
