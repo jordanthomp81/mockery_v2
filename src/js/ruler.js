@@ -56,6 +56,32 @@ $(document).ready(function ($) {
     createRuler('top');
   });
 
+  $(".quick-panel").draggable({
+    containment: "parent"
+  });
+
+  var panelOpen = true;
+  $('.quick-panel-close').click(function() {
+    if(!panelOpen) {
+      panelOpen = true;
+      $(this).css("transform", "rotate(-45deg)");
+      $('.quick-panel').animate({
+        height: "60px"
+      }, 250, function() {
+        // Animation complete.
+      });
+    }else {
+      panelOpen = false;
+      $(this).css("transform", "rotate(0deg)");
+      // $(this).removeClass('resolve');
+      $('.quick-panel').animate({
+        height: "300px"
+      }, 250, function() {
+        // Animation complete.
+      });
+    }
+  });
+
   createRuler('left');
   createRuler('top');
 });

@@ -9,7 +9,7 @@ div#app {
   background: url('../img/grid-bg.jpg');
   background-repeat: repeat;
   margin-left: 1px;
-  padding-left: 32px;
+  padding-left: rem(30px);
   height: calc(100% - 30px);
   width: calc(100% - 1px);
   position: relative;

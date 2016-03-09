@@ -1,3 +1,36 @@
 .quick-panel {
-  
+  width: rem(60px);
+  height: rem(60px);
+  background-color: $quick-panel-primary;
+  z-index: 200;
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  border-radius: 35px;
+
+  svg {
+    margin: 0;
+    padding: 0;
+    $size: rem(17px);
+    margin-top: 22px;
+    margin-left: 22px;
+    max-width: $size;
+    height: $size;
+    width: $size;
+    cursor: pointer;
+
+    .quick-panel-close {
+
+      &.resolve {
+        background-color: red;
+        transform: rotate(45deg);
+      }
+    }
+
+    &:first-of-type {
+      transform: rotate(-45deg);
+      transition: all .45s ease;
+      // background-color: red;
+    }
+  }
 }
