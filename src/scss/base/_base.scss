@@ -1,0 +1,57 @@
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-drag: none;
+  user-select: none;
+  font-family: $base-font;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  @include link-button();
+}
+
+// Utility classes
+.cf {
+  @include cf();
+}
+
+hr {
+  @include rule();
+}
+
+%hide-below-tablet {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.hide-below-tablet {
+  @media (max-width: 1040px) {
+    display: none;
+  }
+}
+
+nav { ul { @include reset-list(); } }
+
+// Some more resets
+input, textarea {
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

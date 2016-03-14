@@ -1,0 +1,203 @@
+$corner-width: rem(30px);
+
+.red-box {
+  float: left;
+  background-color: red;
+  height: 5px;
+  width: 100px;
+}
+
+.ruler-corner {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-drag: none;
+  user-select: none;
+  width: $corner-width;
+  height: $corner-width;
+  float: left;
+  border-bottom: 1px solid $ruler-border;
+}
+
+.top-ruler {
+  z-index: 50;
+  overflow: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  cursor: pointer;
+  position: relative;
+  width: calc(100% - #{$corner-width});
+  height: $corner-width;
+  background-color: $ruler;
+  background: url('../img/ruler-top.png');
+  background-repeat: repeat-x;
+  float: right;
+  border-left: 1px solid $ruler-border;
+  border-bottom: 1px solid $ruler-border;
+
+  .top-ruler-svg {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: calc(#{$corner-width} - 1px);
+
+  }
+
+  // &::-webkit-scrollbar {
+  //   display: none;
+  // }
+
+  .number {
+    position: absolute;
+    top: -2px;
+    left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+
+    color: darken($ruler-mark, 10%);
+
+    &:first-of-type {
+      top: 8px;
+      left: 5px;
+    }
+  }
+
+  .top-pointer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    background-color: $mockery-green;
+    z-index: 2;
+  }
+
+  .ruler-five {
+    float: left;
+    margin-top: rem(26px);
+    height: 13%;
+    width: 1px;
+    background-color: $ruler-mark;
+    margin-left: rem(4px);
+  }
+
+  .ruler-ten {
+    float: left;
+    margin-top: rem(21px);
+    height: 28%;
+    width: 1px;
+    background-color: $ruler-mark;
+    margin-left: rem(4px);
+  }
+
+  .ruler-hundred {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 1px;
+    background-color: $ruler-mark;
+    margin-left: rem(99px);
+  }
+}
+
+.left-ruler {
+  z-index: 50;
+  overflow: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  cursor: pointer;
+  position: relative;
+  $height-before-ruler: 195px;
+  width: calc(#{$corner-width} + 1px);
+  height: calc(100vh - #{$height-before-ruler});
+  background-color: $ruler;
+  background: url('../img/ruler-left.png');
+  background-repeat: repeat-y;
+  float: left;
+  border-right: 1px solid $ruler-border;
+
+  .number {
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    font-size: 12px;
+    padding-left: 5px;
+    font-weight: bold;
+    line-height: 12px;
+    color: darken($ruler-mark, 10%);
+
+    span {
+      display: block;
+    }
+
+    &:first-of-type {
+      top: 8px;
+      left: 5px;
+    }
+  }
+
+  .left-pointer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $mockery-green;
+    z-index: 100;
+  }
+
+  .ruler-five {
+    clear: both;
+    float: right;
+    height: 1px;
+    width: 13%;
+    background-color: $ruler-mark;
+    margin-top: rem(4px);
+  }
+
+  .ruler-ten {
+    clear: both;
+    float: right;
+    height: 1px;
+    width: 28%;
+    background-color: $ruler-mark;
+    margin-top: rem(4px);
+  }
+
+  .ruler-hundred {
+    clear: both;
+    float: right;
+    position: relative;
+    height: 1px;
+    width: 100%;
+    background-color: $ruler-mark;
+    margin-top: rem(99px);
+
+    .number {
+      position: absolute;
+      top: 2px;
+      left: 10px;
+      padding-left: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      color: darken($ruler-mark, 10%);
+      width: 50px;
+
+      span {
+        display: block;
+      }
+
+      &:first-of-type {
+        top: 8px;
+        left: 5px;
+      }
+    }
+  }
+}

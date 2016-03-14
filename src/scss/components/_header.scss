@@ -1,0 +1,27 @@
+.green-strip {
+  height: rem(5px);
+  width: 100%;
+  background-color: $mockery-green;
+}
+
+.main-navigation {
+  height: $nav-height;
+  width: 100%;
+  background-color: $white;
+  border-bottom: 1px solid $dark-grey;
+}
+
+.action-bar {
+  height: rem(60px);
+  width: 100%;
+  background-color: $grey;
+  border-bottom: 1px solid $dark-grey;
+}
+
+svg {
+  $logo-height: rem(35px);
+  width: auto;
+  height: $logo-height;
+  margin-top: calc(( #{$nav-height} / 2 ) - ( #{$logo-height} / 2 ));
+  margin-left: rem(40px);
+}

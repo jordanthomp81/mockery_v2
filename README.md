@@ -7,8 +7,12 @@ Open a terminal
 
 run `git clone https://github.com/jordanthomp81/mockery_v2`
 
-Navigate to the root directory, should be the same folder as the `webpack.config.js` file
+checkout the `vue` branch
 
-run `webpack --watch`
+Navigate to the root directory, should be the same folder as the `gulpfile.js` file
+
+run `npm i`
+
+run `gulp`
 
 Pull up a browser and open index.html
