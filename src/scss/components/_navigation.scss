@@ -1,0 +1,42 @@
+svg.logo {
+  float: left;
+  $logo-height: rem(35px);
+  width: auto;
+  height: $logo-height;
+  margin-top: calc(( #{$nav-height} / 2 ) - ( #{$logo-height} / 2 ));
+  margin-left: rem(40px);
+}
+
+.nav-options {
+  float: left;
+  margin-left: rem(50px);
+  margin-top: rem(42px);
+
+  li {
+    z-index: 54;
+    float: left;
+    font-weight: 500;
+    font-size: rem(15px);
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $light-grey;
+    cursor: pointer;
+
+    &:not(:last-of-type) {
+      margin-right: rem(35px);
+    }
+
+    &:hover {
+      position: relative;
+
+      .sub-menu {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        height: 300px;
+        width: 150px;
+        background-color: white;
+        box-shadow: 3px 3px 1px rgba(#AAABAB, 80%);
+      }
+    }
+  }
+}
