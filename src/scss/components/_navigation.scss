@@ -1,6 +1,6 @@
 svg.logo {
   float: left;
-  $logo-height: rem(35px);
+  $logo-height: rem(28px);
   width: auto;
   height: $logo-height;
   margin-top: calc(( #{$nav-height} / 2 ) - ( #{$logo-height} / 2 ));
@@ -16,7 +16,7 @@ svg.logo {
     z-index: 54;
     float: left;
     font-weight: 500;
-    font-size: rem(15px);
+    font-size: rem(13px);
     font-family: 'Source Sans Pro', sans-serif;
     color: $light-grey;
     cursor: pointer;

@@ -28,7 +28,12 @@ $(document).ready(function ($) {
           }
         }
       }else {
-        ruler.innerHTML = ruler.innerHTML + '<div class="ruler-hundred"><div class="number">' + currSet + '</div></div>';
+        console.log(currSet)
+        if(currSet == 100) {
+          ruler.innerHTML = ruler.innerHTML + '<div class="ruler-hundred first"><div class="number">' + currSet + '</div></div>';
+        }else {
+          ruler.innerHTML = ruler.innerHTML + '<div class="ruler-hundred"><div class="number">' + currSet + '</div></div>';
+        }
       }
     }
   }
