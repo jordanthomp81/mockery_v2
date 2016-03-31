@@ -1,18 +1,49 @@
+.main-navigation {
+  position: relative;
+}
+
 svg.logo {
-  float: left;
   $logo-height: rem(28px);
+  position: absolute;
+  top: calc((#{$nav-height} / 2) - (#{$logo-height} / 2));
+  left: rem(40px);
   width: auto;
   height: $logo-height;
-  margin-top: calc(( #{$nav-height} / 2 ) - ( #{$logo-height} / 2 ));
-  margin-left: rem(40px);
+}
+
+div.edit-page-name {
+  position: absolute;
+  top: rem(15px);
+  left: rem(200px);
+  background-color: transparent;
+  border: 1px solid $light-blue;
+  width: auto;
+  height: 22px;
+
+  h6 {
+    color: $light-blue;
+    float: left;
+    margin-top: rem(5px);
+    padding-left: rem(13px);
+    padding-right: rem(16px);
+    font-size: 11px;
+  }
+
+  #edit-page-name-icon {
+    float: left;
+    margin-right: 9px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
 }
 
 .nav-options {
-  float: left;
-  margin-left: rem(50px);
-  margin-top: rem(42px);
+  position: absolute;
+  top: rem(51px);
+  left: rem(200px);
 
   li {
+    padding-left: 23px;
     z-index: 54;
     float: left;
     font-weight: 500;
@@ -20,9 +51,32 @@ svg.logo {
     font-family: 'Source Sans Pro', sans-serif;
     color: $light-grey;
     cursor: pointer;
+    position: relative;
+
+    &:nth-child(1) {
+      padding-left: 20px;
+    }
+
+    &:nth-child(2) {
+      padding-left: 22px;
+    }
+
+    &:nth-child(3) {
+      padding-left: 24px;
+    }
+
+    &:nth-child(4) {
+      padding-left: 23px;
+    }
+
+    svg {
+      position: absolute;
+      top: -1px;
+      left: 0;
+    }
 
     &:not(:last-of-type) {
-      margin-right: rem(35px);
+      margin-right: rem(24px);
     }
 
     &:hover {

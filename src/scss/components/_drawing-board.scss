@@ -11,7 +11,7 @@ div#app {
   margin-left: 1px;
   padding-left: rem(30px);
   height: calc(100% - 30px);
-  width: calc(100% - 1px);
+  width: 100%;
   position: relative;
 
   &:after {
