@@ -137,7 +137,7 @@ $corner-width: rem(21px);
   -ms-user-select: none;       /* IE/Edge */
   cursor: pointer;
   position: relative;
-  $height-before-ruler: 195px;
+  $height-before-ruler: 151px;
   width: calc(#{$corner-width} + 1px);
   height: calc(100vh - #{$height-before-ruler});
   background-color: $ruler;

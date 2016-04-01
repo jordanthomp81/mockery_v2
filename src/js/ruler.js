@@ -44,10 +44,10 @@ $(document).ready(function ($) {
     var relative = (origin - offset.left);
     if(side == 'left') {
       // minus 197 made the mouse position accurate for X
-      $('.' + side + '-pointer').css('top', relative - 197);
+      $('.' + side + '-pointer').css('top', relative - 153);
     }else {
       // minus 33 made the mouse position accurate for Y
-      $('.' + side + '-pointer').css('left', relative - 33);
+      $('.' + side + '-pointer').css('left', relative - 23);
     }
   }
 
@@ -93,6 +93,14 @@ $(document).ready(function ($) {
         // Animation complete.
       });
     }
+  });
+
+  $(".edit-page-name").on("mouseover", function () {
+      $(this).addClass('active');
+  });
+
+  $(".edit-page-name").on("mouseout", function () {
+      $(this).removeClass('active');
   });
 
   $('.quick-panel-undo').click(function() {

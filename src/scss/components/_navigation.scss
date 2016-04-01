@@ -19,21 +19,37 @@ div.edit-page-name {
   border: 1px solid $light-blue;
   width: auto;
   height: 22px;
+  cursor: pointer;
 
   h6 {
     color: $light-blue;
     float: left;
+    font-weight: bold;
     margin-top: rem(5px);
     padding-left: rem(13px);
-    padding-right: rem(16px);
-    font-size: 11px;
+    transition: padding .15s ease-in;
+    padding-right: rem(13px);
+    font-size: 10px;
+  }
+
+  &.active {
+    #edit-page-name-icon {
+      display: block;
+      opacity: 1;
+    }
+
+    h6 {
+      padding-right: rem(16px);
+    }
   }
 
   #edit-page-name-icon {
+    transition: padding .15s ease-in;
     float: left;
     margin-right: 9px;
     margin-top: 5px;
-    cursor: pointer;
+    display: none;
+    opacity: 0;
   }
 }
 
