@@ -2,6 +2,52 @@
   position: relative;
 }
 
+.logo-container {
+
+  .sub-menu {
+    cursor: auto;
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 40px;
+    height: auto;
+    width: auto;
+    background-color: #767676;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 49px;
+      top: -7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 7px 7px 7px;
+      border-color: transparent transparent #767676 transparent;
+    }
+  }
+
+  &:hover {
+    position: relative;
+
+    .sub-menu {
+      transition: all .5s ease;
+      display: block;
+      // padding
+
+      h6 {
+        cursor: pointer;
+        transition: all .3s ease;
+        color: #fff;
+        padding: rem(8px) rem(15px);
+        white-space: nowrap;
+        font-size: 10px;
+        margin: 0;
+      }
+    }
+  }
+}
+
 svg.logo {
   $logo-height: rem(28px);
   position: absolute;
@@ -9,11 +55,6 @@ svg.logo {
   left: rem(40px);
   width: auto;
   height: $logo-height;
-  transition: all .1s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 div.edit-page-name {
