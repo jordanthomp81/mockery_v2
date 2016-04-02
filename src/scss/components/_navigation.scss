@@ -69,6 +69,10 @@ div.edit-page-name {
     cursor: pointer;
     position: relative;
 
+    &:hover {
+      padding: 0 0 25px 23px;
+    }
+
     &:nth-child(1) {
       padding-left: 20px;
     }
@@ -96,13 +100,13 @@ div.edit-page-name {
     }
 
     .sub-menu {
+      cursor: auto;
       display: none;
-      transition: all 6s ease;
       position: absolute;
       top: 37px;
       left: -10px;
-      height: 0px;
-      width: 150px;
+      height: auto;
+      width: auto;
       border: 1px solid #e3e5e7;
       background-color: white;
       box-shadow: 1px 1px 2px rgba(#AAABAB, 50%);
@@ -138,7 +142,30 @@ div.edit-page-name {
       .sub-menu {
         transition: all .5s ease;
         display: block;
-        height: 300px;
+        // padding
+
+        h6 {
+          cursor: pointer;
+          transition: all .3s ease;
+          color: #7a7a7a;
+          padding: 0 rem(20px);
+          white-space: nowrap;
+          font-size: 13px;
+          margin: 0;
+          margin-bottom: 20px;
+
+          &:hover {
+            color: #64bd60;
+          }
+
+          &:first-of-type {
+            margin-top: 20px;
+          }
+
+          &:last-of-type {
+            margin-bottom: 20px;
+          }
+        }
       }
     }
   }
