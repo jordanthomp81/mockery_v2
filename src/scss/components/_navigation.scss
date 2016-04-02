@@ -9,6 +9,11 @@ svg.logo {
   left: rem(40px);
   width: auto;
   height: $logo-height;
+  transition: all .1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 div.edit-page-name {
@@ -59,7 +64,8 @@ div.edit-page-name {
   left: rem(200px);
 
   li {
-    padding-left: 23px;
+    transition: all .4s ease;
+    padding: 0 0 15px 23px;
     z-index: 54;
     float: left;
     font-weight: 500;
@@ -69,8 +75,21 @@ div.edit-page-name {
     cursor: pointer;
     position: relative;
 
+    svg {
+      path {
+        transition: all .4s ease;
+      }
+    }
+
     &:hover {
+      color: lighten(black, 40%);
       padding: 0 0 25px 23px;
+
+      svg {
+        path {
+          fill: lighten(black, 40%);
+        }
+      }
     }
 
     &:nth-child(1) {
@@ -150,7 +169,7 @@ div.edit-page-name {
           color: #7a7a7a;
           padding: 0 rem(20px);
           white-space: nowrap;
-          font-size: 13px;
+          font-size: 12px;
           margin: 0;
           margin-bottom: 20px;
 

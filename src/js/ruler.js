@@ -65,6 +65,11 @@ $(document).ready(function ($) {
     containment: "parent"
   });
 
+  $('.nav-options li').on('click', '.sub-menu', function(event) {
+      $('.nav-options li').off('hover');
+      event.preventDefault();
+  });
+
   var panelOpen = true;
   $('.quick-panel-close').click(function() {
     if(!panelOpen) {
@@ -75,7 +80,7 @@ $(document).ready(function ($) {
       $('.quick-panel-undo').removeClass('resolved');
       $('.quick-panel-redo').removeClass('resolved');
       $('.quick-panel').animate({
-        height: "60px"
+        height: "50px"
       }, 150, function() {
         // Animation complete.
       });
@@ -88,7 +93,7 @@ $(document).ready(function ($) {
       $('.quick-panel-undo').addClass('resolved');
       $('.quick-panel-redo').addClass('resolved');
       $('.quick-panel').animate({
-        height: "320px"
+        height: "280px"
       }, 150, function() {
         // Animation complete.
       });
