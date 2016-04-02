@@ -95,17 +95,50 @@ div.edit-page-name {
       margin-right: rem(24px);
     }
 
+    .sub-menu {
+      display: none;
+      transition: all 6s ease;
+      position: absolute;
+      top: 37px;
+      left: -10px;
+      height: 0px;
+      width: 150px;
+      border: 1px solid #e3e5e7;
+      background-color: white;
+      box-shadow: 1px 1px 2px rgba(#AAABAB, 50%);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 19px;
+        top: -12px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 12px 12px 12px;
+        border-color: transparent transparent #e3e5e7 transparent;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 21px;
+        top: -10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent #fff transparent;
+      }
+    }
+
     &:hover {
       position: relative;
 
       .sub-menu {
-        position: absolute;
-        top: 20px;
-        left: 0;
+        transition: all .5s ease;
+        display: block;
         height: 300px;
-        width: 150px;
-        background-color: white;
-        box-shadow: 3px 3px 1px rgba(#AAABAB, 80%);
       }
     }
   }
