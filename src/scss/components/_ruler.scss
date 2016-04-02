@@ -1,4 +1,4 @@
-$corner-width: rem(30px);
+$corner-width: rem(21px);
 
 .red-box {
   float: left;
@@ -34,7 +34,7 @@ $corner-width: rem(30px);
   width: calc(100% - #{$corner-width});
   height: $corner-width;
   background-color: $ruler;
-  background: url('../img/ruler-top.png');
+  background: url('../img/top-ruler-new(1).png');
   background-repeat: repeat-x;
   float: right;
   border-left: 1px solid $ruler-border;
@@ -44,7 +44,6 @@ $corner-width: rem(30px);
     margin: 0 !important;
     padding: 0 !important;
     height: calc(#{$corner-width} - 1px);
-
   }
 
   // &::-webkit-scrollbar {
@@ -55,14 +54,14 @@ $corner-width: rem(30px);
     position: absolute;
     top: -2px;
     left: 5px;
-    font-size: 12px;
+    opacity: .8;
+    font-size: 9px;
     font-weight: bold;
-
     color: darken($ruler-mark, 10%);
 
     &:first-of-type {
-      top: 8px;
-      left: 5px;
+      top: 3px;
+      left: 4px;
     }
   }
 
@@ -101,6 +100,30 @@ $corner-width: rem(30px);
     width: 1px;
     background-color: $ruler-mark;
     margin-left: rem(99px);
+
+    &.first {
+      margin-left: rem(100px);
+    }
+
+    .number {
+      position: absolute;
+      top: 2px;
+      left: 10px;
+      padding-left: 5px;
+      font-size: 9px;
+      font-weight: bold;
+      color: darken($ruler-mark, 10%);
+      width: 50px;
+
+      span {
+        display: block;
+      }
+
+      &:first-of-type {
+        top: 3px;
+        left: 1px;
+      }
+    }
   }
 }
 
@@ -114,11 +137,11 @@ $corner-width: rem(30px);
   -ms-user-select: none;       /* IE/Edge */
   cursor: pointer;
   position: relative;
-  $height-before-ruler: 195px;
+  $height-before-ruler: 151px;
   width: calc(#{$corner-width} + 1px);
   height: calc(100vh - #{$height-before-ruler});
   background-color: $ruler;
-  background: url('../img/ruler-left.png');
+  background: url('../img/left-ruler-new.png');
   background-repeat: repeat-y;
   float: left;
   border-right: 1px solid $ruler-border;
@@ -127,19 +150,22 @@ $corner-width: rem(30px);
     position: absolute;
     top: 2px;
     left: 10px;
-    font-size: 12px;
+    font-size: 9px;
     padding-left: 5px;
     font-weight: bold;
+    opacity: .8;
     line-height: 12px;
     color: darken($ruler-mark, 10%);
 
     span {
+      font-size: 9px;
+      line-height: 10px;
       display: block;
     }
 
     &:first-of-type {
-      top: 8px;
-      left: 5px;
+      top: 2px;
+      left: 3px;
     }
   }
 
@@ -185,7 +211,7 @@ $corner-width: rem(30px);
       top: 2px;
       left: 10px;
       padding-left: 5px;
-      font-size: 12px;
+      font-size: 9px;
       font-weight: bold;
       color: darken($ruler-mark, 10%);
       width: 50px;
@@ -195,8 +221,8 @@ $corner-width: rem(30px);
       }
 
       &:first-of-type {
-        top: 8px;
-        left: 5px;
+        top: 3px;
+        left: 3px;
       }
     }
   }

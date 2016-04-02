@@ -1,5 +1,5 @@
 div#app {
-  height: calc(100% - 165px);
+  height: calc(100% - 151px);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -9,10 +9,11 @@ div#app {
   background: url('../img/grid-bg.jpg');
   background-repeat: repeat;
   margin-left: 1px;
-  padding-left: rem(30px);
-  height: calc(100% - 30px);
-  width: calc(100% - 1px);
+  padding-left: rem(20px);
+  height: 100%;
+  width: calc(100% - 18px);
   position: relative;
+  left: 17px;
 
   &:after {
     position: absolute;

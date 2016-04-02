@@ -46,20 +46,5 @@ var vm = new Vue({
   // define methods under the `methods` object
   methods: {
 
-    countTopRulerMarks : function (element) {
-      var element = document.getElementById(element);
-      // var elementName = element.charAt(0) == '#' || '.' ? document.getElementById('foo') : document.getElementsByClassName('foo')[0];
-      // var elementInfo = element.getBoundingClientRect();
-      // var elementheight = elementInfo.height;
-      // var elementwidth = elementInfo.width;
-      console.log(element.offsetWidth);
-    },
-    greet: function() {
-      // `this` inside methods point to the Vue instance
-      this.name = 'jordan';
-    }
   }
 })
-
-// you can invoke methods in JavaScript too
-vm.countTopRulerMarks('top-ruler') // -> 'Hello Vue.js!'
