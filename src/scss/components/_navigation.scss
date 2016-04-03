@@ -9,7 +9,7 @@
     display: none;
     position: absolute;
     top: 65px;
-    left: 40px;
+    left: 42px;
     height: auto;
     width: auto;
     background-color: #767676;
@@ -96,6 +96,12 @@ div.edit-page-name {
     margin-top: 5px;
     display: none;
     opacity: 0;
+  }
+}
+
+.in-active {
+  .sub-menu {
+    display: none !important;
   }
 }
 

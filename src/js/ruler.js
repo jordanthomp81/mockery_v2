@@ -93,7 +93,7 @@ $(document).ready(function ($) {
       $('.quick-panel-undo').addClass('resolved');
       $('.quick-panel-redo').addClass('resolved');
       $('.quick-panel').animate({
-        height: "280px"
+        height: "275px"
       }, 150, function() {
         // Animation complete.
       });
@@ -106,6 +106,30 @@ $(document).ready(function ($) {
 
   $(".edit-page-name").on("mouseout", function () {
       $(this).removeClass('active');
+  });
+  // .off('hover');
+
+  $('.nav-options li').click(function(){
+     $(this).addClass('in-active');
+  });
+
+  $('.nav-options li').on('mouseleave', function(){
+     $(this).removeClass('in-active');
+  });
+
+  $('#toggle-ruler').click(function() {
+    $(this).html('Hide Rulers');
+    if($('.top-ruler').is(":visible")) {
+      $(this).html('Show Rulers (Ctrl + R)');
+      $('.top-ruler').hide();
+      $('.left-ruler').hide();
+      $('.ruler-corner').hide();
+    }else {
+      $(this).html('Hide Rulers (Ctrl + R)');
+      $('.top-ruler').show();
+      $('.left-ruler').show();
+      $('.ruler-corner').show();
+    }
   });
 
   $('.quick-panel-undo').click(function() {
