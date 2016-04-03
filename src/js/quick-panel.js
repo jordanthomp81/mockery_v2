@@ -38,7 +38,7 @@ $(document).ready(function ($) {
   $(".inner-board").resizable();
 
   $(".quick-panel").draggable({
-    containment: "parent"
+    containment: [21, 155]
   });
 
   $('.quick-panel-undo').click(function() {
