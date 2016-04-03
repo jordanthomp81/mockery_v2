@@ -34,7 +34,7 @@ $(document).ready(function ($) {
     }
   });
 
-  $(".drawing_board").draggable({containment:  [-130, 0], snap: "body, header"});
+  $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});
   $(".inner-board").resizable();
 
   $(".quick-panel").draggable({

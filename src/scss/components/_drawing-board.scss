@@ -7,7 +7,8 @@ div#app {
   // background-color: transparent;
   padding-bottom: 450px;
   padding-right: 694px;
-  top: -14px;
+  top: 151px;
+  left: 21px;
 }
 
 .inner-board {
@@ -19,15 +20,19 @@ div#app {
   margin-left: 1px;
   padding-left: rem(20px);
   height: 700px;
-  width: 1880px;
+  width: 1280px;
   position: relative;
-  left: 21px;
+  // left: 21px;
+  border-left: 1px solid #CED8D7;
+  border-top: 1px solid #CED8D7;
+  border-bottom: 1px solid #CED8D7;
+  border-right: 1px solid #CED8D7;
 
   &:after {
     position: absolute;
     content: '';
     height: 100%;
-    width: calc(100% - 1px);
+    width: 100%;
     top: 0;
     left: 0;
     background-color: white;
