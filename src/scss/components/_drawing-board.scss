@@ -1,19 +1,27 @@
+body{
+  background-color: #F2F2F2;
+}
+
 div#app {
-  height: calc(100% - 151px);
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  display: table;
+  // background-color: transparent;
+  padding-bottom: 450px;
+  padding-right: 694px;
+  top: 130px;
 }
 
 .inner-board {
+  cursor: move;
+  z-index: 0;
   background: url('../img/grid-bg.jpg');
+  background-origin: content-box;
   background-repeat: repeat;
   margin-left: 1px;
   padding-left: rem(20px);
-  height: 100%;
-  width: calc(100% - 18px);
+  height: 700px;
+  width: 1880px;
   position: relative;
-  left: 17px;
+  left: 21px;
 
   &:after {
     position: absolute;

@@ -7,6 +7,15 @@ $corner-width: rem(21px);
   width: 100px;
 }
 
+.ruler-container {
+  position: fixed;
+  top: 130px;
+  left: 0;
+  height: calc(100vh - 130px);
+  width: 100vw;
+  z-index: 6;
+}
+
 .ruler-corner {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
