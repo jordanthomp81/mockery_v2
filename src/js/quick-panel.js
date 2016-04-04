@@ -37,8 +37,12 @@ $(document).ready(function ($) {
   $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});
   $(".inner-board").resizable();
 
+  var docWidth = $(window).width();
+  var docHeight = $(window).height();
+  console.log("Width " + docWidth)
+  console.log("Height " + docHeight)
   $(".quick-panel").draggable({
-    containment: [21, 155]
+    containment: [22, 152]
   });
 
   $('.quick-panel-undo').click(function() {
