@@ -351,7 +351,7 @@ div.edit-page-name {
         font-size: 12px;
 
         &:hover {
-          color: lighten(#63C6BB, 10%);
+          color: #63C6BB;
         }
 
         &:first-of-type {
@@ -373,6 +373,7 @@ div.edit-page-name {
   cursor: pointer;
   float: right;
   position: relative;
+  padding-bottom: 32px;
 
   .sub-menu {
     cursor: pointer;
@@ -381,7 +382,7 @@ div.edit-page-name {
     cursor: auto;
     display: none;
     position: absolute;
-    top: 42px;
+    top: 56px;
     right: -40px;
     height: auto;
     width: auto;
@@ -389,9 +390,83 @@ div.edit-page-name {
     background-color: white;
     box-shadow: 1px 1px 2px rgba(#AAABAB, 50%);
 
-    h6 {
-      position: relative;
+    h5 {
+      white-space: nowrap;
+      padding: rem(18px) rem(50px) rem(0px) rem(16px);
+      font-size: rem(15px);
+      margin: 0;
+      font-family: 'Source Sans Pro', sans-serif;
     }
+
+    hr {
+      border-color: darken(#F5F5F5, 5%);
+      // padding: 0 rem(15px);
+      width: 92%;
+      margin: 0;
+      transform: translateX(-50%);
+      margin-left: 50%;
+      margin-top: 7px;
+      height: 1px;
+
+    }
+
+    .url {
+      cursor: text;
+      padding: 0 rem(5px);
+      margin: rem(18px) rem(11px) rem(18px) rem(16px);
+      background-color: white;
+      border: 1px solid #EAEDF0;
+      border-radius: 20px;
+      width: 340px;
+      height: 35px;
+      position: relative;
+      overflow: hidden;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      // &::after {
+      //   content: '';
+      //   height: 33px;
+      //   width: 40px;
+      //   background: linear-gradient(to right, rgba(0, 0, 0, 0), white);
+      //   position: absolute;
+      //   top: 0;
+      //   right: 70px;
+      // }
+
+      // h6 {
+      //   white-space: nowrap;
+      // }
+
+      .copy-url {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        background-color: #5FA9DD;
+        width: 70px;
+        height: 33px;
+        border: 1px solid #5FA9DD;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        h4 {
+          white-space: nowrap;
+          padding: rem(11px) rem(0px) rem(0px) rem(8px);
+          font-size: rem(11px);
+          font-weight: bold;
+          margin: 0;
+          color: white;
+          font-family: 'Source Sans Pro', sans-serif;
+        }
+      }
+    }
+
+    // h6 {
+    //   position: relative;
+    // }
 
     &::before {
       content: '';
@@ -426,10 +501,11 @@ div.edit-page-name {
       display: block;
 
       h6 {
-        cursor: pointer;
+        overflow: hidden;
+        // cursor: pointer;
         transition: all .3s ease;
-        color: #7a7a7a;
-        padding: 0;
+        color: #A4A5A5;
+        // padding: 0;
         white-space: nowrap;
         font-size: 12px;
         margin: 0;
@@ -446,6 +522,14 @@ div.edit-page-name {
         // &:last-of-type {
         //   margin-bottom: 20px;
         // }
+      }
+    }
+
+    .url {
+
+      h6 {
+        padding-top: calc((35px / 2) - (14px / 2));
+        padding-left: 10px;
       }
     }
 

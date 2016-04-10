@@ -1,4 +1,11 @@
 .quick-panel {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-drag: none;
+  user-select: none;
   width: rem(50px);
   height: rem(50px);
   background-color: $quick-panel-primary;
