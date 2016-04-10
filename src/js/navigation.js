@@ -25,4 +25,17 @@ $(document).ready(function ($) {
      $(this).removeClass('in-active');
   });
 
+  $('.user-admin').click(function(){
+     $(this).addClass('in-active');
+  });
+
+  $('.user-admin').on('mouseleave', function(){
+     $(this).removeClass('in-active');
+  });
+
+  $('.user-admin').on('click', '.sub-menu', function(event) {
+      $('.nav-options li').off('hover');
+      event.preventDefault();
+  });
+
 });
