@@ -1,5 +1,29 @@
 $(document).ready(function ($) {
 
+  // var currIEZoom = 100;
+  //
+  // $('.inner-board').bind('mousewheel', function(e){
+  //   if(e.originalEvent.wheelDelta / 120 > 0) {
+  //     currIEZoom += 1;
+  //     $('.inner-board').css('zoom', currIEZoom + "%");
+  //   }
+  //   else{
+  //     currIEZoom -= 1;
+  //     $('.inner-board').css('zoom', currIEZoom + "%");
+  //   }
+  // });
+  //
+  // $('#zoom-in').on('click',function(){
+  //   console.log('clicked')
+  //   currIEZoom += 1;
+  //   $('.inner-board').css('zoom', currIEZoom + "%");
+  // });
+  //
+  // $('#zoom-out').on('click',function(){
+  //   currIEZoom -= 1;
+  //   $('.inner-board').css('zoom', currIEZoom + "%");
+  // });
+
   function createRuler(side) {
     var currSet = 0;
     side = side == 'left' ? 'left' : 'top';

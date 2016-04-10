@@ -248,6 +248,14 @@ div.edit-page-name {
   cursor: pointer;
   position: relative;
 
+  .user-admin-arrow {
+    transition: all .45s ease;
+  }
+
+  .user-admin-orb {
+    transition: all .5s ease;
+  }
+
   .sub-menu {
     cursor: pointer;
     float: right;
@@ -337,6 +345,14 @@ div.edit-page-name {
   &:hover {
     position: relative;
     height: 115%;
+
+    .user-admin-arrow {
+      transform: rotate(180deg);
+    }
+
+    .user-admin-orb {
+      transform: scale(1.1);
+    }
 
     .sub-menu {
       transition: all .5s ease;
@@ -573,6 +589,7 @@ div.edit-page-name {
 }
 
 .user-admin-arrow {
+  transition: all .5s ease;
   margin-top: calc((#{$nav-height} / 2) - (8px / 2));
   float: right;
 }

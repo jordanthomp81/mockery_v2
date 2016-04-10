@@ -34,7 +34,20 @@ $(document).ready(function ($) {
     }
   });
 
-  $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});
+  var panActive = false;
+  $('#pan').click(function() {
+    if(panActive) {
+      $(".drawing_board").draggable('destroy');
+      $('#pan').html('Pan (Ctrl + Alt + P)')
+      panActive = false;
+    }else {
+      $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});
+      $('#pan').html('Stop Pan (Ctrl + Alt + P)')
+      panActive = true;
+    }
+  });
+
+  // $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});
   $(".inner-board").resizable();
 
   var docWidth = $(window).width();
