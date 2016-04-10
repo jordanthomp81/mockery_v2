@@ -1,25 +1,38 @@
+body{
+  background-color: #F2F2F2;
+}
+
 div#app {
-  height: calc(100% - 151px);
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  display: table;
+  // background-color: transparent;
+  padding-bottom: 450px;
+  padding-right: 694px;
+  top: 151px;
+  left: 21px;
 }
 
 .inner-board {
+  cursor: move;
+  z-index: 0;
   background: url('../img/grid-bg.jpg');
+  background-origin: content-box;
   background-repeat: repeat;
   margin-left: 1px;
   padding-left: rem(20px);
-  height: 100%;
-  width: calc(100% - 18px);
+  height: 768px;
+  width: 1366px;
   position: relative;
-  left: 17px;
+  // left: 21px;
+  border-left: 1px solid #CED8D7;
+  border-top: 1px solid #CED8D7;
+  border-bottom: 1px solid #CED8D7;
+  border-right: 1px solid #CED8D7;
 
   &:after {
     position: absolute;
     content: '';
     height: 100%;
-    width: calc(100% - 1px);
+    width: 100%;
     top: 0;
     left: 0;
     background-color: white;

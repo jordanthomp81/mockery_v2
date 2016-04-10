@@ -7,6 +7,15 @@ $corner-width: rem(21px);
   width: 100px;
 }
 
+.ruler-container {
+  position: fixed;
+  top: 130px;
+  left: 0;
+  height: calc(100vh - 130px);
+  width: 100vw;
+  z-index: 6;
+}
+
 .ruler-corner {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -17,12 +26,15 @@ $corner-width: rem(21px);
   user-select: none;
   width: $corner-width;
   height: $corner-width;
-  float: left;
+  // float: left;
   border-bottom: 1px solid $ruler-border;
+  position: fixed;
+  top: 130px;
+  z-index: 2;
 }
 
 .top-ruler {
-  z-index: 50;
+  z-index: 2;
   overflow: hidden;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -30,13 +42,15 @@ $corner-width: rem(21px);
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;       /* IE/Edge */
   cursor: pointer;
-  position: relative;
+  position: fixed;
   width: calc(100% - #{$corner-width});
   height: $corner-width;
   background-color: $ruler;
   background: url('../img/top-ruler-new(1).png');
   background-repeat: repeat-x;
-  float: right;
+  // float: right;
+  top: 130px;
+  left: 21px;
   border-left: 1px solid $ruler-border;
   border-bottom: 1px solid $ruler-border;
 
@@ -136,14 +150,15 @@ $corner-width: rem(21px);
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;       /* IE/Edge */
   cursor: pointer;
-  position: relative;
+  position: fixed;
   $height-before-ruler: 151px;
   width: calc(#{$corner-width} + 1px);
   height: calc(100vh - #{$height-before-ruler});
   background-color: $ruler;
   background: url('../img/left-ruler-new.png');
   background-repeat: repeat-y;
-  float: left;
+  // float: left;
+  top: 151px;
   border-right: 1px solid $ruler-border;
 
   .number {

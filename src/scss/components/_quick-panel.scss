@@ -1,17 +1,17 @@
 .quick-panel {
-  width: rem(60px);
-  height: rem(60px);
+  width: rem(50px);
+  height: rem(50px);
   background-color: $quick-panel-primary;
-  z-index: 200;
-  position: absolute;
-  top: 50px;
-  left: 80px;
+  z-index: 1;
+  position: fixed;
+  top: 180px;
+  left: 60px;
   border-radius: 35px;
   overflow: hidden;
 
   .quick-panel-close-container {
-    height: rem(60px);
-    width: rem(60px);
+    height: rem(50px);
+    width: rem(50px);
     background-color: transparent;
     box-shadow: 0px 2px 15px 1px darken($quick-panel-primary, 7%);
     border-radius: 35px;
@@ -33,24 +33,24 @@
     }
 
     &:nth-child(1) {
-      $size: rem(17px);
+      $size: rem(15px);
       height: $size;
       width: $size;
       max-width: $size;
-      margin-top: 21px;
-      margin-left: 22px;
+      margin-top: 17px;
+      margin-left: 18px;
       transform: rotate(-45deg);
       transition: all .25s ease;
     }
   }
 
   .quick-panel-elements {
-    $size: rem(24px);
+    $size: rem(21px);
     max-width: $size;
     height: $size;
     width: $size;
-    margin-top: 105px;
-    margin-left: 18px;
+    margin-top: 85px;
+    margin-left: 15px;
     transition: all .5s ease;
     opacity: 0;
 
@@ -60,12 +60,12 @@
   }
 
   .quick-panel-layers {
-    $size: rem(24px);
+    $size: rem(21px);
     max-width: $size;
     height: $size;
     width: $size;
     margin-top: 25px;
-    margin-left: 18px;
+    margin-left: 15px;
     transition: all .5s ease;
     opacity: 0;
 
@@ -75,12 +75,12 @@
   }
 
   .quick-panel-undo {
-    $size: rem(24px);
+    $size: rem(21px);
     max-width: $size;
     height: $size;
     width: $size;
     margin-top: 25px;
-    margin-left: 18px;
+    margin-left: 15px;
     transition: all .5s ease;
     background-color: $quick-panel-primary;
     transform: rotate(-360deg);
@@ -97,15 +97,15 @@
   }
 
   .quick-panel-redo {
-    $size: rem(24px);
+    $size: rem(21px);
     max-width: $size;
     height: $size;
     width: $size;
     margin-top: 25px;
-    margin-left: 18px;
+    margin-left: 15px;
     transition: all .5s ease;
     background-color: $quick-panel-primary;
-    transform: rotate(0deg) scaleY(-1);
+    // transform: rotate(0deg) scaleY(-1);
     opacity: 0;
 
     &.resolved {
@@ -114,7 +114,7 @@
 
     &.active {
       transition: all 0s ease;
-      transform: rotate(-360deg) scaleY(-1);
+      transform: rotate(-360deg);
     }
   }
 }

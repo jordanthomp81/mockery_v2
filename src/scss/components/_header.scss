@@ -4,6 +4,13 @@
   background-color: $mockery-green;
 }
 
+header {
+  height: 130px;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+}
+
 .main-navigation {
   height: $nav-height;
   width: 100%;
