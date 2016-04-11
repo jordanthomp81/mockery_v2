@@ -112,7 +112,7 @@
     margin-left: 15px;
     transition: all .5s ease;
     background-color: $quick-panel-primary;
-    // transform: rotate(0deg) scaleY(-1);
+    transform: rotate(0deg) scaleY(-1);
     opacity: 0;
 
     &.resolved {
@@ -121,7 +121,7 @@
 
     &.active {
       transition: all 0s ease;
-      transform: rotate(-360deg);
+      transform: rotate(-360deg) scaleY(-1);
     }
   }
 }

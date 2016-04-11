@@ -55,7 +55,7 @@ $(document).ready(function ($) {
       $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});
       $('#pan').html('Stop Pan (Ctrl + Alt + P)')
       $('.inner-board').addClass('panning');
-      $('.current-function > h6').html('Pan Tool Is Active');
+      $('.current-function > h6').html('Pan Tool Active');
       $('.current-function').addClass('active');
       panActive = true;
     }
