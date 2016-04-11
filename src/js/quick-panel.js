@@ -34,18 +34,50 @@ $(document).ready(function ($) {
     }
   });
 
+  // function contains(haystack, needles) {
+  //   return needles.map(function (needle) {
+  //       return haystack.indexOf(needle);
+  //   }).indexOf(-1) == -1;
+  // }
+
   var panActive = false;
-  $('#pan').click(function() {
+  var keys = {};
+
+  function checkPan() {
     if(panActive) {
       $(".drawing_board").draggable('destroy');
       $('#pan').html('Pan (Ctrl + Alt + P)')
+      $('.inner-board').removeClass('panning');
+      $('.current-function').removeClass('active');
+      $('.current-function > h6').html('');
       panActive = false;
     }else {
       $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});
       $('#pan').html('Stop Pan (Ctrl + Alt + P)')
+      $('.inner-board').addClass('panning');
+      $('.current-function > h6').html('Pan Tool Is Active');
+      $('.current-function').addClass('active');
       panActive = true;
     }
+  }
+
+  $('#pan').click(function() {
+    checkPan();
   });
+
+  // $(document).keyup(function (e) {
+  //     delete keys[e.which];
+  //     // printKeys();
+  // });
+
+  // function printKeys() {
+  //     var html = '';
+  //     for (var i in keys) {
+  //         if (!keys.hasOwnProperty(i)) continue;
+  //         html += '<p>' + i + '</p>';
+  //     }
+  //     $('#out').html(html);
+  // }
 
   // $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});
   $(".inner-board").resizable();

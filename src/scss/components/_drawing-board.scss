@@ -2,6 +2,28 @@ body{
   background-color: #F2F2F2;
 }
 
+.current-function {
+  z-index: 7;
+  padding: rem(15px) rem(35px);
+  background-color: rgba(0,0,0, .5);
+  position: fixed;
+  border-radius: 20px;
+  bottom: 25px;
+  left: 60px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  h6 {
+    font-size: rem(14px);
+    color: white;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+}
+
 div#app {
   display: table;
   // background-color: transparent;
@@ -9,10 +31,11 @@ div#app {
   padding-right: 694px;
   top: 151px;
   left: 21px;
+  position: absolute;
 }
 
 .inner-board {
-  cursor: move;
+  cursor: default;
   z-index: 0;
   background: url('../img/grid-bg.jpg');
   background-origin: content-box;
@@ -27,6 +50,10 @@ div#app {
   border-top: 1px solid #CED8D7;
   border-bottom: 1px solid #CED8D7;
   border-right: 1px solid #CED8D7;
+
+  &.panning {
+    cursor: move !important;
+  }
 
   &:after {
     position: absolute;
