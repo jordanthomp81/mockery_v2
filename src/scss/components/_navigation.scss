@@ -429,32 +429,22 @@ div.edit-page-name {
     .url {
       cursor: text;
       padding: 0 rem(5px);
-      margin: rem(18px) rem(11px) rem(18px) rem(16px);
+      margin: rem(18px) rem(14px) rem(18px) rem(16px);
       background-color: white;
       border: 1px solid #EAEDF0;
       border-radius: 20px;
       width: 340px;
-      height: 35px;
+      height: 40px;
       position: relative;
       overflow: hidden;
+
+      h6:first-of-type:hover {
+        color: darken(#A4A5A5, 15%);
+      }
 
       &::-webkit-scrollbar {
         display: none;
       }
-
-      // &::after {
-      //   content: '';
-      //   height: 33px;
-      //   width: 40px;
-      //   background: linear-gradient(to right, rgba(0, 0, 0, 0), white);
-      //   position: absolute;
-      //   top: 0;
-      //   right: 70px;
-      // }
-
-      // h6 {
-      //   white-space: nowrap;
-      // }
 
       .copy-url {
         cursor: pointer;
@@ -462,15 +452,15 @@ div.edit-page-name {
         top: 0;
         right: 0px;
         background-color: #5FA9DD;
-        width: 70px;
-        height: 33px;
+        width: 80px;
+        height: 38px;
         border: 1px solid #5FA9DD;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
 
         h4 {
           white-space: nowrap;
-          padding: rem(11px) rem(0px) rem(0px) rem(8px);
+          padding: rem(13px) rem(0px) rem(0px) rem(13px);
           font-size: rem(11px);
           font-weight: bold;
           margin: 0;
@@ -544,7 +534,7 @@ div.edit-page-name {
     .url {
 
       h6 {
-        padding-top: calc((35px / 2) - (14px / 2));
+        padding-top: calc((40px / 2) - (14px / 2));
         padding-left: 10px;
       }
     }
