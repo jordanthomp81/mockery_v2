@@ -4,6 +4,17 @@ $(document).ready(function ($) {
     containment: "parent"
   });
 
+  $.widget("ui.actionspinner", $.ui.spinner, {
+      _format: function (value) {
+          return value + 'px';
+      },
+      _parse: function (value) {
+          return parseInt(value);
+      }
+  });
+
+  var xInput = $('.action-input').actionspinner();;
+
   var panelOpen = true;
   $('.quick-panel-close').click(function() {
     if(!panelOpen) {

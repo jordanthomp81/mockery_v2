@@ -23,4 +23,125 @@ header {
   width: 100%;
   background-color: $grey;
   border-bottom: 1px solid $dark-grey;
+
+  .current-selection {
+    float: left;
+    color: #828180;
+    margin-left: rem(40px);
+    padding-top: calc((#{$action-bar-height} / 2) - (13px / 2));
+    margin-right: 30px;
+    font-size: 13px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .origin-container {
+    float: left;
+    margin-top: calc((#{$action-bar-height} / 2) - (20px / 2));
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid #D9DADB;
+    position: relative;
+    margin-right: 20px;
+
+    .origin-item {
+      background-color: white;
+      border: 1px solid #CAC9CA;
+      width: 5px;
+      height: 5px;
+      position: absolute;
+
+      &:first-of-type {
+        top: -2.5px;
+        left: -3px;
+      }
+
+      &:nth-of-type(2) {
+        top: -2.5px;
+        left: 49.5%;
+        transform: translateX(-50%);
+      }
+
+      &:nth-of-type(3) {
+        top: -2.5px;
+        right: -3px;
+      }
+
+      &:nth-of-type(4) {
+        right: -3px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-of-type(5) {
+        bottom: -3px;
+        right: -3px;
+      }
+
+      &:nth-of-type(6) {
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &:nth-of-type(7) {
+        bottom: -3px;
+        left: -3px;
+      }
+
+      &:nth-of-type(8) {
+        left: -3px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-of-type(9) {
+        border: none;
+        background-color: #5FA9DD;
+        top: 44%;
+        transform: translateY(-44%);
+        left: 54.7%;
+        transform: translateX(-54.7%);
+      }
+    }
+  }
+
+  .action-text {
+    float: left;
+    color: #828180;
+    padding-top: calc((#{$action-bar-height} / 2) - (13px / 2));
+    margin: 0;
+    margin-right: 15px;
+    font-size: 13px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .x-input {
+    // max-width: 25px;
+    padding-top: calc((#{$action-bar-height} / 2) - (27px / 2));
+
+    input {
+      padding-left: 5px;
+    }
+
+    .action-bar .x-input .ui-widget-content {
+      padding-left: 5px;
+      padding-right: 10px;
+    }
+
+    .ui-widget-content {
+      border-color: #D1D1D1;
+    }
+
+    .ui-button-text-only .ui-button-text {
+      background-color: white;
+    }
+  }
+
+  .action-input {
+    margin: 0;
+    background-color: white;
+    width: 50px;
+    height: 25px;
+  }
 }
