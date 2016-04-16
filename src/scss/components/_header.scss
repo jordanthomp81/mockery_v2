@@ -18,11 +18,56 @@ header {
   border-bottom: 1px solid $dark-grey;
 }
 
+.action-bar .x-input {
+  max-width: 52px;
+  float: left;
+  margin-right: rem(15px);
+}
+
 .action-bar {
+  $action-bar: rem(45px);
   height: rem(45px);
   width: 100%;
   background-color: $grey;
   border-bottom: 1px solid $dark-grey;
+
+  .action-input {
+    margin-right: rem(15px)
+  }
+
+  .link-width-height {
+    margin-top: calc((#{$action-bar} / 2) - (15px / 2));
+    margin-right: rem(15px);
+    margin-left: rem(1px);
+    float: left;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.active {
+      path {
+        fill: #929BA5;
+      }
+    }
+  }
+
+  .x-input .ui-widget-content {
+    border-color: #d1d1d1;
+    border-radius: 0px;
+  }
+
+  .ui-state-active {
+    border: 1px solid #d3d3d3 !important;
+  }
+
+  .ui-state-hover {
+    // border: 1px solid #d3d3d3 !important;
+  }
+
+  input.action-input.ui-spinner-input {
+    font-size: 12px;
+  }
 
   .current-selection {
     float: left;
