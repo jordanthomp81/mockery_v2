@@ -1,10 +1,31 @@
 $(document).ready(function ($) {
 
+  $('.swatch').dblclick(function() {
+    var swatches = $('.swatch');
+    swatches.toggleClass('active');
+  });
+
+  $('.link-width-height').click(function() {
+    if($(this).hasClass('active')) {
+      $(this).removeClass('active');
+      window.clearTimeout(activew);
+      $('.current-function').removeClass('active');
+    }else {
+      $(this).addClass('active');
+      $('.current-function > h6').html('Width & Height Linked');
+      $('.current-function').addClass('active');
+
+      var active = setTimeout(function(){
+        $('.current-function').removeClass('active');
+      }, 2000);
+    }
+  });
+
   $(".quick-panel").draggable({
     containment: "parent"
   });
 
-  $.widget("ui.actionspinner", $.ui.spinner, {
+  $.widget("ui.actionSpinner", $.ui.spinner, {
       _format: function (value) {
           return value + 'px';
       },
@@ -13,7 +34,18 @@ $(document).ready(function ($) {
       }
   });
 
-  var xInput = $('.action-input').actionspinner();;
+  $.widget("ui.actionSpinnerPercent", $.ui.spinner, {
+      _format: function (value) {
+          return value + '%';
+      },
+      _parse: function (value) {
+          return parseInt(value);
+      }
+  });
+
+  var xInput = $('.action-input').actionSpinner();
+  // debugger
+  var percentInput = $('.action-input-percent').actionSpinnerPercent();
 
   var panelOpen = true;
   $('.quick-panel-close').click(function() {

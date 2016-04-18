@@ -19,7 +19,7 @@ header {
 }
 
 .action-bar .x-input {
-  max-width: 52px;
+  max-width: 65px;
   float: left;
   margin-right: rem(15px);
 }
@@ -32,22 +32,33 @@ header {
   border-bottom: 1px solid $dark-grey;
 
   .action-input {
-    margin-right: rem(15px)
+    margin-right: rem(15px);
+  }
+
+  .action-input-percent {
+    margin-right: rem(15px);
   }
 
   .link-width-height {
+    transition: all .3s ease;
     margin-top: calc((#{$action-bar} / 2) - (15px / 2));
-    margin-right: rem(15px);
-    margin-left: rem(1px);
+    margin-right: rem(16px);
+    margin-left: rem(4px);
     float: left;
 
     &:hover {
       cursor: pointer;
     }
 
+    &:hover {
+      path {
+        fill: darken(#929BA5, 20%);
+      }
+    }
+
     &.active {
       path {
-        fill: #929BA5;
+        fill: #66BD62;
       }
     }
   }
@@ -67,6 +78,12 @@ header {
 
   input.action-input.ui-spinner-input {
     font-size: 12px;
+    color: #828282;
+  }
+
+  input.action-input-percent.ui-spinner-input {
+    font-size: 12px;
+    color: #828282;
   }
 
   .current-selection {
@@ -186,7 +203,51 @@ header {
   .action-input {
     margin: 0;
     background-color: white;
-    width: 50px;
+    width: 65px;
     height: 25px;
+  }
+
+  .action-input-percent {
+    margin: 0;
+    background-color: white;
+    width: 65px;
+    height: 25px;
+  }
+
+  .colours {
+    margin-left: 5px;
+    height: 21px;
+    width: 22px;
+    float: left;
+    position: relative;
+    margin-top: calc((#{$action-bar-height} / 2) - (22px / 2));
+
+    .forefront-color {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #5FA9DD;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+
+      &.active {
+        z-index: 1;
+      }
+    }
+
+    .background-color {
+      position: absolute;
+      top: 6.5px;
+      left: 6.5px;
+      background-color: #B3B3B3;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+
+      &.active {
+        z-index: 1;
+      }
+    }
   }
 }
