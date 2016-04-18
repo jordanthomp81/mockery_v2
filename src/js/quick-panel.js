@@ -2,22 +2,21 @@ $(document).ready(function ($) {
 
   $('.swatch').dblclick(function() {
     var swatches = $('.swatch');
-    swatches.toggleClass('active');
+    swatches.removeClass('active');
+    $(this).addClass('active');
   });
 
   $('.link-width-height').click(function() {
     if($(this).hasClass('active')) {
       $(this).removeClass('active');
-      window.clearTimeout(activew);
       $('.current-function').removeClass('active');
     }else {
       $(this).addClass('active');
       $('.current-function > h6').html('Width & Height Linked');
-      $('.current-function').addClass('active');
 
-      var active = setTimeout(function(){
-        $('.current-function').removeClass('active');
-      }, 2000);
+      if(!$('.current-function').hasClass('active')) {
+        $('.current-function').addClass('active');
+      }
     }
   });
 
