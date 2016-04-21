@@ -1,29 +1,5 @@
 $(document).ready(function ($) {
 
-  // var currIEZoom = 100;
-  //
-  // $('.inner-board').bind('mousewheel', function(e){
-  //   if(e.originalEvent.wheelDelta / 120 > 0) {
-  //     currIEZoom += 1;
-  //     $('.inner-board').css('zoom', currIEZoom + "%");
-  //   }
-  //   else{
-  //     currIEZoom -= 1;
-  //     $('.inner-board').css('zoom', currIEZoom + "%");
-  //   }
-  // });
-  //
-  // $('#zoom-in').on('click',function(){
-  //   console.log('clicked')
-  //   currIEZoom += 1;
-  //   $('.inner-board').css('zoom', currIEZoom + "%");
-  // });
-  //
-  // $('#zoom-out').on('click',function(){
-  //   currIEZoom -= 1;
-  //   $('.inner-board').css('zoom', currIEZoom + "%");
-  // });
-
   function createRuler(side) {
     var currSet = 0;
     side = side == 'left' ? 'left' : 'top';
@@ -36,7 +12,6 @@ $(document).ready(function ($) {
     var decimal = (size / 100) % 1 != 0 ? parseInt(String(size / 100).split('.')[1].substring(0,1)) : 0;
     var currSet = 0;
 
-    console.log(size)
     for (var i = 0; i < marks; i++) {
       currSet += 100;
       var setArray = ( "" + currSet).split("");

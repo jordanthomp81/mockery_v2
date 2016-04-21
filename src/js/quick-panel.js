@@ -6,6 +6,13 @@ $(document).ready(function ($) {
     $(this).addClass('active');
   });
 
+  $('.color-option').click(function() {
+    $('.color-option').removeClass('active');
+    if(!$(this).hasClass('no-check')) {
+      $(this).addClass('active');
+    }
+  });
+
   $('.link-width-height').click(function() {
     if($(this).hasClass('active')) {
       $(this).removeClass('active');
@@ -45,6 +52,7 @@ $(document).ready(function ($) {
   var xInput = $('.action-input').actionSpinner();
   // debugger
   var percentInput = $('.action-input-percent').actionSpinnerPercent();
+  // percentInput.actionSpinnerPercent("disable");
 
   var panelOpen = true;
   $('.quick-panel-close').click(function() {
