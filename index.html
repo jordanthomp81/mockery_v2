@@ -450,7 +450,7 @@
 
               </div>
 
-              <div class="color-option no-check">
+              <div class="color-option">
 
                 <span>
 
@@ -464,7 +464,11 @@
 
             <div class="color-selection">
 
-              <input class="color-input" type="text" placeholder="Paste Hex Code Here">
+              <div class="current-color">Current Color: </div>
+
+              <div class="current-color-preview"></div>
+
+              <input class="color-input" type="text" placeholder="Paste Hex Code Here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Paste Hex Code Here'">
 
             </div>
 

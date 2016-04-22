@@ -1,3 +1,14 @@
+var currentColor = '';
+
+function RGB2Color(r, g, b) {
+  return '#' + this.byte2Hex(r) + this.byte2Hex(g) + this.byte2Hex(b);
+}
+
+function byte2Hex(n) {
+  var nybHexString = "0123456789ABCDEF";
+  return String(nybHexString.substr((n >> 4) & 0x0F, 1)) + nybHexString.substr(n & 0x0F, 1);
+}
+
 $(document).ready(function ($) {
 
   $('.swatch').dblclick(function() {
@@ -6,10 +17,24 @@ $(document).ready(function ($) {
     $(this).addClass('active');
   });
 
+  $('.colours > .sub-menu').hover(function() {
+    $('.current-color').toggleClass('active');
+  });
+
   $('.color-option').click(function() {
     $('.color-option').removeClass('active');
     if(!$(this).hasClass('no-check')) {
+      $('.current-color-preview').removeClass('none-selected');
       $(this).addClass('active');
+      currentColor = $(this).css('backgroundColor').split('(')[1].split(')')[0];
+      currentColor = RGB2Color(currentColor.split(',')[0], currentColor.split(',')[1], currentColor.split(',')[2]);
+      console.log(currentColor)
+      $('.current-color').html('Current Color: ' + currentColor)
+      $('.current-color-preview').css('background-color', currentColor)
+      debugger
+      // setCurrentColor();
+    }else {
+      $('.current-color-preview').toggleClass('none-selected');
     }
   });
 
