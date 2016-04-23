@@ -11,10 +11,6 @@ body {
   width: 100%;
 }
 
-button {
-  @include link-button();
-}
-
 // Utility classes
 .cf {
   @include cf();
@@ -22,18 +18,6 @@ button {
 
 hr {
   @include rule();
-}
-
-%hide-below-tablet {
-  @media (max-width: 767px) {
-    display: none;
-  }
-}
-
-.hide-below-tablet {
-  @media (max-width: 1040px) {
-    display: none;
-  }
 }
 
 nav { ul { @include reset-list(); } }
