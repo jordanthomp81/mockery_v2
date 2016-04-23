@@ -35,6 +35,7 @@ $(document).ready(function ($) {
       // setCurrentColor();
     }else {
       $('.current-color-preview').toggleClass('none-selected');
+      $('.current-color').html('No Color Selected');
     }
   });
 

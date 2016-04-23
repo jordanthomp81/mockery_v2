@@ -464,13 +464,121 @@
 
             <div class="color-selection">
 
-              <div class="current-color">Current Color: </div>
+              <div class="current-color">No Color Selected</div>
 
               <div class="current-color-preview"></div>
+
+              <svg class="color-dropper" xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.91" viewBox="0 0 14.91 14.91"><path fill="#65C6BB" d="M14.162.746c-.484-.482-1.125-.748-1.809-.748s-1.324.266-1.809.748L7.08 4.211a1.516 1.516 0 0 0-1.842 2.058L1 10.508a.539.539 0 0 0-.158.4l.063 1.646-.826 1.343a.536.536 0 0 0 .078.659l.199.2a.54.54 0 0 0 .662.076l1.342-.83 1.64.063a.549.549 0 0 0 .4-.155l4.24-4.242c.191.087.402.131.615.131.404 0 .783-.156 1.07-.442.396-.398.539-.993.369-1.528l3.467-3.465a2.56 2.56 0 0 0 .001-3.618zM4.168 12.393l-2.098-.852 4.148-4.149 1.299 1.297-3.349 3.704z"/></svg>
 
               <input class="color-input" type="text" placeholder="Paste Hex Code Here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Paste Hex Code Here'">
 
             </div>
+
+          </div>
+
+        </div>
+
+        <div class="alignment-container">
+
+          <svg class="alignment-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="19" viewBox="0 0 16 19"><path fill="#9B9A9A" d="M1.001 18.58c0 .23-.189.42-.42.42H.42a.421.421 0 0 1-.42-.42V.42C0 .189.189 0 .42 0h.16C.811 0 1 .189 1 .42v18.16zM16 7.468c0 .231-.189.42-.42.42H4.744a.421.421 0 0 1-.42-.42V4.241c0-.231.189-.42.42-.42H15.58c.23 0 .42.189.42.42v3.227z"/><path fill="none" stroke="#9B9A9A" stroke-width="1.051" stroke-miterlimit="10" d="M11.105 14.693c0 .23-.189.42-.42.42H4.744a.421.421 0 0 1-.42-.42v-3.228c0-.23.189-.42.42-.42h5.942c.23 0 .42.189.42.42v3.228z"/></svg>
+
+          <svg class="aligment-arrow" xmlns="http://www.w3.org/2000/svg" width="7" height="5" viewBox="0 0 8 6"><path fill="#7D7D7D" d="M8 1.136L7.066 0 4 3.728.934 0 0 1.136 4 6l4-4.864zm0 0"/></svg>
+
+          <h5 class="alignment-heading">Alignment</h5>
+
+          <div class="animated fadeInUp sub-menu">
+
+            <h5>Alignment Options</h5>
+
+            <hr>
+
+            <svg class="alignment-left-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="19" viewBox="0 0 16 19"><path fill="#9B9A9A" d="M1.001 18.58c0 .23-.189.42-.42.42H.42a.421.421 0 0 1-.42-.42V.42C0 .189.189 0 .42 0h.16C.811 0 1 .189 1 .42v18.16zM16 7.468c0 .231-.189.42-.42.42H4.744a.421.421 0 0 1-.42-.42V4.241c0-.231.189-.42.42-.42H15.58c.23 0 .42.189.42.42v3.227z"/><path fill="none" stroke="#9B9A9A" stroke-width="1.051" stroke-miterlimit="10" d="M11.105 14.693c0 .23-.189.42-.42.42H4.744a.421.421 0 0 1-.42-.42v-3.228c0-.23.189-.42.42-.42h5.942c.23 0 .42.189.42.42v3.228z"/></svg>
+
+            <svg class="alignment-middle-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.83" height="19.31" viewBox="0 0 12.83 19.31"><symbol id="a" viewBox="-30.506 -45.938 61.013 91.875"><path fill="#9B9A9A" d="M2.269-43.938c0-1.1-.9-2-2-2h-.703c-1.1 0-2 .9-2 2v87.875c0 1.1.9 2 2 2h.703c1.1 0 2-.9 2-2v-87.875z"/><path fill="#9B9A9A" d="M15.851 10.863c0-1.1-.9-2-2-2h-27.867c-1.1 0-2 .9-2 2v15.666c0 1.101.9 2 2 2h27.867c1.1 0 2-.899 2-2V10.863z"/><path fill="#F4F6F7" d="M28.007-24.449c0-1.1-.9-2-2-2h-52.013c-1.1 0-2 .9-2 2v15.666c0 1.1.9 2 2 2h52.013c1.1 0 2-.9 2-2v-15.666z"/><path fill="none" stroke="#9B9A9A" stroke-width="5" stroke-miterlimit="10" d="M28.007-24.449c0-1.1-.9-2-2-2h-52.013c-1.1 0-2 .9-2 2v15.666c0 1.1.9 2 2 2h52.013c1.1 0 2-.9 2-2v-15.666z"/></symbol><use xlink:href="#a" width="61.013" height="91.875" x="-30.506" y="-45.938" transform="matrix(.2102 0 0 -.2102 6.415 9.655)" overflow="visible"/></svg>
+
+            <svg class="alignment-right-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15.8" height="19.31" viewBox="0 0 15.8 19.31"><symbol id="a" viewBox="-38.091 -45.937 75.182 91.874"><path fill="#9B9A9A" d="M-33.388-43.937c0-1.1-.9-2-2-2h-.703c-1.1 0-2 .9-2 2v87.874c0 1.101.9 2 2 2h.703c1.1 0 2-.899 2-2v-87.874zM37.091 9.794c0-1.1-.9-2-2-2h-50.865c-1.1 0-2 .9-2 2v15.667c0 1.101.9 2 2 2h50.865c1.1 0 2-.899 2-2V9.794z"/><path fill="none" stroke="#9B9A9A" stroke-width="5" stroke-miterlimit="10" d="M14.093-25.141c0-1.1-.9-2-2-2h-27.867c-1.1 0-2 .9-2 2v15.667c0 1.1.9 2 2 2h27.867c1.1 0 2-.9 2-2v-15.667z"/></symbol><use xlink:href="#a" width="75.182" height="91.874" x="-38.091" y="-45.937" transform="rotate(180 3.897 4.827) scale(.2102)" overflow="visible"/></svg>
+
+            <svg class="alignment-top-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.31" height="15.8" viewBox="0 0 19.31 15.8"><symbol id="a" viewBox="-38.091 -45.938 75.182 91.875"><path fill="#9B9A9A" d="M-33.388-43.938c0-1.1-.899-2-2-2h-.703c-1.101 0-2 .9-2 2v87.875c0 1.1.899 2 2 2h.703c1.101 0 2-.9 2-2v-87.875zM37.091 9.795c0-1.1-.9-2-2-2h-50.865c-1.101 0-2 .9-2 2v15.666c0 1.101.899 2 2 2h50.865c1.1 0 2-.899 2-2V9.795z"/><path fill="none" stroke="#9B9A9A" stroke-width="5" stroke-miterlimit="10" d="M14.093-25.141c0-1.1-.9-2-2-2h-27.867c-1.101 0-2 .9-2 2v15.666c0 1.1.899 2 2 2h27.867c1.1 0 2-.9 2-2v-15.666z"/></symbol><use xlink:href="#a" width="75.182" height="91.875" x="-38.091" y="-45.938" transform="matrix(0 .2102 .2102 0 9.655 8.005)" overflow="visible"/></svg>
+
+            <svg class="vertical-middle-alignment-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.31" height="16.77" viewBox="0 0 19.31 16.77"><symbol id="a" viewBox="-30.506 -45.938 61.013 91.875"><path fill="#9B9A9A" d="M2.269-43.938c0-1.1-.9-2-2-2h-.703c-1.1 0-2 .9-2 2v87.875c0 1.1.9 2 2 2h.703c1.1 0 2-.9 2-2v-87.875z"/><path fill="#9B9A9A" d="M15.851 10.863c0-1.101-.9-2-2-2h-27.867c-1.1 0-2 .899-2 2v15.666c0 1.101.9 2 2 2h27.867c1.1 0 2-.899 2-2V10.863z"/><path fill="#F4F6F7" d="M28.007-24.449c0-1.1-.9-2-2-2h-52.013c-1.1 0-2 .9-2 2v15.666c0 1.1.9 2 2 2h52.013c1.1 0 2-.9 2-2v-15.666z"/><path fill="none" stroke="#9B9A9A" stroke-width="5" stroke-miterlimit="10" d="M28.007-24.449c0-1.1-.9-2-2-2h-52.013c-1.1 0-2 .9-2 2v15.666c0 1.1.9 2 2 2h52.013c1.1 0 2-.9 2-2v-15.666z"/></symbol><use xlink:href="#a" width="61.013" height="91.875" x="-30.506" y="-45.938" transform="matrix(0 .2102 .2102 0 9.655 8.385)" overflow="visible"/></svg>
+
+            <svg class="alignment-bottom-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.31" height="15.8" viewBox="0 0 19.31 15.8"><symbol id="a" viewBox="-38.091 -45.938 75.182 91.875"><path fill="#9B9A9A" d="M-33.388-43.938c0-1.1-.899-2-2-2h-.703c-1.101 0-2 .9-2 2v87.875c0 1.1.899 2 2 2h.703c1.101 0 2-.9 2-2v-87.875zM37.091 9.795c0-1.1-.9-2-2-2h-50.865c-1.101 0-2 .9-2 2v15.666c0 1.101.899 2 2 2h50.865c1.1 0 2-.899 2-2V9.795z"/><path fill="none" stroke="#9B9A9A" stroke-width="5" stroke-miterlimit="10" d="M14.093-25.141c0-1.1-.9-2-2-2h-27.867c-1.101 0-2 .9-2 2v15.666c0 1.1.899 2 2 2h27.867c1.1 0 2-.9 2-2v-15.666z"/></symbol><use xlink:href="#a" width="75.182" height="91.875" x="-38.091" y="-45.938" transform="rotate(-90 8.725 -.93) scale(.2102)" overflow="visible"/></svg>
+
+            <!-- <h5>Share Wireframe</h5>
+
+            <hr>
+
+            <div class="url">
+
+              <h6>http://mockerytools.com/8395js93l2/bj9aw3</h6>
+
+              <div class="copy-url">
+
+                <h4>COPY URL</h4>
+
+              </div>
+
+            </div> -->
+
+          </div>
+
+        </div>
+
+        <div class="grouping-container">
+
+          <svg class="grouping-icon" xmlns="http://www.w3.org/2000/svg" width="19.31" height="19.31" viewBox="0 0 19.31 19.31"><path fill="#9B9C9B" d="M-.001 0v19.311h19.312V0H-.001zm18.312 18.311H.998V.999h17.313v17.312z"/><path fill="#9B9A9A" d="M15.422 14.777c0 .23-.189.42-.42.42H4.309a.421.421 0 0 1-.42-.42v-3.295c0-.23.189-.42.42-.42h10.693c.23 0 .42.189.42.42v3.295zM15.396 7.826c0 .231-.189.42-.42.42H4.283a.421.421 0 0 1-.42-.42V4.533c0-.231.189-.42.42-.42h10.693c.23 0 .42.189.42.42v3.293z"/></svg>
+
+          <svg class="grouping-arrow" xmlns="http://www.w3.org/2000/svg" width="7" height="5" viewBox="0 0 8 6"><path fill="#7D7D7D" d="M8 1.136L7.066 0 4 3.728.934 0 0 1.136 4 6l4-4.864zm0 0"/></svg>
+
+          <h5 class="grouping-heading">Grouping</h5>
+
+          <div class="animated fadeInUp sub-menu">
+
+            <!-- <h5>Share Wireframe</h5>
+
+            <hr>
+
+            <div class="url">
+
+              <h6>http://mockerytools.com/8395js93l2/bj9aw3</h6>
+
+              <div class="copy-url">
+
+                <h4>COPY URL</h4>
+
+              </div>
+
+            </div> -->
+
+          </div>
+
+        </div>
+
+        <div class="depth-container">
+
+          <svg class="depth-icon" xmlns="http://www.w3.org/2000/svg" width="18.1" height="18.1" viewBox="0 0 18.1 18.1"><path fill="none" stroke="#9B9A9A" stroke-width="1.051" stroke-miterlimit="10" d="M17.55 17.13c0 .23-.189.42-.42.42H8.569a.421.421 0 0 1-.42-.42V8.659c0-.231.189-.42.42-.42h8.561c.23 0 .42.189.42.42v8.471z"/><path fill="#9B9A9A" d="M13.75 13.286c0 .23-.189.42-.42.42H4.77a.421.421 0 0 1-.42-.42V4.814c0-.231.189-.42.42-.42h8.56c.23 0 .42.189.42.42v8.472z"/><path fill="none" stroke="#9A9A99" stroke-width="1.051" stroke-miterlimit="10" d="M13.75 13.286c0 .23-.189.42-.42.42H4.77a.421.421 0 0 1-.42-.42V4.814c0-.231.189-.42.42-.42h8.56c.23 0 .42.189.42.42v8.472z"/><g><path fill="#F4F6F7" d="M9.951 9.442c0 .231-.189.42-.42.42H.97a.421.421 0 0 1-.42-.42V.97C.55.739.739.55.97.55h8.561c.231 0 .42.189.42.42v8.472z"/><path fill="none" stroke="#9B9A9A" stroke-width="1.051" stroke-miterlimit="10" d="M9.951 9.442c0 .231-.189.42-.42.42H.97a.421.421 0 0 1-.42-.42V.97C.55.739.739.55.97.55h8.561c.231 0 .42.189.42.42v8.472z"/></g></svg>
+
+          <svg class="depth-arrow" xmlns="http://www.w3.org/2000/svg" width="7" height="5" viewBox="0 0 8 6"><path fill="#7D7D7D" d="M8 1.136L7.066 0 4 3.728.934 0 0 1.136 4 6l4-4.864zm0 0"/></svg>
+
+          <h5 class="depth-heading">Depth</h5>
+
+          <div class="animated fadeInUp sub-menu">
+
+            <!-- <h5>Share Wireframe</h5>
+
+            <hr>
+
+            <div class="url">
+
+              <h6>http://mockerytools.com/8395js93l2/bj9aw3</h6>
+
+              <div class="copy-url">
+
+                <h4>COPY URL</h4>
+
+              </div>
+
+            </div> -->
 
           </div>
 
