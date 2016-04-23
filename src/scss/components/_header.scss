@@ -4,7 +4,7 @@
   background-color: $mockery-green;
 }
 
-header {
+header { 
   height: 130px;
   width: 100%;
   position: fixed;
@@ -698,6 +698,113 @@ header {
       margin: 0;
       margin-top: 5px;
     }
+
+    .sub-menu {
+      cursor: pointer !important;
+      display: none;
+      position: absolute;
+      top: 47px;
+      left: -10px;
+      height: auto;
+      width: 135px;
+      border: 1px solid #e3e5e7;
+      background-color: white;
+      box-shadow: 1px 1px 2px rgba(#AAABAB, 50%);
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+      svg {
+        margin-left: 13px;
+
+        &:first-of-type {
+          margin-left: 35px;
+        }
+      }
+
+      h5 {
+        white-space: nowrap;
+        padding: rem(0px) rem(50px) rem(0px) rem(14px);
+        font-size: rem(14px);
+        margin: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+
+      hr {
+        border-color: darken(#F5F5F5, 5%);
+        // padding: 0 rem(15px);
+        width: 92%;
+        margin: 0;
+        transform: translateX(-50%);
+        margin-left: 50%;
+        margin-top: 7px;
+        height: 1px;
+        margin-bottom: 15px;
+      }
+
+      h6 {
+        cursor: pointer !important;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 19px;
+        top: -12px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 12px 12px 12px;
+        border-color: transparent transparent #e3e5e7 transparent;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 21px;
+        top: -10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent #fff transparent;
+      }
+    }
+
+    // jbg
+
+    &:hover {
+      position: relative;
+      height: 40px;
+
+      .sub-menu {
+        transition: all .5s ease;
+        display: block;
+        // padding
+
+        h6 {
+          cursor: pointer;
+          transition: all .3s ease;
+          color: #7a7a7a;
+          padding: 0 rem(20px);
+          white-space: nowrap;
+          font-size: 12px;
+          margin: 0;
+          margin-bottom: 20px;
+
+          &:hover {
+            color: #64bd60;
+          }
+
+          &:first-of-type {
+            margin-top: 20px;
+          }
+
+          &:last-of-type {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
   }
 
   .depth-container {
@@ -724,6 +831,109 @@ header {
       margin: 0;
       margin-top: 5px;
       margin-left: 2px;
+    }
+
+    .sub-menu {
+      cursor: pointer !important;
+      display: none;
+      position: absolute;
+      top: 47px;
+      left: -10px;
+      height: auto;
+      width: 190px;
+      border: 1px solid #e3e5e7;
+      background-color: white;
+      box-shadow: 1px 1px 2px rgba(#AAABAB, 50%);
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+      svg {
+        margin-left: 15px;
+      }
+
+      h5 {
+        white-space: nowrap;
+        padding: rem(0px) rem(50px) rem(0px) rem(11px);
+        font-size: rem(14px);
+        margin: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+
+      hr {
+        border-color: darken(#F5F5F5, 5%);
+        // padding: 0 rem(15px);
+        width: 92%;
+        margin: 0;
+        transform: translateX(-50%);
+        margin-left: 50%;
+        margin-top: 7px;
+        height: 1px;
+        margin-bottom: 15px;
+      }
+
+      h6 {
+        cursor: pointer !important;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 19px;
+        top: -12px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 12px 12px 12px;
+        border-color: transparent transparent #e3e5e7 transparent;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 21px;
+        top: -10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent #fff transparent;
+      }
+    }
+
+    // jbg
+
+    &:hover {
+      position: relative;
+      height: 40px;
+
+      .sub-menu {
+        transition: all .5s ease;
+        display: block;
+        // padding
+
+        h6 {
+          cursor: pointer;
+          transition: all .3s ease;
+          color: #7a7a7a;
+          padding: 0 rem(20px);
+          white-space: nowrap;
+          font-size: 12px;
+          margin: 0;
+          margin-bottom: 20px;
+
+          &:hover {
+            color: #64bd60;
+          }
+
+          &:first-of-type {
+            margin-top: 20px;
+          }
+
+          &:last-of-type {
+            margin-bottom: 20px;
+          }
+        }
+      }
     }
   }
 }
