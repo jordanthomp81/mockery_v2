@@ -20,6 +20,11 @@ $(document).ready(function ($) {
     $(this).addClass('active');
   });
 
+  $('.origin-item').click(function() {
+    $('.origin-item').removeClass('active');
+    $(this).addClass('active');
+  });
+
   $('.colours > .sub-menu').hover(function() {
     $('.current-color').toggleClass('active');
   });

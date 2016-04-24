@@ -4,7 +4,7 @@
 
 .logo-container {
 
-  .sub-menu { 
+  .sub-menu {
     cursor: auto;
     display: none;
     position: absolute;
@@ -59,12 +59,12 @@ svg.logo {
 
 div.edit-page-name {
   position: absolute;
-  top: rem(15px);
+  top: rem(13px);
   left: rem(200px);
   background-color: transparent;
   border: 1px solid $light-blue;
   width: auto;
-  height: 22px;
+  height: 25px;
   cursor: pointer;
 
   h6 {
@@ -75,6 +75,7 @@ div.edit-page-name {
     padding-left: rem(13px);
     transition: padding .15s ease-in;
     padding-right: rem(13px);
+    padding-top: 2px;
     font-size: 10px;
   }
 
@@ -93,7 +94,7 @@ div.edit-page-name {
     transition: padding .15s ease-in;
     float: left;
     margin-right: 9px;
-    margin-top: 5px;
+    margin-top: 6px;
     display: none;
     opacity: 0;
   }

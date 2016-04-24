@@ -108,6 +108,7 @@ header {
       width: rem(5px);
       height: rem(5px);
       position: absolute;
+      cursor: pointer;
 
       &:first-of-type {
         top: rem(-2.5px);
@@ -154,12 +155,15 @@ header {
       }
 
       &:nth-of-type(9) {
-        border: none;
-        background-color: #5FA9DD;
+        left: 54.7%;
         top: 44%;
         transform: translateY(-44%);
-        left: 54.7%;
         transform: translateX(-54.7%);
+      }
+
+      &.active {
+        border: none;
+        background-color: #5FA9DD;
       }
     }
   }
