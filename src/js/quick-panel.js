@@ -13,6 +13,8 @@ $(document).ready(function ($) {
   var forefrontColor = '';
   var backgroundColor = '';
   var forefrontActiveFlag = true;
+  var currentFunctionActive = false;
+  var linkWidthHeight = false;
 
   $('.swatch').dblclick(function() {
     var swatches = $('.swatch');
@@ -87,15 +89,43 @@ $(document).ready(function ($) {
   $('.link-width-height').click(function() {
     if($(this).hasClass('active')) {
       $(this).removeClass('active');
-      $('.current-function').removeClass('active');
+      linkWidthHeight = false;
     }else {
-      $(this).addClass('active');
-      $('.current-function > h6').html('Width & Height Linked');
-
-      if(!$('.current-function').hasClass('active')) {
+      if(currentFunctionActive) {
+        var prevText = $('.current-function > h6').html();
+        $('.current-function > h6').html('Width & Height Linked');
+        linkWidthHeight = true;
+        setTimeout(function() {
+          $('.current-function > h6').html(prevText);
+        }, 3000);
+      }else {
+        $('.current-function > h6').html('Width & Height Linked');
+        linkWidthHeight = true;
+        $(this).addClass('active');
         $('.current-function').addClass('active');
+        currentFunctionActive = true;
+        setTimeout(function() {
+          console.log(panActive)
+          if(!panActive) {
+            $('.current-function').removeClass('active');
+            currentFunctionActive = false;
+          }
+        }, 3000);
       }
     }
+
+
+    // if($(this).hasClass('active')) {
+    //   $(this).removeClass('active');
+    //   $('.current-function').removeClass('active');
+    // }else {
+    //   $(this).addClass('active');
+    //   $('.current-function > h6').html('Width & Height Linked');
+    //
+    //   if(!$('.current-function').hasClass('active')) {
+    //     $('.current-function').addClass('active');
+    //   }
+    // }
   });
 
   $(".quick-panel").draggable({
@@ -172,6 +202,7 @@ $(document).ready(function ($) {
       $('.current-function').removeClass('active');
       $('.current-function > h6').html('');
       panActive = false;
+      currentFunctionActive = false;
     }else {
       $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});
       $('#pan').html('Stop Pan (Ctrl + Alt + P)')
@@ -179,6 +210,7 @@ $(document).ready(function ($) {
       $('.current-function > h6').html('Pan Tool Active');
       $('.current-function').addClass('active');
       panActive = true;
+      currentFunctionActive = true;
     }
   }
 
