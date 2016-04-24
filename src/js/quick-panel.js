@@ -1,5 +1,3 @@
-var currentColor = '';
-
 function RGB2Color(r, g, b) {
   return '#' + this.byte2Hex(r) + this.byte2Hex(g) + this.byte2Hex(b);
 }
@@ -11,6 +9,11 @@ function byte2Hex(n) {
 
 $(document).ready(function ($) {
 
+  // var currentColor = '';
+  var forefrontColor = '';
+  var backgroundColor = '';
+  var forefrontActiveFlag = true;
+
   $('.swatch').dblclick(function() {
     var swatches = $('.swatch');
     swatches.removeClass('active');
@@ -21,22 +24,59 @@ $(document).ready(function ($) {
     $('.current-color').toggleClass('active');
   });
 
-  $('.color-option').click(function() {
-    $('.color-option').removeClass('active');
-    if(!$(this).hasClass('no-check')) {
+  $('.forefront-color').dblclick(function() {
+    $('.colours > .sub-menu > h5').html('Primary Color Options');
+    forefrontActiveFlag = true;
+  });
+
+  $('.background-color').dblclick(function() {
+    $('.colours > .sub-menu > h5').html('Secondary Color Options')
+    forefrontActiveFlag = false;
+  });
+
+  function getSelectedColor(object) {
+    var clickedColor;
+    $this = $(object);
+
+    if(!$this.hasClass('no-check')) {
       $('.current-color-preview').removeClass('none-selected');
-      $(this).addClass('active');
-      currentColor = $(this).css('backgroundColor').split('(')[1].split(')')[0];
-      currentColor = RGB2Color(currentColor.split(',')[0], currentColor.split(',')[1], currentColor.split(',')[2]);
-      console.log(currentColor)
-      $('.current-color').html('Current Color: ' + currentColor)
-      $('.current-color-preview').css('background-color', currentColor)
-      debugger
-      // setCurrentColor();
+      $this.addClass('active');
+      clickedColor = $this.css('backgroundColor').split('(')[1].split(')')[0];
+      clickedColor = RGB2Color(clickedColor.split(',')[0], clickedColor.split(',')[1], clickedColor.split(',')[2]);
+      $('.current-color').html('Current Color: ' + clickedColor)
+      $('.current-color-preview').css('background-color', clickedColor)
+      return clickedColor;
     }else {
       $('.current-color-preview').toggleClass('none-selected');
       $('.current-color').html('No Color Selected');
+      return '#FFF';
     }
+  }
+
+  $('.color-option').click(function() {
+    $('.color-option').removeClass('active');
+
+    if(forefrontActiveFlag == true) {
+      forefrontColor = getSelectedColor(this);
+      console.log("Forefront: " + forefrontColor);
+    }else {
+      backgroundColor = getSelectedColor(this);
+      console.log("Background: " + backgroundColor);
+    }
+    // if(!$(this).hasClass('no-check')) {
+    //   $('.current-color-preview').removeClass('none-selected');
+    //   $(this).addClass('active');
+    //   currentColor = $(this).css('backgroundColor').split('(')[1].split(')')[0];
+    //   currentColor = RGB2Color(currentColor.split(',')[0], currentColor.split(',')[1], currentColor.split(',')[2]);
+    //   console.log(currentColor)
+    //   $('.current-color').html('Current Color: ' + currentColor)
+    //   $('.current-color-preview').css('background-color', currentColor)
+    //   debugger
+    //   // setCurrentColor();
+    // }else {
+    //   $('.current-color-preview').toggleClass('none-selected');
+    //   $('.current-color').html('No Color Selected');
+    // }
   });
 
   $('.link-width-height').click(function() {
