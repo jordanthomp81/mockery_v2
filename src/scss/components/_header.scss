@@ -226,7 +226,7 @@ header {
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #5FA9DD;
+      background-color: #51CAF3;
       width: rem(15px);
       height: rem(15px);
       cursor: pointer;
@@ -240,7 +240,7 @@ header {
       position: absolute;
       top: rem(6.5px);
       left: rem(6.5px);
-      background-color: #B3B3B3;
+      background-color: #E11D3C;
       width: rem(15px);
       height: rem(15px);
       cursor: pointer;
@@ -424,7 +424,7 @@ header {
           height: rem(15px);
           z-index: 101;
           border: rem(1px) solid #E4E6E7;
-          background-color: red;
+          background-color: #51CAF3;
 
           &.none-selected {
             border: rem(1px) solid transparent !important;

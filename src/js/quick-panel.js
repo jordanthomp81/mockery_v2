@@ -9,9 +9,10 @@ function byte2Hex(n) {
 
 $(document).ready(function ($) {
 
-  // var currentColor = '';
-  var forefrontColor = '';
-  var backgroundColor = '';
+  var currentColor = '';
+  var currSelectedColor = '';
+  var forefrontColor = '#51CAF3';
+  var backgroundColor = '#E11D3C';
   var forefrontActiveFlag = true;
   var currentFunctionActive = false;
   var linkWidthHeight = false;
@@ -32,17 +33,26 @@ $(document).ready(function ($) {
   });
 
   $('.forefront-color').dblclick(function() {
+    currentColor = forefrontColor;
+
+    $('.current-color').html('Current Color: ' + currentColor);
     $('.colours > .sub-menu > h5').html('Primary Color Options');
+    $('.current-color-preview').css('background-color', forefrontColor);
+    console.log('foreground ' + forefrontColor);
     forefrontActiveFlag = true;
   });
 
   $('.background-color').dblclick(function() {
-    $('.colours > .sub-menu > h5').html('Secondary Color Options')
+    currentColor = backgroundColor;
+    $('.current-color').html('Current Color: ' + currentColor);
+    $('.colours > .sub-menu > h5').html('Secondary Color Options');
+    $('.current-color-preview').css('background-color', backgroundColor);
+    console.log('background ' + backgroundColor);
     forefrontActiveFlag = false;
   });
 
   function getSelectedColor(object) {
-    var clickedColor;
+    var clickedColor = '';
     $this = $(object);
 
     if(!$this.hasClass('no-check')) {
@@ -52,10 +62,12 @@ $(document).ready(function ($) {
       clickedColor = RGB2Color(clickedColor.split(',')[0], clickedColor.split(',')[1], clickedColor.split(',')[2]);
       $('.current-color').html('Current Color: ' + clickedColor)
       $('.current-color-preview').css('background-color', clickedColor)
+      currentColor = clickedColor;
       return clickedColor;
     }else {
       $('.current-color-preview').toggleClass('none-selected');
       $('.current-color').html('No Color Selected');
+      currentColor = clickedColor;
       return '#FFF';
     }
   }
@@ -66,24 +78,14 @@ $(document).ready(function ($) {
     if(forefrontActiveFlag == true) {
       forefrontColor = getSelectedColor(this);
       console.log("Forefront: " + forefrontColor);
+      $('.forefront-color').css('background-color', forefrontColor);
+      console.log(currentColor);
     }else {
       backgroundColor = getSelectedColor(this);
       console.log("Background: " + backgroundColor);
+      $('.background-color').css('background-color', backgroundColor);
+      console.log(currentColor);
     }
-    // if(!$(this).hasClass('no-check')) {
-    //   $('.current-color-preview').removeClass('none-selected');
-    //   $(this).addClass('active');
-    //   currentColor = $(this).css('backgroundColor').split('(')[1].split(')')[0];
-    //   currentColor = RGB2Color(currentColor.split(',')[0], currentColor.split(',')[1], currentColor.split(',')[2]);
-    //   console.log(currentColor)
-    //   $('.current-color').html('Current Color: ' + currentColor)
-    //   $('.current-color-preview').css('background-color', currentColor)
-    //   debugger
-    //   // setCurrentColor();
-    // }else {
-    //   $('.current-color-preview').toggleClass('none-selected');
-    //   $('.current-color').html('No Color Selected');
-    // }
   });
 
   $('.link-width-height').click(function() {
@@ -113,19 +115,6 @@ $(document).ready(function ($) {
         }, 3000);
       }
     }
-
-
-    // if($(this).hasClass('active')) {
-    //   $(this).removeClass('active');
-    //   $('.current-function').removeClass('active');
-    // }else {
-    //   $(this).addClass('active');
-    //   $('.current-function > h6').html('Width & Height Linked');
-    //
-    //   if(!$('.current-function').hasClass('active')) {
-    //     $('.current-function').addClass('active');
-    //   }
-    // }
   });
 
   $(".quick-panel").draggable({
