@@ -1,15 +1,8 @@
 $corner-width: rem(21px);
 
-.red-box {
-  float: left;
-  background-color: red;
-  height: 5px;
-  width: 100px;
-}
-
 .ruler-container {
   position: fixed;
-  top: 130px;
+  top: rem(130px);
   left: 0;
   height: calc(100vh - 130px);
   width: 100vw;
@@ -17,65 +10,50 @@ $corner-width: rem(21px);
 }
 
 .ruler-corner {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* IE/Edge */
-  user-drag: none;
-  user-select: none;
+  @include no-drag();
   width: $corner-width;
   height: $corner-width;
-  // float: left;
   border-bottom: 1px solid $ruler-border;
   position: fixed;
-  top: 130px;
+  top: rem(130px);
   z-index: 2;
 }
 
 .top-ruler {
+  @include no-drag();
   z-index: 2;
   overflow: hidden;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* IE/Edge */
   cursor: pointer;
   position: fixed;
   width: calc(100% - #{$corner-width});
   height: $corner-width;
   background-color: $ruler;
-  background: url('../img/top-ruler-new(1).png');
+  background: url('../img/top-ruler.png');
   background-repeat: repeat-x;
-  // float: right;
-  top: 130px;
-  left: 21px;
-  border-left: 1px solid $ruler-border;
-  border-bottom: 1px solid $ruler-border;
+  top: rem(130px);
+  left: rem(21px);
+  border-left: rem(1px) solid $ruler-border;
+  border-bottom: rem(1px) solid $ruler-border;
 
+  // try to remove need for !important here
   .top-ruler-svg {
     margin: 0 !important;
     padding: 0 !important;
     height: calc(#{$corner-width} - 1px);
   }
 
-  // &::-webkit-scrollbar {
-  //   display: none;
-  // }
-
   .number {
     position: absolute;
-    top: -2px;
-    left: 5px;
+    top: rem(-2px);
+    left: rem(5px);
     opacity: .8;
-    font-size: 9px;
+    font-size: rem(9px);
     font-weight: bold;
     color: darken($ruler-mark, 10%);
 
     &:first-of-type {
-      top: 3px;
-      left: 4px;
+      top: rem(3px);
+      left: rem(4px);
     }
   }
 
@@ -84,7 +62,7 @@ $corner-width: rem(21px);
     top: 0;
     left: 0;
     height: 100%;
-    width: 1px;
+    width: rem(1px);
     background-color: $mockery-green;
     z-index: 2;
   }
@@ -93,7 +71,7 @@ $corner-width: rem(21px);
     float: left;
     margin-top: rem(26px);
     height: 13%;
-    width: 1px;
+    width: rem(1px);
     background-color: $ruler-mark;
     margin-left: rem(4px);
   }
@@ -102,7 +80,7 @@ $corner-width: rem(21px);
     float: left;
     margin-top: rem(21px);
     height: 28%;
-    width: 1px;
+    width: rem(1px);
     background-color: $ruler-mark;
     margin-left: rem(4px);
   }
@@ -111,7 +89,7 @@ $corner-width: rem(21px);
     position: relative;
     float: left;
     height: 100%;
-    width: 1px;
+    width: rem(1px);
     background-color: $ruler-mark;
     margin-left: rem(99px);
 
@@ -121,66 +99,61 @@ $corner-width: rem(21px);
 
     .number {
       position: absolute;
-      top: 2px;
-      left: 10px;
-      padding-left: 5px;
-      font-size: 9px;
+      top: rem(2px);
+      left: rem(10px);
+      padding-left: rem(5px);
+      font-size: rem(9px);
       font-weight: bold;
       color: darken($ruler-mark, 10%);
-      width: 50px;
+      width: rem(50px);
 
       span {
         display: block;
       }
 
       &:first-of-type {
-        top: 3px;
-        left: 1px;
+        top: rem(3px);
+        left: rem(1px);
       }
     }
   }
 }
 
 .left-ruler {
+  $height-before-ruler: 151px;
+  @include no-drag();
   z-index: 50;
   overflow: hidden;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* IE/Edge */
   cursor: pointer;
   position: fixed;
-  $height-before-ruler: 151px;
   width: calc(#{$corner-width} + 1px);
   height: calc(100vh - #{$height-before-ruler});
   background-color: $ruler;
-  background: url('../img/left-ruler-new.png');
+  background: url('../img/left-ruler.png');
   background-repeat: repeat-y;
-  // float: left;
-  top: 151px;
-  border-right: 1px solid $ruler-border;
+  top: rem(151px);
+  border-right: rem(1px) solid $ruler-border;
 
   .number {
     position: absolute;
-    top: 2px;
-    left: 10px;
-    font-size: 9px;
-    padding-left: 5px;
+    top: rem(2px);
+    left: rem(10px);
+    font-size: rem(9px);
+    padding-left: rem(5px);
     font-weight: bold;
     opacity: .8;
-    line-height: 12px;
+    line-height: rem(12px);
     color: darken($ruler-mark, 10%);
 
     span {
-      font-size: 9px;
-      line-height: 10px;
+      font-size: rem(9px);
+      line-height: rem(10px);
       display: block;
     }
 
     &:first-of-type {
-      top: 2px;
-      left: 3px;
+      top: rem(2px);
+      left: rem(3px);
     }
   }
 
@@ -189,7 +162,7 @@ $corner-width: rem(21px);
     top: 0;
     left: 0;
     width: 100%;
-    height: 1px;
+    height: rem(1px);
     background-color: $mockery-green;
     z-index: 100;
   }
@@ -197,7 +170,7 @@ $corner-width: rem(21px);
   .ruler-five {
     clear: both;
     float: right;
-    height: 1px;
+    height: rem(1px);
     width: 13%;
     background-color: $ruler-mark;
     margin-top: rem(4px);
@@ -206,7 +179,7 @@ $corner-width: rem(21px);
   .ruler-ten {
     clear: both;
     float: right;
-    height: 1px;
+    height: rem(1px);
     width: 28%;
     background-color: $ruler-mark;
     margin-top: rem(4px);
@@ -216,28 +189,28 @@ $corner-width: rem(21px);
     clear: both;
     float: right;
     position: relative;
-    height: 1px;
+    height: rem(1px);
     width: 100%;
     background-color: $ruler-mark;
     margin-top: rem(99px);
 
     .number {
       position: absolute;
-      top: 2px;
-      left: 10px;
-      padding-left: 5px;
-      font-size: 9px;
+      top: rem(2px);
+      left: rem(10px);
+      padding-left: rem(5px);
+      font-size: rem(9px);
       font-weight: bold;
       color: darken($ruler-mark, 10%);
-      width: 50px;
+      width: rem(50px);
 
       span {
         display: block;
       }
 
       &:first-of-type {
-        top: 3px;
-        left: 3px;
+        top: rem(3px);
+        left: rem(3px);
       }
     }
   }

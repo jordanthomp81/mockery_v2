@@ -59,12 +59,12 @@ svg.logo {
 
 div.edit-page-name {
   position: absolute;
-  top: rem(15px);
+  top: rem(13px);
   left: rem(200px);
   background-color: transparent;
   border: 1px solid $light-blue;
   width: auto;
-  height: 22px;
+  height: 25px;
   cursor: pointer;
 
   h6 {
@@ -75,6 +75,7 @@ div.edit-page-name {
     padding-left: rem(13px);
     transition: padding .15s ease-in;
     padding-right: rem(13px);
+    padding-top: 2px;
     font-size: 10px;
   }
 
@@ -93,7 +94,7 @@ div.edit-page-name {
     transition: padding .15s ease-in;
     float: left;
     margin-right: 9px;
-    margin-top: 5px;
+    margin-top: 6px;
     display: none;
     opacity: 0;
   }
@@ -206,6 +207,8 @@ div.edit-page-name {
       }
     }
 
+    // jbg
+
     &:hover {
       position: relative;
 
@@ -247,6 +250,14 @@ div.edit-page-name {
   margin-right: 40px;
   cursor: pointer;
   position: relative;
+
+  .user-admin-arrow {
+    transition: all .45s ease;
+  }
+
+  .user-admin-orb {
+    transition: all .5s ease;
+  }
 
   .sub-menu {
     cursor: pointer;
@@ -338,6 +349,14 @@ div.edit-page-name {
     position: relative;
     height: 115%;
 
+    .user-admin-arrow {
+      transform: rotate(180deg);
+    }
+
+    .user-admin-orb {
+      transform: scale(1.1);
+    }
+
     .sub-menu {
       transition: all .5s ease;
       display: block;
@@ -351,7 +370,7 @@ div.edit-page-name {
         font-size: 12px;
 
         &:hover {
-          color: lighten(#63C6BB, 10%);
+          color: #63C6BB;
         }
 
         &:first-of-type {
@@ -373,6 +392,7 @@ div.edit-page-name {
   cursor: pointer;
   float: right;
   position: relative;
+  padding-bottom: 32px;
 
   .sub-menu {
     cursor: pointer;
@@ -381,7 +401,7 @@ div.edit-page-name {
     cursor: auto;
     display: none;
     position: absolute;
-    top: 42px;
+    top: 56px;
     right: -40px;
     height: auto;
     width: auto;
@@ -389,9 +409,73 @@ div.edit-page-name {
     background-color: white;
     box-shadow: 1px 1px 2px rgba(#AAABAB, 50%);
 
-    h6 {
-      position: relative;
+    h5 {
+      white-space: nowrap;
+      padding: rem(18px) rem(50px) rem(0px) rem(16px);
+      font-size: rem(13px);
+      margin: 0;
+      font-family: 'Source Sans Pro', sans-serif;
     }
+
+    hr {
+      border-color: darken(#F5F5F5, 5%);
+      // padding: 0 rem(15px);
+      width: 92%;
+      margin: 0;
+      transform: translateX(-50%);
+      margin-left: 50%;
+      margin-top: 7px;
+      height: 1px;
+
+    }
+
+    .url {
+      cursor: text;
+      padding: 0 rem(5px);
+      margin: rem(18px) rem(14px) rem(18px) rem(16px);
+      background-color: white;
+      border: 1px solid #EAEDF0;
+      border-radius: 20px;
+      width: 360px;
+      height: 40px;
+      position: relative;
+      overflow: hidden;
+
+      h6:first-of-type:hover {
+        color: darken(#A4A5A5, 15%);
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .copy-url {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        background-color: #5FA9DD;
+        width: 80px;
+        height: 38px;
+        border: 1px solid #5FA9DD;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        h4 {
+          white-space: nowrap;
+          padding: rem(13px) rem(0px) rem(0px) rem(13px);
+          font-size: rem(11px);
+          font-weight: bold;
+          margin: 0;
+          color: white;
+          font-family: 'Source Sans Pro', sans-serif;
+        }
+      }
+    }
+
+    // h6 {
+    //   position: relative;
+    // }
 
     &::before {
       content: '';
@@ -426,10 +510,11 @@ div.edit-page-name {
       display: block;
 
       h6 {
-        cursor: pointer;
+        overflow: hidden;
+        // cursor: pointer;
         transition: all .3s ease;
-        color: #7a7a7a;
-        padding: 0;
+        color: #A4A5A5;
+        // padding: 0;
         white-space: nowrap;
         font-size: 12px;
         margin: 0;
@@ -446,6 +531,14 @@ div.edit-page-name {
         // &:last-of-type {
         //   margin-bottom: 20px;
         // }
+      }
+    }
+
+    .url {
+
+      h6 {
+        padding-top: calc((40px / 2) - (14px / 2));
+        padding-left: 10px;
       }
     }
 
@@ -489,6 +582,7 @@ div.edit-page-name {
 }
 
 .user-admin-arrow {
+  transition: all .5s ease;
   margin-top: calc((#{$nav-height} / 2) - (8px / 2));
   float: right;
 }

@@ -2,31 +2,59 @@ body{
   background-color: #F2F2F2;
 }
 
+.current-function {
+  z-index: 7;
+  padding: rem(15px) rem(35px);
+  background-color: rgba(0,0,0, .5);
+  position: fixed;
+  border-radius: rem(20px);
+  bottom: rem(25px);
+  left: rem(60px);
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  h6 {
+    font-size: rem(14px);
+    color: white;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+}
+
 div#app {
   display: table;
   // background-color: transparent;
-  padding-bottom: 450px;
-  padding-right: 694px;
-  top: 151px;
-  left: 21px;
+  padding-bottom: rem(450px);
+  padding-right: rem(694px);
+  top: rem(151px);
+  left: rem(21px);
+  position: absolute;
 }
 
 .inner-board {
-  cursor: move;
+  cursor: default;
   z-index: 0;
   background: url('../img/grid-bg.jpg');
   background-origin: content-box;
   background-repeat: repeat;
-  margin-left: 1px;
+  margin-left: rem(1px);
   padding-left: rem(20px);
-  height: 768px;
-  width: 1366px;
+  height: rem(768px);
+  width: rem(1366px);
   position: relative;
   // left: 21px;
-  border-left: 1px solid #CED8D7;
-  border-top: 1px solid #CED8D7;
-  border-bottom: 1px solid #CED8D7;
-  border-right: 1px solid #CED8D7;
+  border-left: rem(1px) solid #CED8D7;
+  border-top: rem(1px) solid #CED8D7;
+  border-bottom: rem(1px) solid #CED8D7;
+  border-right: rem(1px) solid #CED8D7;
+
+  // see if we can do this without !important
+  &.panning {
+    cursor: move !important;
+  }
 
   &:after {
     position: absolute;
