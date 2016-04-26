@@ -7,7 +7,11 @@ Open a terminal
 
 run `git clone https://github.com/jordanthomp81/mockery_v2`
 
+<<<<<<< HEAD
 checkout the `develop` branch
+=======
+checkout the `staging` branch
+>>>>>>> c069318f4f7f334541714a7257f9122214103e16
 
 Navigate to the root directory, should be the same folder as the `gulpfile.js` file
 
