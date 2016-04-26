@@ -19,6 +19,50 @@ $(document).ready(function ($) {
   var currentFunctionActive = false;
   var linkWidthHeight = false;
 
+  function setCurrentColor() {
+    var currInputVal = $('.color-input').val();
+    if(currInputVal.length >= 3) {
+      console.log(currInputVal[0] + currInputVal[1])
+      $('.color-options').children().removeClass('active');
+      // currInputVal = currInputVal[0] + currInputVal[1] + currInputVal[1] + currInputVal[2] + currInputVal[2] + currInputVal[3] + currInputVal[3];
+    }
+    $('.current-color').html('Current Color: ' + currInputVal);
+    $('.current-color').html('Current Color: ' + currInputVal);
+    $('.current-color-preview').css('background-color', currInputVal);
+  }
+
+  $('.color-input').bind('paste', function() {
+    console.log('pasted')
+
+    setTimeout(function () {
+        var currInputLength = $('.color-input').val().length;
+
+        if(currInputLength >= 2) {
+          // input length > 4
+          console.log('valid paste')
+          setCurrentColor();
+        }
+    }, 0.005);
+  });
+
+  $('.color-input').keypress(function(e) {
+    var currInputLength = $(this).val().length;
+    if(e.which == 13) {
+      console.log('entered');
+      // if length is too short show in ui: border red
+      setCurrentColor();
+    }else {
+      console.log('not enter key')
+      if(currInputLength >= 3) {
+        // input length > 4
+        console.log('fired')
+        setTimeout(function () {
+          setCurrentColor();
+        }, 0.005);
+      }
+    }
+  });
+
   $('.swatch').dblclick(function() {
     var swatches = $('.swatch');
     swatches.removeClass('active');
