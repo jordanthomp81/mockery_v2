@@ -11,6 +11,8 @@ $(document).ready(function ($) {
 
   var currentColor = '';
   var currSelectedColor = '';
+  var currSelectedFrontColor = 11;
+  var currSelectedBackColor = 7;
   var forefrontColor = '#51CAF3';
   var backgroundColor = '#E11D3C';
   var forefrontActiveFlag = true;
@@ -30,25 +32,42 @@ $(document).ready(function ($) {
 
   $('.colours > .sub-menu').hover(function() {
     $('.current-color').toggleClass('active');
+    if(forefrontActiveFlag) {
+      if($('.forefront-color').hasClass('no-color-selected')) {
+        // set forefrontColor
+        $('.current-color').html('No Color Selected');
+      }
+    }else {
+      if($('.background-color').hasClass('no-color-selected')) {
+        // set backgroundColor
+        $('.current-color').html('No Color Selected');
+      }
+    }
   });
 
   $('.forefront-color').dblclick(function() {
     currentColor = forefrontColor;
-
     $('.current-color').html('Current Color: ' + currentColor);
     $('.colours > .sub-menu > h5').html('Primary Color Options');
-    $('.current-color-preview').css('background-color', forefrontColor);
-    console.log('foreground ' + forefrontColor);
+    $('.current-color-preview').css('background-color', currentColor);
     forefrontActiveFlag = true;
+    console.log('Selected Color: ' + currSelectedFrontColor);
+    $('.color-options').children().removeClass('active');
+    if(currSelectedFrontColor != '') {
+      $('.color-options').children().eq(currSelectedFrontColor - 1).addClass('active')
+    }
   });
 
   $('.background-color').dblclick(function() {
     currentColor = backgroundColor;
     $('.current-color').html('Current Color: ' + currentColor);
     $('.colours > .sub-menu > h5').html('Secondary Color Options');
-    $('.current-color-preview').css('background-color', backgroundColor);
-    console.log('background ' + backgroundColor);
+    $('.current-color-preview').css('background-color', currentColor);
     forefrontActiveFlag = false;
+    $('.color-options').children().removeClass('active');
+    if(currSelectedBackColor != '') {
+      $('.color-options').children().eq(currSelectedBackColor - 1).addClass('active')
+    }
   });
 
   function getSelectedColor(object) {
@@ -63,11 +82,22 @@ $(document).ready(function ($) {
       $('.current-color').html('Current Color: ' + clickedColor)
       $('.current-color-preview').css('background-color', clickedColor)
       currentColor = clickedColor;
+      if(forefrontActiveFlag) {
+        $('.forefront-color').removeClass('no-color-selected');
+      }else {
+        $('.background-color').removeClass('no-color-selected');
+      }
       return clickedColor;
     }else {
-      $('.current-color-preview').toggleClass('none-selected');
+      $('.current-color-preview').addClass('none-selected');
       $('.current-color').html('No Color Selected');
       currentColor = clickedColor;
+
+      if(forefrontActiveFlag) {
+        $('.forefront-color').addClass('no-color-selected');
+      }else {
+        $('.background-color').addClass('no-color-selected');
+      }
       return '#FFF';
     }
   }
@@ -77,14 +107,12 @@ $(document).ready(function ($) {
 
     if(forefrontActiveFlag == true) {
       forefrontColor = getSelectedColor(this);
-      console.log("Forefront: " + forefrontColor);
       $('.forefront-color').css('background-color', forefrontColor);
-      console.log(currentColor);
+      currSelectedFrontColor = parseInt($(this).attr('data-pos-in-colors'));
     }else {
       backgroundColor = getSelectedColor(this);
-      console.log("Background: " + backgroundColor);
       $('.background-color').css('background-color', backgroundColor);
-      console.log(currentColor);
+      currSelectedBackColor = parseInt($(this).attr('data-pos-in-colors'));
     }
   });
 
@@ -107,7 +135,6 @@ $(document).ready(function ($) {
         $('.current-function').addClass('active');
         currentFunctionActive = true;
         setTimeout(function() {
-          console.log(panActive)
           if(!panActive) {
             $('.current-function').removeClass('active');
             currentFunctionActive = false;
@@ -226,8 +253,6 @@ $(document).ready(function ($) {
 
   var docWidth = $(window).width();
   var docHeight = $(window).height();
-  console.log("Width " + docWidth)
-  console.log("Height " + docHeight)
   $(".quick-panel").draggable({
     containment: [22, 152]
   });
@@ -235,16 +260,13 @@ $(document).ready(function ($) {
   $('.quick-panel-undo').click(function() {
     $('.quick-panel-undo').addClass('active');
     setTimeout(function(){
-      console.log('timed');
       $('.quick-panel-undo').removeClass('active');
     }, .0100);
   });
 
   $('.quick-panel-redo').click(function() {
-    console.log('Fired');
     $('.quick-panel-redo').addClass('active');
     setTimeout(function(){
-      console.log('timed');
       $('.quick-panel-redo').removeClass('active');
     }, .0100);
   });

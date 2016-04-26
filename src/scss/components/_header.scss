@@ -234,6 +234,23 @@ header {
       &.active {
         z-index: 1;
       }
+
+      &.no-color-selected {
+        overflow: hidden;
+        background-color: white;
+        border: 1px solid #e4e6e7;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          background-color: red;
+          width: rem(2px);
+          height: rem(20px);
+          transform: rotate(45deg) translateX(-173%);
+        }
+      }
     }
 
     .background-color {
@@ -247,6 +264,23 @@ header {
 
       &.active {
         z-index: 1;
+      }
+
+      &.no-color-selected {
+        overflow: hidden;
+        background-color: white;
+        border: 1px solid #e4e6e7;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          background-color: red;
+          width: rem(2px);
+          height: rem(20px);
+          transform: rotate(45deg) translateX(-173%);
+        }
       }
     }
 
