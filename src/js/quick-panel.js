@@ -29,6 +29,8 @@ $(document).ready(function ($) {
     $('.current-color').html('Current Color: ' + currInputVal);
     $('.current-color').html('Current Color: ' + currInputVal);
     $('.current-color-preview').css('background-color', currInputVal);
+    $('.color-input').attr('value', '');
+    // last problem was trying to get the $('.color-input') to equal none after color change
   }
 
   $('.color-input').bind('paste', function() {

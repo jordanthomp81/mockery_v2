@@ -610,7 +610,7 @@ header {
       top: rem(47px);
       left: rem(-10px);
       height: auto;
-      width: rem(230px);
+      width: rem(215px);
       border: rem(1px) solid #e3e5e7;
       background-color: white;
       box-shadow: rem(1px) rem(1px) rem(2px) rgba(#AAABAB, 50%);
@@ -619,6 +619,7 @@ header {
 
       svg {
         margin-left: rem(15px);
+        float: left;
       }
 
       h5 {
@@ -669,8 +670,6 @@ header {
         border-color: transparent transparent #fff transparent;
       }
     }
-
-    // jbg
 
     &:hover {
       position: relative;
