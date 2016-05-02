@@ -7,6 +7,31 @@ function byte2Hex(n) {
   return String(nybHexString.substr((n >> 4) & 0x0F, 1)) + nybHexString.substr(n & 0x0F, 1);
 }
 
+function HSVtoRGB(h, s, v) {
+    var r, g, b, i, f, p, q, t;
+    if (arguments.length === 1) {
+      s = h.s, v = h.v, h = h.h;
+    }
+    i = Math.floor(h * 6);
+    f = h * 6 - i;
+    p = v * (1 - s);
+    q = v * (1 - f * s);
+    t = v * (1 - (1 - f) * s);
+    switch (i % 6) {
+        case 0: r = v, g = t, b = p; break;
+        case 1: r = q, g = v, b = p; break;
+        case 2: r = p, g = v, b = t; break;
+        case 3: r = p, g = q, b = v; break;
+        case 4: r = t, g = p, b = v; break;
+        case 5: r = v, g = p, b = q; break;
+    }
+    return {
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255)
+    };
+}
+
 $(document).ready(function ($) {
 
   var currentColor = '';
@@ -64,6 +89,51 @@ $(document).ready(function ($) {
       }
     }
   });
+
+  $("#eye-dropper").spectrum({
+    localStorageKey: "spectrum.homepage",
+    preferredFormat: "hex"
+  });
+
+  $("#eye-dropper").on('hide.spectrum', function(e, tinycolor) {
+    var r = parseInt(tinycolor['_r']);
+    var g = parseInt(tinycolor['_g']);
+    var b = parseInt(tinycolor['_b']);
+    var colorPickerHex = RGB2Color(r, g, b);
+
+    if(forefrontActiveFlag) {
+      currentColor = colorPickerHex.toString();
+      forefrontColor = colorPickerHex.toString();
+      $('.forefront-color').css('background-color', forefrontColor);
+      $('.color-option').removeClass('active');
+      $('.swatch').removeClass('no-color-selected');
+      currSelectedFrontColor = '';
+    }else {
+      currentColor = colorPickerHex.toString();
+      backgroundColor = colorPickerHex.toString();
+      $('.background-color').css('background-color', backgroundColor);
+      $('.color-option').removeClass('active');
+      $('.swatch').removeClass('no-color-selected');
+      currSelectedBackColor = '';
+    }
+
+    $('.current-color').html('Current Color: ' + colorPickerHex);
+    $('.current-color-preview').css('background-color', colorPickerHex);
+  });
+
+  // $(".color-dropper").click(function() {
+  //   console.log('fired')
+  //   $(".current-color-preview").spectrum({
+  //     localStorageKey: "spectrum.homepage",
+  //     showSelectionPalette: true,
+  //     hide: function(color) {
+  //       console.log('fired closes')
+  //       var colorNow = localStorage['spectrum.homepage'].split('(')[1].split(')')[0].split(',')
+  //       $('.color-dropper').addClass(colorNow)
+  //     }
+  //   });
+  //   return false;
+  // });
 
   $('.swatch').dblclick(function() {
     var swatches = $('.swatch');

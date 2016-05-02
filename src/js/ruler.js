@@ -51,12 +51,24 @@ $(document).ready(function ($) {
     }
   }
 
+  function setRulerWidth() {
+    var canvasWidth = $(document).width();
+    $('.top-ruler').width(canvasWidth);
+  }
+
+  function setRulerHeight() {
+    var canvasHeight = $(document).height();
+    $('.left-ruler').height(canvasHeight);
+  }
+
   $(document).on("mousemove", function(event) {
     updateRulerPointer('left', event);
     updateRulerPointer('top', event);
   });
 
   $(window).resize(function() {
+    setRulerWidth();
+    setRulerHeight();
     createRuler('left');
     createRuler('top');
   });
@@ -80,6 +92,17 @@ $(document).ready(function ($) {
     }
   });
 
+  var topOffset = parseInt($(".top-ruler").css('top')); //Grab the left position left first
+  var leftOffset = parseInt($(".left-ruler").css('left')); //Grab the left position left first
+  $(window).scroll(function(){
+    $('.top-ruler').css({
+        'top': $(this).scrollTop() + topOffset
+    });
+    $('.left-ruler').css('left', $(this).scrollLeft() + leftOffset);
+  });
+
+  setRulerWidth();
+  setRulerHeight();
   createRuler('left');
   createRuler('top');
 

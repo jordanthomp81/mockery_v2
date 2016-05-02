@@ -14,8 +14,9 @@ $corner-width: rem(21px);
   width: $corner-width;
   height: $corner-width;
   border-bottom: 1px solid $ruler-border;
-  position: fixed;
+  position: absolute;
   top: rem(130px);
+  left: 0px;
   z-index: 2;
 }
 
@@ -24,7 +25,7 @@ $corner-width: rem(21px);
   z-index: 2;
   overflow: hidden;
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   width: calc(100% - #{$corner-width});
   height: $corner-width;
   background-color: $ruler;
@@ -125,13 +126,14 @@ $corner-width: rem(21px);
   z-index: 50;
   overflow: hidden;
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   width: calc(#{$corner-width} + 1px);
   height: calc(100vh - #{$height-before-ruler});
   background-color: $ruler;
   background: url('../img/left-ruler.png');
   background-repeat: repeat-y;
   top: rem(151px);
+  left: 0px;
   border-right: rem(1px) solid $ruler-border;
 
   .number {
