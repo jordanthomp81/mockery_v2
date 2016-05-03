@@ -1,5 +1,7 @@
 $(document).ready(function ($) {
 
+  var prevDocSize = 0;
+
   function createRuler(side) {
     var currSet = 0;
     side = side == 'left' ? 'left' : 'top';
@@ -53,6 +55,7 @@ $(document).ready(function ($) {
 
   function setRulerWidth() {
     var canvasWidth = $(document).width();
+    console.log(canvasWidth)
     $('.top-ruler').width(canvasWidth);
   }
 
@@ -67,10 +70,29 @@ $(document).ready(function ($) {
   });
 
   $(window).resize(function() {
-    setRulerWidth();
-    setRulerHeight();
+    // setRulerWidth();
+    // setRulerHeight();
     createRuler('left');
     createRuler('top');
+  });
+
+  $(window).scroll(function() {
+    var currDocSize = $(document).width();
+    if(prevDocSize == 0) { prevDocSize = currDocSize; }
+    if(currDocSize > prevDocSize) {
+      var canvasWidth = parseInt($(document).width() - 22);
+      $('.top-ruler').width(canvasWidth);
+      var canvasHeight = parseInt($(document).height() - 21);
+      $('.left-ruler').height(canvasHeight);
+      console.log('scrolled')
+      $('.top-ruler').empty();
+      $('.left-ruler').empty();
+      createRuler('left');
+      createRuler('top');
+    }else {
+      console.log('equal')
+    }
+    prevDocSize = currDocSize;
   });
 
   $('#toggle-ruler').click(function() {
@@ -101,8 +123,8 @@ $(document).ready(function ($) {
     $('.left-ruler').css('left', $(this).scrollLeft() + leftOffset);
   });
 
-  setRulerWidth();
-  setRulerHeight();
+  // setRulerWidth();
+  // setRulerHeight();
   createRuler('left');
   createRuler('top');
 

@@ -11,13 +11,16 @@ $corner-width: rem(21px);
 
 .ruler-corner {
   @include no-drag();
-  width: $corner-width;
-  height: $corner-width;
+  width: 22px;
+  height: 21px;
   border-bottom: 1px solid $ruler-border;
-  position: absolute;
+  border-right: 1px solid $ruler-border;
+  position: fixed;
   top: rem(130px);
   left: 0px;
-  z-index: 2;
+  // z-index: 2;
+  z-index: 60 !important;
+  // border-right: 1px solid #E0E0E0;
 }
 
 .top-ruler {
