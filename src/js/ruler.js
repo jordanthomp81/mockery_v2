@@ -54,13 +54,13 @@ $(document).ready(function ($) {
   }
 
   function setRulerWidth() {
-    var canvasWidth = $(document).width();
+    var canvasWidth = parseInt($(document).width() - 22);
     console.log(canvasWidth)
     $('.top-ruler').width(canvasWidth);
   }
 
   function setRulerHeight() {
-    var canvasHeight = $(document).height();
+    var canvasHeight = parseInt($(document).height() - 21);
     $('.left-ruler').height(canvasHeight);
   }
 
@@ -70,8 +70,8 @@ $(document).ready(function ($) {
   });
 
   $(window).resize(function() {
-    // setRulerWidth();
-    // setRulerHeight();
+    setRulerWidth();
+    setRulerHeight();
     createRuler('left');
     createRuler('top');
   });
@@ -123,8 +123,8 @@ $(document).ready(function ($) {
     $('.left-ruler').css('left', $(this).scrollLeft() + leftOffset);
   });
 
-  // setRulerWidth();
-  // setRulerHeight();
+  setRulerWidth();
+  setRulerHeight();
   createRuler('left');
   createRuler('top');
 
