@@ -46,10 +46,10 @@ $(document).ready(function ($) {
     var relative = (origin - offset.left);
     if(side == 'left') {
       // minus 197 made the mouse position accurate for X
-      $('.' + side + '-pointer').css('top', relative - 153);
+      $('.' + side + '-pointer').css('top', relative - 133);
     }else {
       // minus 33 made the mouse position accurate for Y
-      $('.' + side + '-pointer').css('left', relative - 23);
+      $('.' + side + '-pointer').css('left', relative - 3);
     }
   }
 
