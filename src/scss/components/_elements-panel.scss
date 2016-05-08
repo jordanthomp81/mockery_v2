@@ -1,0 +1,16 @@
+.elements-panel {
+  width: 250px;
+  height: calc(100% - 151px);
+  background-color: white;
+  border-left: 1px solid darken(#E3E7EB, 5%);
+  position: fixed;
+  top: $nav-height-with-ruler;
+  right: 0;
+  z-index: 50;
+  display: none;
+
+  &.active {
+    display: block;
+    transition: all .3s ease;
+  }
+}
