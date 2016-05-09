@@ -15,4 +15,6 @@ run `gulp`
 
 Pull up a browser and open index.html
 
+or
+
 Navigate in your web browser to http://jordanthomp81.github.io/mockery_v2/
