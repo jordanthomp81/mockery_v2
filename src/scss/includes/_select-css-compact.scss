@@ -1,0 +1,54 @@
+//colors
+$color_silver_chalice_approx: #aaa;
+$color_log_cabin_approx: #222;
+$black: #000;
+
+.custom-select::after {
+	display: block;
+}
+@supports(mask-type: alpha ) {
+	.custom-select {
+		overflow: visible;
+		select {
+			width: 100%;
+			padding-right: 2em;
+		}
+	}
+}
+@media screen and(-ms-high-contrast: active),(-ms-high-contrast: none) {
+	.custom-select {
+		select::-ms-expand {
+			display: none;
+		}
+		select {
+			padding-right: 2em;
+			background: none;
+			border: 1px solid transparent;
+			&:focus {
+				border-color: $color_silver_chalice_approx;
+			}
+			&:focus::-ms-value {
+				background: transparent;
+				color: $color_log_cabin_approx;
+			}
+		}
+	}
+	.custom-select::after {
+		display: block;
+	}
+}
+
+.custom-select select {
+	padding-right: .4em;
+	background: none;
+	border: 1px solid transparent;
+	min-width: 6em;
+	width: 130%;
+	min-width: calc(0em);
+	width: calc(100% +2.4em);
+	&:-moz-focusring {
+		color: transparent;
+		//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		text-shadow: 0 0 0 $black;
+	}
+}

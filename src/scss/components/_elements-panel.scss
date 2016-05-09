@@ -9,6 +9,110 @@
   z-index: 1;
   display: none;
 
+  .element-navigation {
+    width: 100%;
+    height: 50px;
+    margin-bottom: rem(35px);
+    padding: rem(30px) 0 0 rem(20px);
+
+    .element-panel-icon {
+      float: left;
+    }
+
+    .element-panel-headline {
+      float: left;
+      font-family: $base-font;
+      font-size: 18px;
+      color: #7C7B7B;
+      margin: 0;
+      margin-top: 1px;
+      padding: 0;
+      margin-left: rem(20px);
+    }
+
+    .element-panel-close-btn {
+      float: right;
+      cursor: pointer;
+      margin: rem(5px) rem(20px) 0 0;
+    }
+  }
+
+  .element-search {
+    width: 100%;
+    height: 25px;
+    padding: 0;
+    margin-bottom: rem(20px);
+    padding-left: rem(20px);
+    clear: both;
+
+    .search-icon {
+      float: left;
+    }
+
+    .search-category-dropdown {
+      width: 110px;
+      height: 25px;
+      margin-right: rem(20px);
+      float: right;
+
+      select {
+        background-color: #F5F6F7;
+        width: 110px;
+        font-size: 10px;
+        padding-left: 3px;
+        height: 25px;
+        margin-right: rem(20px);
+        border: 1px solid #DADADB;
+      }
+    }
+  }
+
+  .element-icon-container {
+    width: 100%;
+    padding: 0 rem(20px);
+    height: calc(100% - 130px);
+    overflow-y: scroll;
+
+    .element-icon {
+      width: calc(50% - 10px);
+      height: rem(94.5px);
+      background-color: white;
+      border-left: 1px solid #DCDCDC;
+      border-right: 1px solid #DCDCDC;
+      border-bottom: 1px solid #DCDCDC;
+      border-top: 4px solid #63BE61;
+      cursor: pointer;
+      transition: all .3s ease;
+      margin-bottom: rem(25px);
+
+      &.active {
+        border: 1px solid #87BAE5;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          height: 10px;
+          width: 10px;
+          top: 8px;
+          left: 10px;
+          background-image: url('../inc/vectors/element-checkmark-icon.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+
+      &:nth-of-type(even) {
+        float: left;
+      }
+
+      &:nth-of-type(odd) {
+        float: right;
+        clear: both;
+      }
+    }
+  }
+
   &.active {
     display: block;
     transition: all .3s ease;
