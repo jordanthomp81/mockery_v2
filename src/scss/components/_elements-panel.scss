@@ -85,6 +85,56 @@
       transition: all .3s ease;
       margin-bottom: rem(25px);
 
+      .element-text-icon {
+        margin-top: calc((99.5 / 2) - (25px / 2));
+        margin-left: calc((99 / 2) - (31px / 2));
+      }
+
+      .element-link-icon {
+        margin-top: calc((99.5 / 2) - (25px / 2));
+        margin-left: calc((99 / 2) - (25px / 2));
+      }
+
+      .element-image-icon {
+        margin-top: calc((99.5 / 2) - (25px / 2));
+        margin-left: calc((99 / 2) - (30px / 2));
+      }
+
+      .element-rectangle-icon {
+        margin-top: calc((99.5 / 2) - (25px / 2));
+        margin-left: calc((99 / 2) - (25px / 2));
+      }
+
+      .element-circle-icon {
+        margin-top: calc((99.5 / 2) - (25px / 2));
+        margin-left: calc((99 / 2) - (25px / 2));
+      }
+
+      .element-checkbox-icon {
+        margin-top: calc((99.5 / 2) - (27px / 2));
+        margin-left: calc((99 / 2) - (27px / 2));
+      }
+
+      .element-table-icon {
+        margin-top: calc((99.5 / 2) - (25px / 2));
+        margin-left: calc((99 / 2) - (26.5px / 2));
+      }
+
+      .element-horizontal-list-icon {
+        margin-top: calc((99.5 / 2) - (15px / 2));
+        margin-left: calc((99 / 2) - (47px / 2));
+      }
+
+      .element-button-icon {
+        margin-top: calc((99.5 / 2) - (21px / 2));
+        margin-left: calc((99 / 2) - (47px / 2));
+      }
+
+      .element-bulleted-list-icon {
+        margin-top: calc((99.5 / 2) - (25px / 2));
+        margin-left: calc((99 / 2) - (38px / 2));
+      }
+
       &.active {
         border: 1px solid #87BAE5;
         position: relative;
