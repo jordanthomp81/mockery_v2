@@ -40,31 +40,55 @@
     .element-panel-close-btn {
       float: right;
       cursor: pointer;
-      margin: rem(5px) rem(20px) 0 0;
+      margin: rem(5px) rem(25px) 0 0;
+
+      &:hover {
+        @extend .animated;
+        @extend .pulse;
+        animation-duration: .7s;
+        animation-iteration-count:infinite;
+
+        path {
+          transition: all .3s ease;
+          fill: #63be61;
+        }
+      }
     }
   }
 
-  .element-search {
+  .element-search-alt {
     width: 100%;
     height: 25px;
     padding: 0;
     margin-bottom: rem(20px);
     padding-left: rem(20px);
     clear: both;
+    display: none;
 
-    .search-icon-container {
+    &.active {
+      display: block;
+    }
+
+    .search-icon-container-alt {
       float: left;
       clear: both;
       padding-left: 10px;
       transition: all .3s ease;
+      background-color: #F5F6F7;
+      border: 1px solid #DADADB;
+      width: calc(100% - 20px);
+      height: 25px;
+      border-radius: 20px;
 
-      .search-icon {
+      .search-icon-alt {
         float: left;
-        margin-top: 6px;
+        margin-top: 5px;
+        width: 14px;
+        height: 13px;
+        cursor: pointer;
       }
 
-      .search-input {
-        display: none;
+      .search-input-alt {
         width: rem(175px);
         float: left;
         margin-left: 8px;
@@ -79,22 +103,51 @@
         width: calc(100% - 20px);
         height: 25px;
         border-radius: 20px;
+      }
+    }
+  }
 
-        .search-input {
-          display: block;
-        }
+  .element-search {
+    width: 100%;
+    height: 25px;
+    padding: 0;
+    margin-bottom: rem(20px);
+    padding-left: rem(20px);
+    clear: both;
+    background-color: transparent;
+    border: 1px solid transparent;
 
-        .search-icon {
-          margin-top: 5px;
-          width: 14px;
-          height: 13px;
-        }
+    .search-icon-container {
+      float: left;
+      clear: both;
+      padding-left: 10px;
+      transition: all .3s ease;
+
+      .search-icon {
+        float: left;
+        margin-top: 5px;
+      }
+
+      .search-input {
+        display: none;
+        width: rem(175px);
+        float: left;
+        margin-left: 8px;
+        margin-top: 2px;
+        background-color: transparent;
+        border: 1px solid transparent;
       }
     }
 
     .search-icon {
       cursor: pointer;
-      margin-top: 4px;
+      margin-top: 7px;
+
+      &:hover {
+        path {
+          fill: #63be61;
+        }
+      }
     }
 
     .search-category-dropdown {
