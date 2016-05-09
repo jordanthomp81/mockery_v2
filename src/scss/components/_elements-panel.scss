@@ -1,5 +1,5 @@
 .elements-panel {
-  width: 250px;
+  width: 275px;
   height: calc(100% - 151px);
   background-color: white;
   border-left: 1px solid darken(#E3E7EB, 5%);
@@ -75,7 +75,7 @@
 
     .element-icon {
       width: calc(50% - 10px);
-      height: rem(94.5px);
+      height: rem(99.5px);
       background-color: white;
       border-left: 1px solid #DCDCDC;
       border-right: 1px solid #DCDCDC;
@@ -118,3 +118,5 @@
     transition: all .3s ease;
   }
 }
+
+// CDCCCC
