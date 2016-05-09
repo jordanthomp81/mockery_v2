@@ -44,13 +44,27 @@ $(document).ready(function ($) {
   var currentFunctionActive = false;
   var linkWidthHeight = false;
 
+  $(document).on('keyup',function(evt) {
+    if (evt.keyCode == 27) {
+      if($('.search-icon-container').hasClass('active')) {
+        $('.search-category-dropdown').toggle();
+        $('.search-icon-container').toggleClass('active');
+      }
+    }
+  });
+
+  $('.search-icon').click(function() {
+    $('.search-category-dropdown').toggle();
+    $('.search-icon-container').toggleClass('active');
+  });
+
   var isDragging = false;
   var currDraggedElement;
   $('.element-icon').mousedown(function(e) {
     currDraggedElement = $(this);
   })
   $(document).mouseup(function() {
-    
+
   });
 
   $('.element-icon').click(function() {
