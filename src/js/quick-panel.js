@@ -44,6 +44,15 @@ $(document).ready(function ($) {
   var currentFunctionActive = false;
   var linkWidthHeight = false;
 
+  var isDragging = false;
+  var currDraggedElement;
+  $('.element-icon').mousedown(function(e) {
+    currDraggedElement = $(this);
+  })
+  $(document).mouseup(function() {
+    
+  });
+
   $('.element-icon').click(function() {
     if($(this).hasClass('active')) {
       $(this).removeClass('active');
