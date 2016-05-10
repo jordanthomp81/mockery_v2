@@ -43,6 +43,7 @@ $(document).ready(function ($) {
   var forefrontActiveFlag = true;
   var currentFunctionActive = false;
   var linkWidthHeight = false;
+  var selectedElements = [];
 
   $(document).on('keyup',function(evt) {
     if (evt.keyCode == 27) {
@@ -80,10 +81,35 @@ $(document).ready(function ($) {
 
   $('.element-icon').click(function() {
     if($(this).hasClass('active')) {
+      var currArray = $(this).find('svg').attr('class').split('-');
+      currArray.shift();
+      currArray.pop();
+      for(var x=0; x <= selectedElements.length; x++) {
+        if(currArray[0].toString() == selectedElements[x]) {
+          delete selectedElements[x];
+          selectedElements = jQuery.grep(selectedElements, function(n){ return (n); });
+          break;
+        }
+      }
+      console.log(selectedElements)
       $(this).removeClass('active');
+      // checkMultiple();
     }else {
-      $('.element-icon').removeClass('active');
+      var currArray = $(this).find('svg').attr('class').split('-');
+      var currArrayString = '';
+      currArray.shift();
+      currArray.pop();
+      if(currArray.length >= 2) {
+        for(var j=0; j < currArray.length; j++) {
+          currArrayString += currArray[j] + ' ';
+        }
+      }else {
+        currArrayString = currArray[0].toString();
+      }
       $(this).addClass('active');
+      selectedElements.push(currArrayString);
+      console.log(selectedElements)
+      // checkMultiple();
     }
   });
 

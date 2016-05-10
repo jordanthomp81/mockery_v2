@@ -184,12 +184,6 @@
     }
 
     &:hover {
-
-      .element-icon {
-        @extend .animated;
-        @extend .pulse;
-      }
-
       .element-icon-headline {
         color: #63BE61;
       }
