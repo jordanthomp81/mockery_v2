@@ -44,7 +44,7 @@
 
       &:hover {
         @extend .animated;
-        @extend .pulse;
+        @extend .pulse-large;
         animation-duration: .7s;
         animation-iteration-count:infinite;
 
@@ -169,22 +169,95 @@
   }
 
   .element-icon-container {
+    width: calc(50% - 10px);
+    margin: 0;
+    padding: 0;
+    margin-bottom: rem(25px);
+
+    &:nth-of-type(even) {
+      float: left;
+    }
+
+    &:nth-of-type(odd) {
+      float: right;
+      clear: both;
+    }
+
+    &:hover {
+
+      .element-icon {
+        @extend .animated;
+        @extend .pulse;
+      }
+
+      .element-icon-headline {
+        color: #63BE61;
+      }
+    }
+  }
+
+  .element-icons-container {
     width: 100%;
     padding: 0 rem(20px);
     height: calc(100% - 130px);
     overflow-y: scroll;
 
+    .element-icon-headline {
+      transition: all .3s ease;
+      margin: 0;
+      padding: 0;
+      // text-align: center;
+      width: 100%;
+      text-align: center;
+      // margin-left: 50%;
+      // transform: translateX(-50%);
+      padding: 0 5%;
+      height: auto;
+      font-family: $base-font;
+      font-size: 13px;
+      color: darken(#7C7B7B, 10%);
+
+      // &:nth-of-type(even) {
+      //   float: left;
+      // }
+      //
+      // &:nth-of-type(odd) {
+      //   float: right;
+      //   clear: both;
+      // }
+    }
+
     .element-icon {
-      width: calc(50% - 10px);
+      width: 100%;
       height: rem(99.5px);
       background-color: white;
-      border-left: 1px solid #DCDCDC;
-      border-right: 1px solid #DCDCDC;
-      border-bottom: 1px solid #DCDCDC;
-      border-top: 4px solid #63BE61;
+      border: 1px solid #DCDCDC;
+      border-top: 0;
+      // border-top: 4px solid #63BE61;
       cursor: pointer;
+      position:relative;
       transition: all .3s ease;
-      margin-bottom: rem(25px);
+      margin-bottom: rem(15px);
+      transition: all 0s ease;
+
+      &:before {
+        display: block;
+        content:"";
+        border-top: 4px solid #63BE61;
+        width: 103%;
+        height: 4px;
+        position:absolute;
+        left:-1px;
+        top: 0;
+      }
+
+      // &:nth-of-type(even) {
+      //   float: left;
+      // }
+      //
+      // &:nth-of-type(odd) {
+      //   float: right;
+      // }
 
       .element-text-icon {
         margin-top: calc((99.5 / 2) - (25px / 2));
@@ -240,6 +313,10 @@
         border: 1px solid #87BAE5;
         position: relative;
 
+        &::before {
+          display: none;
+        }
+
         &::after {
           content: '';
           position: absolute;
@@ -251,15 +328,6 @@
           background-repeat: no-repeat;
           background-size: contain;
         }
-      }
-
-      &:nth-of-type(even) {
-        float: left;
-      }
-
-      &:nth-of-type(odd) {
-        float: right;
-        clear: both;
       }
     }
   }
