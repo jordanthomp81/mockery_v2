@@ -79,6 +79,20 @@ $(document).ready(function ($) {
 
   });
 
+  function checkMultiple() {
+    if(selectedElements.length >= 1) {
+      $('.multiple-selected').addClass('active');
+    }else {
+      $('.multiple-selected').toggleClass('active');
+    }
+  }
+
+  $('.selected-cancel-btn').click(function() {
+    $('.multiple-selected').removeClass('active');
+    $('.element-icon').removeClass('active');
+    selectedElements = [];
+  });
+
   $('.element-icon').click(function() {
     if($(this).hasClass('active')) {
       var currArray = $(this).find('svg').attr('class').split('-');
@@ -91,9 +105,8 @@ $(document).ready(function ($) {
           break;
         }
       }
-      console.log(selectedElements)
       $(this).removeClass('active');
-      // checkMultiple();
+      checkMultiple();
     }else {
       var currArray = $(this).find('svg').attr('class').split('-');
       var currArrayString = '';
@@ -108,8 +121,7 @@ $(document).ready(function ($) {
       }
       $(this).addClass('active');
       selectedElements.push(currArrayString);
-      console.log(selectedElements)
-      // checkMultiple();
+      checkMultiple();
     }
   });
 
