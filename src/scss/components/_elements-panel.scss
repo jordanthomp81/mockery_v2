@@ -24,18 +24,63 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 65px;
     background-color: white;
     border-top: 1px solid #EBEDF0;
     z-index: 5;
 
     .selected-cancel-btn {
-      padding: rem(5px);
-      max-width: 30px;
+      padding: rem(7px) rem(8px);
       margin-left: 10px;
       border: 1px solid #C15657;
       cursor: pointer;
-      margin-top: calc((50px / 2) - (30px / 2));
+      float: left;
+      margin-top: calc((65px / 2) - (34px / 2));
+    }
+
+    .selected-create-btn {
+      padding: rem(5px);
+      margin-right: 10px;
+      width: calc(100% - 63px);
+      border: 1px solid #5FA9DD;
+      cursor: pointer;
+      float: right;
+      transition: all .3s ease;
+      margin-top: calc((65px / 2) - (34px / 2));
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc((34px / 2) - (10px / 2));
+        right: rem(10px);
+        width: 12px;
+        height: 10px;
+        background-image: url('../inc/vectors/element-large-checkmark-icon.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      &:hover {
+        border: 1px solid darken(#5FA9DD, 10%);
+
+        h6 {
+          color: darken(#5FA9DD, 10%);
+        }
+
+        &::after {
+          transform: scale(1.2);
+        }
+      }
+
+      h6 {
+        color: #5FA9DD;
+        font-size: 11px;
+        margin: 0;
+        padding: rem(5.5px) rem(5px);
+        font-family: $base-font;
+      }
+      // margin-top: calc((65px / 2) - (34px / 2));
     }
 
     &.active {
@@ -45,7 +90,7 @@
 
   .element-navigation {
     width: 100%;
-    height: 50px;
+    height: 65px;
     margin-bottom: rem(35px);
     padding: rem(30px) 0 0 rem(20px);
 

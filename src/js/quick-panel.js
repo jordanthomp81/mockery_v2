@@ -44,6 +44,7 @@ $(document).ready(function ($) {
   var currentFunctionActive = false;
   var linkWidthHeight = false;
   var selectedElements = [];
+  var currId = $(".drawing_board").find("div").length + 1;
 
   $(document).on('keyup',function(evt) {
     if (evt.keyCode == 27) {
@@ -91,6 +92,30 @@ $(document).ready(function ($) {
     $('.multiple-selected').removeClass('active');
     $('.element-icon').removeClass('active');
     selectedElements = [];
+  });
+
+  $('.selected-create-btn').click(function() {
+    $('.multiple-selected').removeClass('active');
+    $('.element-icon').removeClass('active');
+    selectedElements = [];
+  });
+
+  function createElement(element) {
+    var el = element;
+    if(el.hasClass('draggable')) {
+      console.log('draggable')
+      el = el.draggable();
+    }
+    if(el.hasClass('resizable')) {
+      console.log('resizable')
+      el = el.resizable();
+    }
+    $(".drawing_board").append(el);
+    currId++;
+  }
+
+  $('.element-icon').dblclick(function() {
+    createElement($('<div class="element draggable resizable circle"></div>'));
   });
 
   $('.element-icon').click(function() {
@@ -243,6 +268,8 @@ $(document).ready(function ($) {
   //   });
   //   return false;
   // });
+
+
 
   $('.swatch').dblclick(function() {
     var swatches = $('.swatch');

@@ -3,6 +3,17 @@ body{
   display: table;
 }
 
+.circle {
+  background-color: #F26A24;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  position: absolute !important;
+  left: 100px;
+  top: 100px;
+  cursor: move;
+}
+
 .current-function {
   z-index: 7;
   padding: rem(15px) rem(35px);
