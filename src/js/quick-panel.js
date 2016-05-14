@@ -45,6 +45,7 @@ $(document).ready(function ($) {
   var linkWidthHeight = false;
   var selectedElements = [];
   var currId = $(".drawing_board").find("div").length + 1;
+  var currDraggedElement;
 
   $(document).on('keyup',function(evt) {
     if (evt.keyCode == 27) {
@@ -71,15 +72,6 @@ $(document).ready(function ($) {
     $('.element-search-alt').toggle();
   });
 
-  var isDragging = false;
-  var currDraggedElement;
-  $('.element-icon').mousedown(function(e) {
-    currDraggedElement = $(this);
-  })
-  $(document).mouseup(function() {
-
-  });
-
   function checkMultiple() {
     if(selectedElements.length >= 1) {
       $('.multiple-selected').addClass('active');
@@ -100,23 +92,69 @@ $(document).ready(function ($) {
     selectedElements = [];
   });
 
-  function createElement(element) {
+  function createElement(element, mousePos, dragOptions, resizeOptions) {
     var el = element;
+
     if(el.hasClass('draggable')) {
-      console.log('draggable')
-      el = el.draggable();
+      if(dragOptions) {
+        el = el.draggable(dragOptions);
+      }else {
+        el = el.draggable();
+      }
     }
+
     if(el.hasClass('resizable')) {
-      console.log('resizable')
-      el = el.resizable();
+      if(resizeOptions) {
+        el = el.resizable(resizeOptions);
+      }else {
+        el = el.resizable();
+      }
     }
+
+    el.css('top', (parseInt(mousePos.top) - 198)) // 198 is a random offset fix later
+    el.css('left', (parseInt(mousePos.left) - 110)) // 110 is a random offset fix later
     $(".drawing_board").append(el);
     currId++;
   }
 
-  $('.element-icon').dblclick(function() {
-    createElement($('<div class="element draggable resizable circle"></div>'));
+  // $('.element-icon').mouseup(function() {
+  //   var currElement = $(this).attr('data-element');
+  //   console.log(currElement)
+  //   currElement = currElement + "Template";
+  //   createElement(window[currElement]());
+  // });
+
+  var isDragging = false;
+  var dragPos = { top: -1, left: -1 };
+  $('.element-icon').mousedown(function() {
+    currDraggedElement = $(this);
+    isDragging = false;
+  }).mousemove(function() {
+    isDragging = true;
+  }).on("dragend", function(event){
+    dragPos.left = event.pageX;
+    dragPos.top = event.pageY;
+    var wasDragging = isDragging;
+    isDragging = false;
+    if (!wasDragging) {
+      console.log('not dragged')
+    }else {
+      var currElement = currDraggedElement.attr('data-element');
+      console.log(currElement)
+      currElement = currElement + "Template";
+      createElement(window[currElement](), dragPos);
+    }
   });
+
+  // $(document).mouseup(function(e) {
+  //  var subject = currDraggedElement;
+  //  console.log(subject)
+  // //
+  // //  if(e.target.id != subject.attr('data-element')) {
+  // //   //  subject.fadeOut();
+  // //   alert('drag complete')
+  // //  }
+  // });
 
   $('.element-icon').click(function() {
     if($(this).hasClass('active')) {
