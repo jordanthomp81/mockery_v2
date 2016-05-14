@@ -111,8 +111,10 @@ $(document).ready(function ($) {
       }
     }
 
-    el.css('top', (parseInt(mousePos.top) - 198)) // 198 is a random offset fix later
-    el.css('left', (parseInt(mousePos.left) - 110)) // 110 is a random offset fix later
+    mousePos.top = parseInt(mousePos.top) - 198;
+    mousePos.left = parseInt(mousePos.left) - 110;
+    el.css('top', mousePos.top) // 198 is a random offset fix later
+    el.css('left', mousePos.left) // 110 is a random offset fix later
     $(".drawing_board").append(el);
     currId++;
   }
