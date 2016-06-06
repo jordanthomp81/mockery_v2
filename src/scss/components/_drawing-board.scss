@@ -115,6 +115,29 @@ body{
   }
 }
 
+.button {
+  width: 120px;
+  height: 50px;
+  background-color: #9B9A9A;
+  text-align: center;
+  cursor: pointer;
+
+  h6 {
+    cursor: pointer;
+    padding-top: 18px;
+    font-size: 16px;
+    color: white;
+  }
+}
+
+.bulleted-list {
+  cursor: pointer;
+
+  li {
+    list-style-type: disc;
+  }
+}
+
 .current-function {
   z-index: 7;
   padding: rem(15px) rem(35px);

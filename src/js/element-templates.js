@@ -37,3 +37,13 @@ function horizontalListTemplate() {
   var element = $('<h6 class="horizontal-list element draggable">One | Two | Three</h6>');
   return element;
 }
+
+function buttonTemplate() {
+  var element = $('<div class="button element draggable"><h6>Click Me!</h6></div>');
+  return element;
+}
+
+function bulletedListTemplate() {
+  var element = $('<ul class="bulleted-list draggable"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>');
+  return element;
+}
