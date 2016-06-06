@@ -89,7 +89,7 @@ $(document).ready(function ($) {
   $('.selected-create-btn').click(function() {
     for(var x=0; x < selectedElements.length; x++) {
       var currElement = selectedElements[x];
-      currElement = currElement + "Template";
+      currElement = ery + "Templalate";
       createElement(window[currElement](), null, false);
     }
     $('.multiple-selected').removeClass('active');
@@ -119,6 +119,8 @@ $(document).ready(function ($) {
     if(multi) {
       mousePos.top = parseInt(mousePos.top) - 198;
       mousePos.left = parseInt(mousePos.left) - 110;
+      console.log('mouseTop' + mousePos.top);
+      console.log('mouseLeft' + mousePos.left);
       el.css('top', mousePos.top) // 198 is a random offset fix later
       el.css('left', mousePos.left) // 110 is a random offset fix later
     }
@@ -149,7 +151,6 @@ $(document).ready(function ($) {
       console.log('not dragged')
     }else {
       var currElement = currDraggedElement.attr('data-element');
-      console.log(currElement)
       currElement = currElement + "Template";
       createElement(window[currElement](), dragPos, true);
     }
@@ -228,7 +229,6 @@ $(document).ready(function ($) {
   function setCurrentColor() {
     var currInputVal = $('.color-input').val();
     if(currInputVal.length >= 3) {
-      console.log(currInputVal[0] + currInputVal[1])
       $('.color-options').children().removeClass('active');
       // currInputVal = currInputVal[0] + currInputVal[1] + currInputVal[1] + currInputVal[2] + currInputVal[2] + currInputVal[3] + currInputVal[3];
     }
@@ -240,14 +240,12 @@ $(document).ready(function ($) {
   }
 
   $('.color-input').bind('paste', function() {
-    console.log('pasted')
 
     setTimeout(function () {
         var currInputLength = $('.color-input').val().length;
 
         if(currInputLength >= 2) {
           // input length > 4
-          console.log('valid paste')
           setCurrentColor();
         }
     }, 0.005);
@@ -256,14 +254,11 @@ $(document).ready(function ($) {
   $('.color-input').keypress(function(e) {
     var currInputLength = $(this).val().length;
     if(e.which == 13) {
-      console.log('entered');
       // if length is too short show in ui: border red
       setCurrentColor();
     }else {
-      console.log('not enter key')
       if(currInputLength >= 3) {
         // input length > 4
-        console.log('fired')
         setTimeout(function () {
           setCurrentColor();
         }, 0.005);
@@ -350,7 +345,6 @@ $(document).ready(function ($) {
     $('.colours > .sub-menu > h5').html('Primary Color Options');
     $('.current-color-preview').css('background-color', currentColor);
     forefrontActiveFlag = true;
-    console.log('Selected Color: ' + currSelectedFrontColor);
     $('.color-options').children().removeClass('active');
     if(currSelectedFrontColor != '') {
       $('.color-options').children().eq(currSelectedFrontColor - 1).addClass('active')
