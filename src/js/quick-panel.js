@@ -87,9 +87,10 @@ $(document).ready(function ($) {
   });
 
   $('.selected-create-btn').click(function() {
+    console.log(selectedElements)
     for(var x=0; x < selectedElements.length; x++) {
       var currElement = selectedElements[x];
-      currElement = ery + "Templalate";
+      currElement = currElement + "Template";
       createElement(window[currElement](), null, false);
     }
     $('.multiple-selected').removeClass('active');
@@ -119,8 +120,6 @@ $(document).ready(function ($) {
     if(multi) {
       mousePos.top = parseInt(mousePos.top) - 198;
       mousePos.left = parseInt(mousePos.left) - 110;
-      console.log('mouseTop' + mousePos.top);
-      console.log('mouseLeft' + mousePos.left);
       el.css('top', mousePos.top) // 198 is a random offset fix later
       el.css('left', mousePos.left) // 110 is a random offset fix later
     }
@@ -148,7 +147,7 @@ $(document).ready(function ($) {
     var wasDragging = isDragging;
     isDragging = false;
     if (!wasDragging) {
-      console.log('not dragged')
+      // console.log('not dragged')
     }else {
       var currElement = currDraggedElement.attr('data-element');
       currElement = currElement + "Template";
@@ -171,10 +170,26 @@ $(document).ready(function ($) {
       var currArray = $(this).find('svg').attr('class').split('-');
       currArray.shift();
       currArray.pop();
+      var tempArray = '';
+      if(currArray.length >= 2) {
+        for(var b=0; b < currArray.length; b++) {
+          if(b>0) {
+            var firstLetter = currArray[b][0].toUpperCase();
+            var remainingText = currArray[b].substring(1, currArray[b].length)
+            currArray[b] = firstLetter + remainingText;
+          }
+          tempArray += currArray[b];
+        }
+        currArray = [tempArray];
+      }else {
+        tempArray = currArray[0].toString();
+        currArray = [tempArray];
+      }
       for(var x=0; x <= selectedElements.length; x++) {
         if(currArray[0].toString() == selectedElements[x]) {
           delete selectedElements[x];
           selectedElements = jQuery.grep(selectedElements, function(n){ return (n); });
+          console.log(selectedElements)
           break;
         }
       }
@@ -187,7 +202,12 @@ $(document).ready(function ($) {
       currArray.pop();
       if(currArray.length >= 2) {
         for(var j=0; j < currArray.length; j++) {
-          currArrayString += currArray[j] + ' ';
+          if(j>0) {
+            var firstLetter = currArray[j][0].toUpperCase();
+            var remainingText = currArray[j].substring(1, currArray[j].length)
+            currArray[j] = firstLetter + remainingText;
+          }
+          currArrayString += currArray[j];
         }
       }else {
         currArrayString = currArray[0].toString();
