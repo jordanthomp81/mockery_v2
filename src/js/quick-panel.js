@@ -155,16 +155,6 @@ $(document).ready(function ($) {
     }
   });
 
-  // $(document).mouseup(function(e) {
-  //  var subject = currDraggedElement;
-  //  console.log(subject)
-  // //
-  // //  if(e.target.id != subject.attr('data-element')) {
-  // //   //  subject.fadeOut();
-  // //   alert('drag complete')
-  // //  }
-  // });
-
   $('.element-icon').click(function() {
     if($(this).hasClass('active')) {
       var currArray = $(this).find('svg').attr('class').split('-');
