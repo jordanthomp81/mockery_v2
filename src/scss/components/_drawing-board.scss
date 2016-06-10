@@ -3,6 +3,12 @@ body{
   display: table;
 }
 
+.element {
+  &.active {
+    border: 2px dashed black;
+  }
+}
+
 .circle {
   background-color: #F26A24;
   border-radius: 100%;

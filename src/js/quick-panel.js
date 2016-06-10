@@ -46,6 +46,17 @@ $(document).ready(function ($) {
   var selectedElements = [];
   var currId = $(".drawing_board").find("div").length + 1;
   var currDraggedElement;
+  var isItemSelected = false;
+
+  $(document).on('click', function(e) {
+    if ($(e.target).hasClass('element')) {
+      $(e.target).toggleClass('active');
+      isItemSelected = true;
+    }else {
+      $('.element').removeClass('active');
+      isItemSelected = false;
+    }
+  });
 
   $(document).on('keyup',function(evt) {
     if (evt.keyCode == 27) {

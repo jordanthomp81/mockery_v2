@@ -24,12 +24,12 @@ function linkTemplate() {
 }
 
 function checkboxTemplate() {
-  var element = $('<label class="draggable"><input class="checkbox" type="checkbox" />This is a checkbox</label>');
+  var element = $('<label class="element draggable"><input class="checkbox" type="checkbox" />This is a checkbox</label>');
   return element;
 }
 
 function tableTemplate() {
-  var element = $('<table class="table draggable resizable"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><td>Eve</td><td>Jackson</td><td>94</td></tr><tr><td>John</td><td>Doe</td><td>80</td></tr></table>');
+  var element = $('<table class="table element draggable resizable"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><td>Eve</td><td>Jackson</td><td>94</td></tr><tr><td>John</td><td>Doe</td><td>80</td></tr></table>');
   return element;
 }
 
