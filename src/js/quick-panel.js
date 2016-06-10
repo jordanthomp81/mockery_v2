@@ -49,7 +49,8 @@ $(document).ready(function ($) {
   var isItemSelected = false;
 
   $(document).on('click', function(e) {
-    if ($(e.target).hasClass('element')) {
+    if ($(e.target).hasClass('element') && !$(e.target).hasClass('active')) {
+      $('.element').removeClass('active');
       $(e.target).toggleClass('active');
       isItemSelected = true;
     }else {

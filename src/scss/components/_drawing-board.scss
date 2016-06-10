@@ -5,7 +5,16 @@ body{
 
 .element {
   &.active {
-    border: 2px dashed black;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: calc(100% + 25px);
+      height: calc(100% + 25px);
+      border: 2px solid #47A1DC;
+    }
   }
 }
 
