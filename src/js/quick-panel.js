@@ -99,7 +99,6 @@ $(document).ready(function ($) {
   });
 
   $('.selected-create-btn').click(function() {
-    console.log(selectedElements)
     for(var x=0; x < selectedElements.length; x++) {
       var currElement = selectedElements[x];
       currElement = currElement + "Template";
@@ -156,6 +155,8 @@ $(document).ready(function ($) {
   }).on("dragend", function(event){
     dragPos.left = event.pageX;
     dragPos.top = event.pageY;
+    console.log('Top: ' + dragPos.top)
+    console.log('Left: ' + dragPos.left)
     var wasDragging = isDragging;
     isDragging = false;
     if (!wasDragging) {
@@ -191,7 +192,6 @@ $(document).ready(function ($) {
         if(currArray[0].toString() == selectedElements[x]) {
           delete selectedElements[x];
           selectedElements = jQuery.grep(selectedElements, function(n){ return (n); });
-          console.log(selectedElements)
           break;
         }
       }
