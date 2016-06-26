@@ -22,13 +22,6 @@ hr {
 
 nav { ul { @include reset-list(); } }
 
-// Some more resets
-input, textarea {
-  outline: none;
-  border-radius: 0;
-  -webkit-appearance: none;
-}
-
 *, *:before, *:after {
   box-sizing: inherit;
 }

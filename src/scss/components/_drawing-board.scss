@@ -1,5 +1,169 @@
 body{
   background-color: #F2F2F2;
+  display: table;
+}
+
+.element {
+  &.active {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: calc(100% + 25px);
+      height: calc(100% + 25px);
+      border: 2px solid #47A1DC;
+    }
+  }
+}
+
+.circle {
+  background-color: #F26A24;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  position: absolute !important;
+  left: 150px;
+  top: 100px;
+  cursor: move;
+}
+
+.rectangle {
+  background-color: #F26A24;
+  width: 50px;
+  height: 50px;
+  position: absolute !important;
+  left: 150px;
+  top: 100px;
+  cursor: move;
+}
+
+.image {
+  background-color: #F7F9FA;
+  border: 1px solid #E3E7EB;
+  width: 150px;
+  height: 150px;
+  position: absolute !important;
+  left: 150px;
+  top: 100px;
+  cursor: move;
+
+  svg {
+    width: 50px;
+    height: 50px;
+    margin-left: 50%;
+    margin-top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.link {
+  color: blue;
+  position: absolute !important;
+  left: 150px;
+  top: 100px;
+  cursor: move;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: rem(18px);
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+
+.text {
+  color: lighten(black, 10%);
+  position: absolute !important;
+  left: 150px;
+  top: 100px;
+  cursor: move;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: rem(18px);
+  font-weight: normal;
+}
+
+.horizontal-list {
+  position: absolute !important;
+  left: 150px;
+  top: 100px;
+  cursor: move;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: rem(18px);
+  font-weight: normal;
+}
+
+.checkbox {
+  position: absolute !important;
+  cursor: move;
+  padding-left: 20px;
+
+  input {
+    margin-top: 1px;
+    margin-left: -20px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
+
+.table {
+  position: absolute !important;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: rem(400px);
+
+  & caption {
+    font-size: 1.5em;
+    margin: .25em 0 .75em;
+  }
+  & tr {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+  & th,
+  & td {
+    padding: .625em;
+    text-align: center;
+  }
+  & th {
+    background-color: red;
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  & td img {
+    text-align: center;
+  }
+}
+
+.button {
+  position: absolute !important;
+  width: 120px;
+  height: 50px;
+  background-color: #9B9A9A;
+  text-align: center;
+  cursor: pointer;
+
+  h6 {
+    cursor: pointer;
+    padding-top: 18px;
+    font-size: 16px;
+    color: white;
+  }
+}
+
+.bulleted-list {
+  position: absolute !important;
+  cursor: pointer;
+  padding-left: 18px;
+
+  li {
+    list-style-type: disc;
+  }
 }
 
 .current-function {

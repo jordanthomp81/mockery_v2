@@ -8,6 +8,9 @@
 @import "includes/variables";
 @import "includes/colors";
 @import "includes/mixins";
+@import "includes/spectrum";
+@import "includes/select-css";
+@import "includes/select-css-compact";
 
 // base elements
 @import "base/fonts";
@@ -16,6 +19,7 @@
 
 // components
 @import "components/header";
+@import "components/elements-panel";
 @import "components/ruler";
 @import "components/navigation";
 @import "components/drawing-board";
