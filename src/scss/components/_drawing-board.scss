@@ -18,10 +18,6 @@ body{
   }
 }
 
-.draggable {
-  position: absolute !important;
-}
-
 .circle {
   background-color: #F26A24;
   border-radius: 100%;
@@ -98,9 +94,13 @@ body{
 
 .checkbox {
   position: absolute !important;
-  background-color: red;
-  height: 15px;
-  width: 15px;
+  cursor: move;
+  padding-left: 20px;
+
+  input {
+    margin-top: 1px;
+    margin-left: -20px;
+  }
 }
 
 .table {

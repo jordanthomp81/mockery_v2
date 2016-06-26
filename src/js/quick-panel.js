@@ -49,9 +49,27 @@ $(document).ready(function ($) {
   var isItemSelected = false;
 
   $(document).on('click', function(e) {
-    if ($(e.target).hasClass('element') && !$(e.target).hasClass('active')) {
+    e.stopPropagation();
+    e.preventDefault();
+    var target;
+    // var hasClassFlag = false;
+    if($(e.target).attr('class') == undefined) {
+      target = $(e.target).parent();
+      for (var b = 0; b < 3; b++) {
+        if(target.hasClass('element')) {
+          break;
+        }else {
+          target = target.parent();
+        }
+      }
+    }else {
+      console.log('nope')
+      target = $(e.target);
+    }
+    // console.log(target);
+    if (target.hasClass('element') && !target.hasClass('active')) {
       $('.element').removeClass('active');
-      $(e.target).toggleClass('active');
+      target.toggleClass('active');
       isItemSelected = true;
     }else {
       $('.element').removeClass('active');
@@ -262,7 +280,6 @@ $(document).ready(function ($) {
   }
 
   $('.color-input').bind('paste', function() {
-
     setTimeout(function () {
         var currInputLength = $('.color-input').val().length;
 

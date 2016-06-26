@@ -24,7 +24,7 @@ function linkTemplate() {
 }
 
 function checkboxTemplate() {
-  var element = $('<label class="element draggable"><input class="checkbox" type="checkbox" />This is a checkbox</label>');
+  var element = $('<label class="checkbox element draggable"><input class="checkbox" type="checkbox" />This is a checkbox</label>');
   return element;
 }
 
@@ -44,6 +44,6 @@ function buttonTemplate() {
 }
 
 function bulletedListTemplate() {
-  var element = $('<ul class="bulleted-list draggable"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>');
+  var element = $('<ul class="bulleted-list element draggable"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>');
   return element;
 }
