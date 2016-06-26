@@ -101,6 +101,10 @@ body{
     margin-top: 1px;
     margin-left: -20px;
   }
+
+  input:focus {
+    outline: none;
+  }
 }
 
 .table {
@@ -155,6 +159,7 @@ body{
 .bulleted-list {
   position: absolute !important;
   cursor: pointer;
+  padding-left: 18px;
 
   li {
     list-style-type: disc;
