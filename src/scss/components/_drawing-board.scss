@@ -4,6 +4,58 @@ body{
 }
 
 .element {
+  span:nth-of-type(1) {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    width: 9px;
+    height: 9px;
+    border: 2px solid #5FA9DD;
+    top: -15px;
+    left: -15px;
+  }
+
+  span:nth-of-type(2) {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    width: 9px;
+    height: 9px;
+    border: 2px solid #5FA9DD;
+    top: -15px;
+    right: -15px;
+  }
+  //
+  span:nth-of-type(3) {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    width: 9px;
+    height: 9px;
+    border: 2px solid #5FA9DD;
+    bottom: -15px;
+    left: -15px;
+  }
+  //
+  span:nth-of-type(4) {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    width: 9px;
+    height: 9px;
+    border: 2px solid #5FA9DD;
+    bottom: -15px;
+    right: -15px;
+  }
+
   &.active {
     &::after {
       content: '';
@@ -14,6 +66,10 @@ body{
       width: calc(100% + 25px);
       height: calc(100% + 25px);
       border: 2px solid #47A1DC;
+    }
+
+    span {
+      display: block;
     }
   }
 }
@@ -150,7 +206,7 @@ body{
 
   h6 {
     cursor: pointer;
-    padding-top: 18px;
+    padding-top: 2px;
     font-size: 16px;
     color: white;
   }
