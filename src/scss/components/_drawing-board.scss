@@ -3,7 +3,11 @@ body{
   display: table;
 }
 
-.element {
+.element-container {
+  display: inline-block;
+  position: absolute !important;
+  cursor: move;
+
   span:nth-of-type(1) {
     border-radius: 10px;
     display: none;
@@ -57,6 +61,11 @@ body{
   }
 
   &.active {
+
+    span {
+      display: block;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -67,11 +76,11 @@ body{
       height: calc(100% + 25px);
       border: 2px solid #47A1DC;
     }
-
-    span {
-      display: block;
-    }
   }
+}
+
+.element {
+
 }
 
 .circle {
@@ -79,10 +88,6 @@ body{
   border-radius: 100%;
   width: 50px;
   height: 50px;
-  position: absolute !important;
-  left: 150px;
-  top: 100px;
-  cursor: move;
 }
 
 .rectangle {
@@ -93,6 +98,17 @@ body{
   left: 150px;
   top: 100px;
   cursor: move;
+
+  .span-settings {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    width: 9px;
+    height: 9px;
+    border: 2px solid #5FA9DD;
+  }
 }
 
 .image {

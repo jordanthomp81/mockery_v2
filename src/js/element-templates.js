@@ -1,7 +1,19 @@
+// div.element.draggable.resizable -->
+//   div.circle -->
+//     span x 6
+//     div.controls
+//
+// Ideal Structure
+
 function circleTemplate() {
-  var element = $('<div class="circle element draggable resizable"><span></span><span></span><span></span><span></span></div>');
+  var element = $('<div class="element-container draggable resizable"><div class="circle"></div><span></span><span></span><span></span><span></span></div>');
   return element;
 }
+
+// function circleTemplate() {
+//   var element = $('<div class="circle element draggable resizable"><span></span><span></span><span></span><span></span></div>');
+//   return element;
+// }
 
 function rectangleTemplate() {
   var element = $('<div class="rectangle element draggable resizable"><span></span><span></span><span></span><span></span></div>');
