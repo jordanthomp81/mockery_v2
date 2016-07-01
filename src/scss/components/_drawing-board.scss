@@ -7,6 +7,7 @@ body{
   display: inline-block;
   position: absolute !important;
   cursor: move;
+  // line-height:0;
 
   span:nth-of-type(1) {
     border-radius: 10px;
@@ -67,6 +68,7 @@ body{
     }
 
     &::after {
+      pointer-events: none;
       content: '';
       position: absolute;
       top: 50%;
@@ -94,21 +96,6 @@ body{
   background-color: #F26A24;
   width: 50px;
   height: 50px;
-  position: absolute !important;
-  left: 150px;
-  top: 100px;
-  cursor: move;
-
-  .span-settings {
-    border-radius: 10px;
-    display: none;
-    position: absolute;
-    background-color: white;
-    z-index: 10;
-    width: 9px;
-    height: 9px;
-    border: 2px solid #5FA9DD;
-  }
 }
 
 .image {
@@ -116,10 +103,6 @@ body{
   border: 1px solid #E3E7EB;
   width: 150px;
   height: 150px;
-  position: absolute !important;
-  left: 150px;
-  top: 100px;
-  cursor: move;
 
   svg {
     width: 50px;
@@ -132,41 +115,30 @@ body{
 
 .link {
   color: blue;
-  position: absolute !important;
-  left: 150px;
-  top: 100px;
-  cursor: move;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: rem(18px);
   font-weight: normal;
   text-decoration: underline;
+  margin-bottom: 0;
 }
-
 
 .text {
   color: lighten(black, 10%);
-  position: absolute !important;
-  left: 150px;
-  top: 100px;
-  cursor: move;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: rem(18px);
   font-weight: normal;
+  margin: 0;
+  padding: 2px;
 }
 
 .horizontal-list {
-  position: absolute !important;
-  left: 150px;
-  top: 100px;
-  cursor: move;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: rem(18px);
   font-weight: normal;
+  margin-bottom: 0px;
 }
 
 .checkbox {
-  position: absolute !important;
-  cursor: move;
   padding-left: 20px;
 
   input {
@@ -180,7 +152,6 @@ body{
 }
 
 .table {
-  position: absolute !important;
   border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0;
@@ -213,24 +184,20 @@ body{
 }
 
 .button {
-  position: absolute !important;
-  width: 120px;
-  height: 50px;
   background-color: #9B9A9A;
   text-align: center;
-  cursor: pointer;
 
   h6 {
     cursor: pointer;
-    padding-top: 2px;
+    padding: 20px 30px;
+    margin-bottom: 0px;
+    // padding-top: 2px;
     font-size: 16px;
     color: white;
   }
 }
 
 .bulleted-list {
-  position: absolute !important;
-  cursor: pointer;
   padding-left: 18px;
 
   li {

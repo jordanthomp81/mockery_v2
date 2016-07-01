@@ -553,12 +553,27 @@ $(document).ready(function ($) {
     e.preventDefault();
     var targetClasses;
     var target = $(e.target).parent();
+    if(target.attr('class') == undefined || target.attr('class').split(' ')[0] != 'element-container') {
+      var tempTarget = target.parent();
+      for (var b = 0; b < 3; b++) {
+        if(tempTarget.hasClass('element-container')) {
+          target = tempTarget;
+          break;
+        }else {
+          tempTarget = tempTarget.parent();
+        }
+      }
+    }
     targetClasses = target.attr('class').split(' ');
-    if (targetClasses[0] == 'element-container' && $.inArray("active", targetClasses) === -1) {
+    console.log(targetClasses)
+    console.log(target.hasClass('active'))
+    if (targetClasses[0] == 'element-container' && !target.hasClass('active')) {
+      console.log('yup')
       $('.element-container').removeClass('active');
       target.toggleClass('active');
       isItemSelected = true;
     }else {
+      console.log('no')
       $('.element-container').removeClass('active');
       isItemSelected = false;
     }
