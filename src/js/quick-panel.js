@@ -564,16 +564,13 @@ $(document).ready(function ($) {
         }
       }
     }
+    
     targetClasses = target.attr('class').split(' ');
-    console.log(targetClasses)
-    console.log(target.hasClass('active'))
     if (targetClasses[0] == 'element-container' && !target.hasClass('active')) {
-      console.log('yup')
       $('.element-container').removeClass('active');
       target.toggleClass('active');
       isItemSelected = true;
     }else {
-      console.log('no')
       $('.element-container').removeClass('active');
       isItemSelected = false;
     }
