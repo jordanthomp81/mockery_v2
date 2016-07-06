@@ -566,15 +566,17 @@ $(document).ready(function ($) {
     }
 
     targetClasses = target.attr('class').split(' ');
-    if($(e.target).hasClass('sub-menu')) {
-      // Do Nothing
-    }else if(targetClasses[0] == 'element-container' & !target.hasClass('active')) {
+    if(targetClasses[0] == 'element-container' && !target.hasClass('active')) {
       $('.element-container').removeClass('active');
       target.toggleClass('active');
       isItemSelected = true;
     }else {
-      $('.element-container').removeClass('active');
-      isItemSelected = false;
+      if($(e.target).parents('.sub-menu').length == 1 || $(e.target).hasClass('sub-menu')) {
+        // Do Nothing
+      }else {
+        $('.element-container').removeClass('active');
+        isItemSelected = false;
+      }
     }
   });
 
