@@ -16,7 +16,16 @@ function rectangleTemplate() {
 }
 
 function textTemplate() {
-  var element = $('<div class="element-container draggable"><h6 class="text">Double Click to edit text<span></span><span></span><span></span><span></span></h6><div class="animated fadeInUp sub-menu"></div></div>');
+  var element = $(
+  '<div class="element-container draggable">' +
+    '<h6 class="text">Double Click to edit text</h6>' +
+    '<span></span><span></span><span></span><span></span>' +
+    '<div class="animated fadeInUp sub-menu">' +
+      '<svg class="element-settings-text-icon" xmlns="http://www.w3.org/2000/svg" width="20.12" height="17.19" viewBox="0 0 15.12 12.19"><g fill="#65BD61"><path d="M7.145 2.031h2.08v1.912h2.357V-.001H0v3.944h2.357V2.031h2.08v8.127H3.331v2.033h4.992v-2.033H7.145V2.031zm0 0"/><path d="M8.184 4.959V7.47H9.85V6.395h.9v4.361h-.693v1.436h3.191v-1.436h-.625V6.395h.832V7.47h1.664V4.959H8.184zm0 0"/></g></svg>' +
+      '<h6 class="element-settings-headline">Text Controls</h6>' +
+      '<hr class="element-settings-divider">' + 
+    '</div>' +
+  '</div>');
   return element;
 }
 
