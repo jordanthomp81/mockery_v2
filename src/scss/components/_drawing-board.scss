@@ -93,8 +93,8 @@ body{
     position: absolute;
     top: -15px;
     left: calc(100% + 40px);
-    height: rem(215px);
-    width: rem(215px);
+    height: auto;
+    width: auto;
     border: rem(1px) solid #e3e5e7;
     background-color: white;
     box-shadow: rem(1px) rem(1px) rem(2px) rgba(#AAABAB, 50%);
@@ -140,11 +140,55 @@ body{
   }
 
   .element-settings-divider {
-    width: 100%;
+    width: 180px;
     height: 1px;
     background-color: #F7F8F9;
     clear: both;
     margin-top: 10px;
+    margin-bottom: 0;
+    float: left;
+  }
+
+  .element-settings-bold {
+    clear: both;
+    float: left;
+    margin-top: 12px;
+  }
+
+  .element-settings-underline {
+    margin-top: 12px;
+    margin-left: 12px;
+    float: left;
+  }
+
+  .element-settings-left-align {
+    margin-top: 12px;
+    margin-left: 12px;
+    float: left;
+  }
+
+  .element-settings-center-align {
+    margin-top: 12px;
+    margin-left: 12px;
+    float: left;
+  }
+
+  .element-settings-right-align {
+    margin-top: 12px;
+    margin-left: 12px;
+    float: left;
+  }
+
+  .element-settings-superscript {
+    margin-top: 8px;
+    margin-left: 12px;
+    float: left;
+  }
+
+  .element-settings-subscript {
+    margin-top: 14px;
+    margin-left: 12px;
+    float: left;
   }
 }
 
