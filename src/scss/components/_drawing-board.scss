@@ -79,19 +79,20 @@ body{
       border: 2px solid #47A1DC;
     }
 
-    &:hover {
+    // &:hover {
       .sub-menu {
         transition: all .2s ease;
         display: block;
       }
-    }
+    // }
   }
 
   .sub-menu {
+    cursor: default !important;
     display: none;
     position: absolute;
     top: -15px;
-    left: 160%;
+    left: calc(100% + 40px);
     height: rem(215px);
     width: rem(215px);
     border: rem(1px) solid #e3e5e7;

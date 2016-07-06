@@ -564,9 +564,11 @@ $(document).ready(function ($) {
         }
       }
     }
-    
+
     targetClasses = target.attr('class').split(' ');
-    if (targetClasses[0] == 'element-container' && !target.hasClass('active')) {
+    if($(e.target).hasClass('sub-menu')) {
+      // Do Nothing
+    }else if(targetClasses[0] == 'element-container' & !target.hasClass('active')) {
       $('.element-container').removeClass('active');
       target.toggleClass('active');
       isItemSelected = true;
