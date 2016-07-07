@@ -3,6 +3,14 @@ body{
   display: table;
 }
 
+.effect-bold {
+  font-weight: bold;
+}
+
+.effect-underline {
+  text-decoration: underline;
+}
+
 .element-container {
   display: inline-block;
   position: absolute !important;
@@ -91,8 +99,8 @@ body{
     cursor: default !important;
     display: none;
     position: absolute;
-    top: -15px;
-    left: calc(100% + 40px);
+    top: -25px;
+    right: calc(100% + 40px);
     height: auto;
     width: auto;
     border: rem(1px) solid #e3e5e7;
@@ -103,26 +111,26 @@ body{
     &::before {
       content: '';
       position: absolute;
-      left: rem(-18px);
+      right: rem(-18px);
       top: rem(31px);
       width: 0;
       height: 0;
       border-style: solid;
       border-width: 0 rem(12px) rem(12px) rem(12px);
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
       border-color: transparent transparent #e3e5e7 transparent;
     }
 
     &::after {
       content: '';
       position: absolute;
-      left: rem(-15px);
+      right: rem(-15px);
       top: rem(32px);
       width: 0;
       height: 0;
       border-style: solid;
       border-width: 0 rem(10px) rem(10px) rem(10px);
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
       border-color: transparent transparent #fff transparent;
     }
   }
@@ -153,42 +161,99 @@ body{
     clear: both;
     float: left;
     margin-top: 12px;
+
+    &:hover {
+      cursor: pointer;
+
+      path {
+        fill: #64bd60;
+      }
+    }
   }
 
   .element-settings-underline {
     margin-top: 12px;
     margin-left: 12px;
     float: left;
+
+    &:hover {
+      cursor: pointer;
+
+      path {
+        fill: #64bd60;
+      }
+    }
   }
 
   .element-settings-left-align {
     margin-top: 12px;
     margin-left: 12px;
     float: left;
+
+    &:hover {
+      cursor: pointer;
+
+      path {
+        fill: #64bd60;
+      }
+    }
   }
 
   .element-settings-center-align {
     margin-top: 12px;
     margin-left: 12px;
     float: left;
+
+    &:hover {
+      cursor: pointer;
+
+      path {
+        fill: #64bd60;
+      }
+    }
   }
 
   .element-settings-right-align {
     margin-top: 12px;
     margin-left: 12px;
     float: left;
+
+    &:hover {
+      cursor: pointer;
+
+      path {
+        fill: #64bd60;
+      }
+    }
   }
 
   .element-settings-superscript {
     margin-top: 8px;
     margin-left: 12px;
     float: left;
+    transition: all .2s ease;
+
+    &:hover {
+      cursor: pointer;
+
+      path {
+        fill: #64bd60;
+      }
+    }
   }
 
   .element-settings-subscript {
     margin-top: 14px;
     margin-left: 10px;
     float: left;
+
+    &:hover {
+      cursor: pointer;
+
+      path {
+        fill: #64bd60;
+      }
+    }
   }
 }
 
@@ -233,7 +298,6 @@ body{
   color: lighten(black, 10%);
   font-family: 'Source Sans Pro', sans-serif;
   font-size: rem(18px);
-  font-weight: normal;
   margin: 0;
   padding: 2px;
 }

@@ -47,6 +47,7 @@ $(document).ready(function ($) {
   var currId = $(".drawing_board").find("div").length + 1;
   var currDraggedElement;
   var isItemSelected = false;
+  var currSelectedItem = '';
 
   // Panels
 
@@ -569,6 +570,7 @@ $(document).ready(function ($) {
     if(targetClasses[0] == 'element-container' && !target.hasClass('active')) {
       $('.element-container').removeClass('active');
       target.toggleClass('active');
+      currSelectedItem = target;
       isItemSelected = true;
     }else {
       if($(e.target).parents('.sub-menu').length == 1 || $(e.target).hasClass('sub-menu')) {
@@ -578,6 +580,29 @@ $(document).ready(function ($) {
         isItemSelected = false;
       }
     }
+  });
+
+  function setEffect(effectName, e) {
+    e.stopPropagation();
+    e.preventDefault();
+    var curr = currSelectedItem.children()[0];
+    effectName = 'effect-' + effectName;
+    // console.log($(curr).hasClass(effectName))
+    if($(curr).hasClass(effectName)) {
+      console.log('removed ' + effectName)
+      $(curr).removeClass(effectName);
+    }else {
+      console.log('added' + effectName)
+      $(curr).addClass(effectName);
+    }
+  }
+
+  $(document).on('click','.element-settings-bold *', function(e) {
+    setEffect('bold', e);
+  });
+
+  $(document).on('click','.element-settings-underline *', function(e) {
+    setEffect('underline', e);
   });
 
   // $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});
