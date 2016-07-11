@@ -587,22 +587,43 @@ $(document).ready(function ($) {
     e.preventDefault();
     var curr = currSelectedItem.children()[0];
     effectName = 'effect-' + effectName;
-    // console.log($(curr).hasClass(effectName))
     if($(curr).hasClass(effectName)) {
-      console.log('removed ' + effectName)
       $(curr).removeClass(effectName);
     }else {
-      console.log('added' + effectName)
       $(curr).addClass(effectName);
     }
   }
 
-  $(document).on('click','.element-settings-bold *', function(e) {
-    setEffect('bold', e);
-  });
+  function clearAllJustify() {
+    var curr = currSelectedItem.children()[0];
+    $(curr).removeClass('effect-justify-left');
+    $(curr).removeClass('effect-justify-center');
+    $(curr).removeClass('effect-justify-right');
+  }
 
-  $(document).on('click','.element-settings-underline *', function(e) {
-    setEffect('underline', e);
+  $(document).on('click','.element-settings-container', function(e) {
+    switch($(this).attr('class').split(' ')[1]) {
+      case 'util-bold':
+        setEffect('bold', e);
+        break;
+      case 'util-underline':
+        setEffect('underline', e);
+        break;
+      case 'util-left-align':
+        clearAllJustify();
+        setEffect('justify-left', e);
+        break;
+      case 'util-center-align':
+        clearAllJustify();
+        setEffect('justify-center', e);
+        break;
+      case 'util-right-align':
+        clearAllJustify();
+        setEffect('justify-right', e);
+        break;
+      default:
+        console.log('no matches');
+    }
   });
 
   // $(".drawing_board").draggable({containment:  [-130, 0], snap: ".left-ruler, .top-ruler"});

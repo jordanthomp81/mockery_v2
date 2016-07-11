@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #F2F2F2;
   display: table;
 }
@@ -9,6 +9,18 @@ body{
 
 .effect-underline {
   text-decoration: underline;
+}
+
+.effect-justify-left {
+  text-align: left;
+}
+
+.effect-justify-center {
+  text-align: center;
+}
+
+.effect-justify-right {
+  text-align: right;
 }
 
 .element-container {
@@ -157,10 +169,22 @@ body{
     float: left;
   }
 
-  .element-settings-bold {
-    clear: both;
+  .element-settings-container {
     float: left;
     margin-top: 12px;
+    // background-color: red;
+    width: 11.56px;
+    height: 13.7px;
+
+    &:not(:first-of-type) {
+      margin-left: 12px;
+    }
+  }
+
+  .element-settings-bold {
+    clear: both;
+    // float: left;
+    // margin-top: 12px;
 
     &:hover {
       cursor: pointer;
@@ -172,9 +196,9 @@ body{
   }
 
   .element-settings-underline {
-    margin-top: 12px;
-    margin-left: 12px;
-    float: left;
+    // margin-top: 12px;
+    // margin-left: 12px;
+    // float: left;
 
     &:hover {
       cursor: pointer;
@@ -186,9 +210,9 @@ body{
   }
 
   .element-settings-left-align {
-    margin-top: 12px;
-    margin-left: 12px;
-    float: left;
+    // margin-top: 12px;
+    // margin-left: 12px;
+    // float: left;
 
     &:hover {
       cursor: pointer;
@@ -200,9 +224,9 @@ body{
   }
 
   .element-settings-center-align {
-    margin-top: 12px;
-    margin-left: 12px;
-    float: left;
+    // margin-top: 12px;
+    // margin-left: 12px;
+    // float: left;
 
     &:hover {
       cursor: pointer;
@@ -214,9 +238,9 @@ body{
   }
 
   .element-settings-right-align {
-    margin-top: 12px;
-    margin-left: 12px;
-    float: left;
+    // margin-top: 12px;
+    // margin-left: 12px;
+    // float: left;
 
     &:hover {
       cursor: pointer;
@@ -228,9 +252,10 @@ body{
   }
 
   .element-settings-superscript {
-    margin-top: 8px;
-    margin-left: 12px;
-    float: left;
+    // margin-top: 8px;
+    // margin-left: 12px;
+    // float: left;
+    margin-top: -3px;
     transition: all .2s ease;
 
     &:hover {
@@ -243,9 +268,9 @@ body{
   }
 
   .element-settings-subscript {
-    margin-top: 14px;
-    margin-left: 10px;
-    float: left;
+    margin-top: 2px;
+    // margin-left: 10px;
+    // float: left;
 
     &:hover {
       cursor: pointer;
