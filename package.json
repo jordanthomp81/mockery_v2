@@ -31,6 +31,7 @@
     "node-reset-scss": "^1.0.1"
   },
   "dependencies": {
-    "hapi": "^13.5.0"
+    "hapi": "^13.5.0",
+    "inert": "^4.0.1"
   }
 }
