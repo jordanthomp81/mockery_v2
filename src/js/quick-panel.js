@@ -114,11 +114,9 @@ $(document).ready(function ($) {
 
     if(el.hasClass('resizable')) {
       if(resizeOptions) {
-        // $(el.children()[0])
         $(el.children()[0]).resizable(resizeOptions);
       }else {
         $(el.children()[0]).resizable();
-        // el = el.resizable();
       }
     }
 
@@ -148,8 +146,10 @@ $(document).ready(function ($) {
       // console.log('not dragged')
     }else {
       var currElement = currDraggedElement.attr('data-element');
+      var elementInitFunction = currElement + 'Init';
       currElement = currElement + "Template";
       createElement(window[currElement](), dragPos, true);
+      window[elementInitFunction]();
     }
   });
 
@@ -438,6 +438,15 @@ $(document).ready(function ($) {
       }
   });
 
+  $.widget("ui.heightSpinner", $.ui.spinner, {
+      _format: function (value) {
+          return value + 'px';
+      },
+      _parse: function (value) {
+          return parseInt(value);
+      }
+  });
+
   $.widget("ui.actionSpinnerPercent", $.ui.spinner, {
       _format: function (value) {
           return value + '%';
@@ -448,10 +457,16 @@ $(document).ready(function ($) {
   });
 
   var xInput = $('.action-input').actionSpinner();
-  // debugger
-  var percentInput = $('.action-input-percent').actionSpinnerPercent();
-  // percentInput.actionSpinnerPercent("disable");
+  var heightInput = $('.element-settings-line-height-input').heightSpinner();
 
+  // $(document).ready(function() {
+  //   $('.element-settings-line-height-icon').click(function() {
+  //     console.log('clicked')
+  //     var heightInput = $('.element-settings-line-height-input').heightSpinner();
+  //   });
+  // });
+
+  var percentInput = $('.action-input-percent').actionSpinnerPercent();
 
   // Quick Panel
 
@@ -545,7 +560,6 @@ $(document).ready(function ($) {
   $('#pan').click(function() {
     checkPan();
   });
-
 
   // Drawing Board
 
