@@ -29,7 +29,7 @@ body {
   cursor: move;
   // line-height:0;
 
-  span:nth-of-type(1) {
+  span.border-ball-one {
     border-radius: 10px;
     display: none;
     position: absolute;
@@ -42,7 +42,7 @@ body {
     left: -15px;
   }
 
-  span:nth-of-type(2) {
+  span.border-ball-two {
     border-radius: 10px;
     display: none;
     position: absolute;
@@ -55,7 +55,7 @@ body {
     right: -15px;
   }
   //
-  span:nth-of-type(3) {
+  span.border-ball-three {
     border-radius: 10px;
     display: none;
     position: absolute;
@@ -68,7 +68,7 @@ body {
     left: -15px;
   }
   //
-  span:nth-of-type(4) {
+  span.border-ball-four {
     border-radius: 10px;
     display: none;
     position: absolute;
@@ -147,6 +147,79 @@ body {
     }
   }
 
+  .element-settings-character-heading {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: rem(13px);
+    font-weight: normal;
+    clear: both;
+    float: left;
+    margin-top: 35px;
+    margin-right: 15px;
+  }
+
+  .element-settings-character-dropdown {
+    width: calc(94% - 58.6px);
+    margin-top: 32px;
+    background-color: white;
+    padding: 3px 0 3px 0;
+    font-size: 10px;
+    // // padding-left: 3px;
+    border: 1px solid #d1d1d1;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .element-settings-line-height-icon {
+    clear: both;
+    float: left;
+    margin-top: 5px;
+    margin-right: 15px;
+  }
+
+  .ui-spinner {
+    width: 55px;
+    float: left;
+    padding: 0;
+    margin: 0;
+    height: 27px;
+    margin-top: 3px;
+    font-size: 12px;
+    color: #828282;
+    border-color: #d1d1d1;
+    border-radius: 0;
+
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+      background-color: white;
+    }
+
+    span.ui-button-text {
+      background-color: white;
+    }
+
+    span.ui-icon.ui-icon-triangle-1-n {
+      background-color: white;
+    }
+
+    span.ui-icon.ui-icon-triangle-1-s {
+      background-color: white;
+    }
+  }
+
+  .element-settings-line-height-input {
+    width: 55px;
+    padding: 0;
+    margin: 0;
+    padding-top: 6px;
+    padding-left: 5px;
+    padding-right: 25px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   .element-settings-text-icon {
     float: left;
   }
@@ -177,7 +250,7 @@ body {
     height: 13.7px;
 
     &:not(:first-of-type) {
-      margin-left: 12px;
+      margin-left: 15px;
     }
   }
 

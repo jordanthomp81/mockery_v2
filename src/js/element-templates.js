@@ -19,7 +19,7 @@ function textTemplate() {
   var element = $(
   '<div class="element-container draggable">' +
     '<p class="text element">Double Click to edi t text</p>' +
-    '<span></span><span></span><span></span><span></span>' +
+    '<span class="border-ball-one"></span><span class="border-ball-two"></span><span class="border-ball-three"></span><span class="border-ball-four"></span>' +
     '<div class="animated fadeInUp sub-menu">' +
       '<svg class="element-settings-text-icon" xmlns="http://www.w3.org/2000/svg" width="20.12" height="17.19" viewBox="0 0 15.12 12.19"><g fill="#65BD61"><path d="M7.145 2.031h2.08v1.912h2.357V-.001H0v3.944h2.357V2.031h2.08v8.127H3.331v2.033h4.992v-2.033H7.145V2.031zm0 0"/><path d="M8.184 4.959V7.47H9.85V6.395h.9v4.361h-.693v1.436h3.191v-1.436h-.625V6.395h.832V7.47h1.664V4.959H8.184zm0 0"/></g></svg>' +
       '<h6 class="element-settings-headline">Text Controls</h6>' +
@@ -45,9 +45,22 @@ function textTemplate() {
       '<div class="element-settings-container util-subscript">' +
         '<svg class="element-settings-subscript" xmlns="http://www.w3.org/2000/svg" width="16.77" height="16.4" viewBox="0 0 15.77 15.4"><g fill="#9B9A9A"><path d="M6.296 1.788h1.832v1.687h2.079V-.001H.001v3.476h2.075V1.788h1.836V8.95h-.979v1.791h4.401V8.95H6.296V1.788zm0 0"/><text transform="translate(11.04 12.27)" font-family="SourceSansPro-Bold" font-size="8.18">2</text></g></svg>' +
       '</div>' +
+      '<h6 class="element-settings-character-heading">Character</h6>' +
+      '<select class="element-settings-character-dropdown">' +
+        '<option value="volvo">Source Sans Pro</option>' +
+        '<option value="saab">Helvetica</option>' +
+        '<option value="mercedes">Arial</option>' +
+        '<option value="audi">Times New Roman</option>' +
+      '</select>' +
+      '<svg class="element-settings-line-height-icon" xmlns="http://www.w3.org/2000/svg" width="13.48" height="20.4" viewBox="0 0 13.48 20.4"><g fill="#9B9A9A"><path d="M10.922 2.54h1.201v1.102h1.357V1.37H6.807v2.271h1.357V2.54h1.199v4.682h-.64v1.174h2.879V7.222h-.68V2.54zm0 0M10.922 13.175h1.201v1.104h1.357v-2.271H6.807v2.271h1.357v-1.104h1.199v4.683h-.64v1.174h2.879v-1.174h-.68v-4.683zm0 0"/><g><path d="M1.836 20.401L.918 19.23 0 18.06h3.672l-.918 1.17z"/><path d="M1.293 2.34h1.086v15.72H1.293zM1.838-.001l.916 1.17.918 1.171H0l.918-1.171z"/></g></g></svg>' +
+      '<input class="element-settings-line-height-input" min="0" max="100">' +
     '</div>' +
   '</div>');
   return element;
+}
+
+function textInit() {
+  var heightInput = $('.element-settings-line-height-input').heightSpinner();
 }
 
 function imageTemplate() {
