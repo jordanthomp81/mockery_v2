@@ -29,5 +29,9 @@
     "include-media": "^1.4.2",
     "knapsack": "^0.2.5",
     "node-reset-scss": "^1.0.1"
+  },
+  "dependencies": {
+    "hapi": "^13.5.0",
+    "inert": "^4.0.1"
   }
 }
