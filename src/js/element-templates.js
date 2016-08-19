@@ -39,28 +39,38 @@ function textTemplate() {
       '<div class="element-settings-container util-right-align">' +
         '<svg class="element-settings-right-align" xmlns="http://www.w3.org/2000/svg" width="16.02" height="12.63" viewBox="0 0 16.02 12.63"><g fill="#9B9A9A"><path d="M8.572 10.83h7.446v1.802H8.572zM3.611 7.215h12.407v1.808H3.611zM.001 3.606h16.018v1.807H.001zM4.964-.002h11.055v1.807H4.964z"/></g></svg>' +
       '</div>' +
-      '<div class="element-settings-container util-superscript">' +
-        '<svg class="element-settings-superscript" xmlns="http://www.w3.org/2000/svg" width="17.93" height="16.7" viewBox="0 0 16.93 15.7"><g fill="#9B9A9A"><path d="M6.295 6.747h1.834v1.687h2.076V4.958H0v3.476h2.077V6.747H3.91v7.164h-.978v1.791h4.402V13.91H6.295V6.747zm0 0"/><text transform="translate(12.201 6.79)" font-family="SourceSansPro-Bold" font-size="8.18">1</text></g></svg>' +
-      '</div>' +
-      '<div class="element-settings-container util-subscript">' +
-        '<svg class="element-settings-subscript" xmlns="http://www.w3.org/2000/svg" width="16.77" height="16.4" viewBox="0 0 15.77 15.4"><g fill="#9B9A9A"><path d="M6.296 1.788h1.832v1.687h2.079V-.001H.001v3.476h2.075V1.788h1.836V8.95h-.979v1.791h4.401V8.95H6.296V1.788zm0 0"/><text transform="translate(11.04 12.27)" font-family="SourceSansPro-Bold" font-size="8.18">2</text></g></svg>' +
-      '</div>' +
       '<h6 class="element-settings-character-heading">Character</h6>' +
       '<select class="element-settings-character-dropdown">' +
-        '<option value="volvo">Source Sans Pro</option>' +
-        '<option value="saab">Helvetica</option>' +
-        '<option value="mercedes">Arial</option>' +
-        '<option value="audi">Times New Roman</option>' +
+        '<option value="beji">Source Sans Pro</option>' +
+        '<option value="volvo">Pridi</option>' +
+        '<option value="saab">Archivo Black</option>' +
+        '<option value="mercedes">Bungee Shade</option>' +
+        '<option value="audi">Chewy</option>' +
+        '<option value="mercedes">Lobster Two</option>' +
+        '<option value="mercedes">Comfortaa</option>' +
+        '<option value="mercedes">Yellowtail</option>' +
+        '<option value="mercedes">Dancing Script</option>' +
+        '<option value="mercedes">Quicksand</option>' +
+        '<option value="mercedes">Pacifico</option>' +
+        '<option value="mercedes">Bree Serif</option>' +
+        '<option value="mercedes">Noto Serif</option>' +
+        '<option value="mercedes">PT Serif</option>' +
+        '<option value="mercedes">Baloo Da</option>' +
+        '<option value="mercedes">Lora</option>' +
+        '<option value="mercedes">Oswald</option>' +
+        '<option value="mercedes">Denk One</option>' +
+        '<option value="mercedes">Open Sans</option>' +
+        '<option value="mercedes">Roboto</option>' +
       '</select>' +
       '<svg class="element-settings-line-height-icon" xmlns="http://www.w3.org/2000/svg" width="13.48" height="20.4" viewBox="0 0 13.48 20.4"><g fill="#9B9A9A"><path d="M10.922 2.54h1.201v1.102h1.357V1.37H6.807v2.271h1.357V2.54h1.199v4.682h-.64v1.174h2.879V7.222h-.68V2.54zm0 0M10.922 13.175h1.201v1.104h1.357v-2.271H6.807v2.271h1.357v-1.104h1.199v4.683h-.64v1.174h2.879v-1.174h-.68v-4.683zm0 0"/><g><path d="M1.836 20.401L.918 19.23 0 18.06h3.672l-.918 1.17z"/><path d="M1.293 2.34h1.086v15.72H1.293zM1.838-.001l.916 1.17.918 1.171H0l.918-1.171z"/></g></g></svg>' +
-      '<input class="element-settings-line-height-input" min="0" max="100">' +
+      '<input class="element-settings-line-height-input" value="27" min="0" max="100">' +
     '</div>' +
   '</div>');
   return element;
 }
 
 function textInit() {
-  var heightInput = $('.element-settings-line-height-input').heightSpinner();
+  var heightInput = $('.element-settings-line-height-input').lineheightspinner();
 }
 
 function imageTemplate() {

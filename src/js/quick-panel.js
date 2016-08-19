@@ -457,7 +457,7 @@ $(document).ready(function ($) {
   });
 
   var xInput = $('.action-input').actionSpinner();
-  var heightInput = $('.element-settings-line-height-input').heightSpinner();
+  // var heightInput = $('.element-settings-line-height-input').heightSpinner();
 
   // $(document).ready(function() {
   //   $('.element-settings-line-height-icon').click(function() {
@@ -467,6 +467,78 @@ $(document).ready(function ($) {
   // });
 
   var percentInput = $('.action-input-percent').actionSpinnerPercent();
+
+
+  var currVal = 0;
+  //
+  function setLineHeight(el, lineHeight) {
+    el.css('line-height', lineHeight);
+  }
+
+  function setLetterSpacing(el, letterSpacing) {
+    el.css('letter-spacing', letterSpacing);
+  }
+
+  function setFontSize(el, fontSize) {
+    el.css('font-size', fontSize);
+  }
+
+  // $("#spinner").keydown(function(e) {
+  //   if(e.keyCode === 13) {
+  //     setLineHeight($('.box'), $(this).val());
+  //   }
+  // });
+  //
+  // $("#spinner2").keydown(function(e) {
+  //   if(e.keyCode === 13) {
+  //     setLetterSpacing($('.box'), $(this).val());
+  //   }
+  // });
+  //
+  // $("#spinner3").keydown(function(e) {
+  //   if(e.keyCode === 13) {
+  //     setFontSize($('.box'), $(this).val());
+  //   }
+  // });
+
+  $.widget("ui.lineheightspinner", $.ui.spinner, {
+      _format: function (value) {
+        setLineHeight($($(currSelectedItem).children()[0]), value + 'px');
+        // console.log()
+        return value + 'px';
+      },
+      _parse: function (value) {
+        return parseInt(value);
+      }
+  });
+  //
+  // $.widget("ui.letterspacingspinner", $.ui.spinner, {
+  //     _format: function (value) {
+  //       setLetterSpacing($('.box'), value + 'px');
+  //       return value + 'px';
+  //     },
+  //     _parse: function (value) {
+  //       return parseInt(value);
+  //     }
+  // });
+  //
+  // $.widget("ui.fontsizespinner", $.ui.spinner, {
+  //     _format: function (value) {
+  //       setFontSize($('.box'), value + 'px');
+  //       return value + 'px';
+  //     },
+  //     _parse: function (value) {
+  //       return parseInt(value);
+  //     }
+  // });
+
+  // $("#spinner").lineheightspinner();
+  // $("#spinner2").letterspacingspinner();
+  // $("#spinner3").fontsizespinner();
+
+  $(document).on('change','.element-settings-character-dropdown', function(e) {
+    $(currSelectedItem[0].firstChild).css('font-family', $(".element-settings-character-dropdown option:selected").text())
+  });
 
   // Quick Panel
 
