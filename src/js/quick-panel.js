@@ -537,7 +537,7 @@ $(document).ready(function ($) {
   // $("#spinner3").fontsizespinner();
 
   $(document).on('change','.element-settings-character-dropdown', function(e) {
-    $(currSelectedItem[0].firstChild).css('font-family', $(".element-settings-character-dropdown option:selected").text())
+    $(currSelectedItem[0].firstChild).css('font-family', $($(currSelectedItem).children()[5]).find('.element-settings-character-dropdown option:selected').html())
   });
 
   // Quick Panel
