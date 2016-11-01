@@ -503,6 +503,7 @@ $(document).ready(function ($) {
 
   $.widget("ui.lineheightspinner", $.ui.spinner, {
       _format: function (value) {
+        // console.log($($(currSelectedItem).children()[0]))
         setLineHeight($($(currSelectedItem).children()[0]), value + 'px');
         // console.log()
         return value + 'px';
@@ -512,25 +513,25 @@ $(document).ready(function ($) {
       }
   });
   //
-  // $.widget("ui.letterspacingspinner", $.ui.spinner, {
-  //     _format: function (value) {
-  //       setLetterSpacing($('.box'), value + 'px');
-  //       return value + 'px';
-  //     },
-  //     _parse: function (value) {
-  //       return parseInt(value);
-  //     }
-  // });
+  $.widget("ui.letterspacingspinner", $.ui.spinner, {
+      _format: function (value) {
+        setLetterSpacing($($(currSelectedItem).children()[0]), value + 'px');
+        return value + 'px';
+      },
+      _parse: function (value) {
+        return parseInt(value);
+      }
+  });
   //
-  // $.widget("ui.fontsizespinner", $.ui.spinner, {
-  //     _format: function (value) {
-  //       setFontSize($('.box'), value + 'px');
-  //       return value + 'px';
-  //     },
-  //     _parse: function (value) {
-  //       return parseInt(value);
-  //     }
-  // });
+  $.widget("ui.fontsizespinner", $.ui.spinner, {
+      _format: function (value) {
+        setFontSize($($(currSelectedItem).children()[0]), value + 'px');
+        return value + 'px';
+      },
+      _parse: function (value) {
+        return parseInt(value);
+      }
+  });
 
   // $("#spinner").lineheightspinner();
   // $("#spinner2").letterspacingspinner();
