@@ -1,0 +1,59 @@
+@import 'https://fonts.googleapis.com/css?family=Archivo+Black|Baloo+Da|Bree+Serif|Bungee+Shade|Chewy|Comfortaa|Dancing+Script|Denk+One|Lobster+Two|Lora|Noto+Serif|Open+Sans|Oswald|PT+Serif|Pacifico|Pridi|Quicksand|Roboto|Source+Sans+Pro|Yellowtail';
+$base-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+.default-type {
+  font-family: $base-font;
+  color: $coal;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, p, a, h1, h2, h3, h4, h5, h6,
+small, em, strong, input, button {
+  @extend .default-type;
+}
+
+// Headers
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  margin: 1rem 0;
+  font-weight: normal;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  a { color: inherit;  }
+}
+
+// Global responsive typography - edit per project
+// Type will be fluid between min and max sizes
+// See mixin fluid-type() in Knapsack
+
+h1 { @include fluid-type(36px, 56px, 420px, 1024px); }
+h2 { @include fluid-type(36px, 48px, 420px, 1024px); }
+h3 { @include fluid-type(30px, 36px, 420px, 1024px); }
+h4 { @include fluid-type(24px, 30px, 420px, 1024px); }
+h5 { @include fluid-type(20px, 24px, 420px, 1024px); }
+h6 { @include fluid-type(18px, 20px, 420px, 1024px); }
+p, ul, li, ol { @include fluid-type(15px, 18px);}
+
+// Letterspacing
+$tight-spacing: -.045em;
+$snug-spacing:  -.02em;
+$more-spacing:  .1em;
+
+// Webkit antialiasing
+@mixin heavy-antialias() {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+// Generic Styles
+p {
+  line-height: 1.5em;
+  margin: 1em 0;
+}
+
+a {
+  text-decoration: none;
+}

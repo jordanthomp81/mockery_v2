@@ -1,0 +1,62 @@
+// Create a basic animation triggered by waypoints
+// Defaults to fade-in-up type animation, but useful for simple fades or slides.
+@mixin waypoint-basic( $y-start: 30px, $opacity-start: 0, $x-start: 0, $y-end: 0, $opacity-end: 1, $x-end: 0, $duration: .2s, $class-to-toggle: ('.resolved'), $easing: $ease-out-quad) {
+  transform: translateY($y-start) translateX($x-start);
+  transition: all $duration $easing;
+  opacity: $opacity-start;
+
+  &#{$class-to-toggle} {
+    // $.resolved {
+    opacity: $opacity-end;
+    transform: translateY($y-end) translateX($x-end);
+  }
+}
+
+// center an absolutely positioned element:
+@mixin absolute-center($width: 50%) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: $width;
+}
+
+// Mixin: Underline
+// Adds an animated underline below text links
+
+@mixin underline($color: $cyan) {
+  position: relative;
+  text-decoration: none;
+  display: inline-block; // note this will make entire link wrap to new line. if turned off effect doenst work
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: rem(1px);
+    bottom: rem(3px);
+    left: 0;
+    background-color: rgba($color, 0);
+    transform: scaleX(0);
+    transition: all .3s $ease-out-quad;
+  }
+
+  &:hover {
+
+    &:after {
+      transform: scaleX(1);
+      background-color: $color;
+    }
+  }
+}
+
+@mixin no-drag() {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-drag: none;
+  user-select: none;
+}
