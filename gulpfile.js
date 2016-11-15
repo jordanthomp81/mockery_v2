@@ -6,9 +6,21 @@ var cssnano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var svgmin = require('gulp-svgmin');
+var order = require('gulp-order');
 
-gulp.task('app_scripts', function() {
-  return gulp.src(['static/app/src/js/*.js'])
+gulp.task('app_scripts_vendor', function() {
+  gulp.src(['static/app/src/js/pre-vendor/jquery-1.12.0.min.js', 'static/app/src/js/vendor/*.js'])
+    .pipe(order([
+      "/pre-vendor/jquery-1.12.0.min.js",
+      "/vendor/*.js"
+    ], { base: './' }))
+    .pipe(concat('vendor.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('static/app/dist/js'));
+});
+
+gulp.task('app_scripts_custom', function() {
+  gulp.src(['static/app/src/js/custom/*.js'])
     .pipe(concat('core.js'))
     .pipe(uglify())
     .pipe(gulp.dest('static/app/dist/js'));
@@ -86,7 +98,7 @@ gulp.task('landing_fonts', function() {
 	.pipe(gulp.dest('static/landing/dist/css/fonts'));
 });
 
-gulp.task('default', ['app_scripts', 'landing_scripts', 'app_styles', 'landing_styles', 'app_images', 'landing_images', 'app_svg', 'landing_svg', 'app_watch', 'landing_watch', 'landing_fonts']);
+gulp.task('default', ['app_scripts_vendor', 'app_scripts_custom', 'landing_scripts', 'app_styles', 'landing_styles', 'app_images', 'landing_images', 'app_svg', 'landing_svg', 'app_watch', 'landing_watch', 'landing_fonts']);
 
 gulp.on('stop', function () {
   process.nextTick(function () {

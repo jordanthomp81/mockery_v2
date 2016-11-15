@@ -145,6 +145,12 @@ function linkTemplate() {
   return element;
 }
 
+function linkInit() {
+  var heightInput = $('.element-settings-line-height-input').lineheightspinner();
+  var letterSpacingInput = $('.element-settings-letter-spacing-input').letterspacingspinner();
+  var fontSizeInput = $('.element-settings-font-size-input').fontsizespinner();
+}
+
 function checkboxTemplate() {
   var element = $('<div class="element-container draggable"><label class="checkbox element"><input class="checkbox" type="checkbox" />This is a checkbox</label><span></span><span></span><span></span><span></span><div class="animated fadeInUp sub-menu"></div></div>');
   return element;
