@@ -54,8 +54,8 @@ body {
     width: 9px;
     height: 9px;
     border: 2px solid #5FA9DD;
-    top: -15px;
-    left: -15px;
+    top: calc((-75% / 2) - 2px);
+    left: calc((-30% / 2) - 2px);
   }
 
   span.border-ball-two {
@@ -67,8 +67,8 @@ body {
     width: 9px;
     height: 9px;
     border: 2px solid #5FA9DD;
-    top: -15px;
-    right: -15px;
+    top: calc((-75% / 2) - 2px);
+    right: calc((-30% / 2) - 2px);
   }
   //
   span.border-ball-three {
@@ -80,8 +80,8 @@ body {
     width: 9px;
     height: 9px;
     border: 2px solid #5FA9DD;
-    bottom: -15px;
-    left: -15px;
+    bottom: calc((-75% / 2) - 2px);
+    left: calc((-30% / 2) - 2px);
   }
   //
   span.border-ball-four {
@@ -93,8 +93,8 @@ body {
     width: 9px;
     height: 9px;
     border: 2px solid #5FA9DD;
-    bottom: -15px;
-    right: -15px;
+    bottom: calc((-75% / 2) - 2px);
+    right: calc((-30% / 2) - 2px);
   }
 
   &.active {
@@ -110,8 +110,8 @@ body {
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
-      width: calc(100% + 25px);
-      height: calc(100% + 25px);
+      width: calc(100% + 30%);
+      height: calc(100% + 75%);
       border: 2px solid #47A1DC;
     }
 
