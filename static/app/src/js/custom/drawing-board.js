@@ -486,34 +486,33 @@ $(document).ready(function ($) {
   });
 
   $.widget("ui.actionSpinner", $.ui.spinner, {
-      _format: function (value) {
-          return value + 'px';
-      },
-      _parse: function (value) {
-          return parseInt(value);
-      }
+    _format: function (value) {
+      return value + 'px';
+    },
+    _parse: function (value) {
+      return parseInt(value);
+    }
   });
 
   $.widget("ui.heightSpinner", $.ui.spinner, {
-      _format: function (value) {
-          return value + 'px';
-      },
-      _parse: function (value) {
-          return parseInt(value);
-      }
+    _format: function (value) {
+      return value + 'px';
+    },
+    _parse: function (value) {
+      return parseInt(value);
+    }
   });
 
   $.widget("ui.actionSpinnerPercent", $.ui.spinner, {
-      _format: function (value) {
-          return value + '%';
-      },
-      _parse: function (value) {
-          return parseInt(value);
-      }
+    _format: function (value) {
+      return value + '%';
+    },
+    _parse: function (value) {
+      return parseInt(value);
+    }
   });
 
   var xInput = $('.action-input').actionSpinner();
-
   var percentInput = $('.action-input-percent').actionSpinnerPercent();
   var currVal = 0;
 
