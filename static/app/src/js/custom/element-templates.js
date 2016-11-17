@@ -74,10 +74,10 @@ function textTemplate() {
   return element;
 }
 
-function textInit() {
-  var heightInput = $('.element-settings-line-height-input').lineheightspinner();
-  var letterSpacingInput = $('.element-settings-letter-spacing-input').letterspacingspinner();
-  var fontSizeInput = $('.element-settings-font-size-input').fontsizespinner();
+function textInit(currEl) {
+  var heightInput = $(currEl).find('.element-settings-line-height-input').lineheightspinner();
+  var letterSpacingInput = $(currEl).find('.element-settings-letter-spacing-input').letterspacingspinner();
+  var fontSizeInput = $(currEl).find('.element-settings-font-size-input').fontsizespinner();
 }
 
 function imageTemplate() {

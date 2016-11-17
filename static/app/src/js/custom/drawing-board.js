@@ -1,3 +1,5 @@
+var currCreatedElement;
+var isInit = false;
 $(document).ready(function ($) {
   var currentFunctionActive = false;
   var currentColor = '';
@@ -178,8 +180,10 @@ $(document).ready(function ($) {
     }
     $(".drawing_board").append(el);
     currId++;
+    return el;
   }
 
+  // Controls drag logic to create an elemenet based on selection from the elements side panel
   var isDragging = false;
   var dragPos = { top: -1, left: -1 };
   $('.element-icon').mousedown(function() {
@@ -198,8 +202,10 @@ $(document).ready(function ($) {
       var currElement = currDraggedElement.attr('data-element');
       var elementInitFunction = currElement + 'Init';
       currElement = currElement + "Template";
-      createElement(window[currElement](), dragPos, true);
-      window[elementInitFunction]();
+      currCreatedElement = createElement(window[currElement](), dragPos, true);
+      isInit = true;
+      window[elementInitFunction](currCreatedElement);
+      isInit = false;
     }
   });
 
@@ -525,7 +531,11 @@ $(document).ready(function ($) {
 
   $.widget("ui.lineheightspinner", $.ui.spinner, {
       _format: function (value) {
-        setLineHeight($($(currSelectedItem).children()[0]), value + 'px');
+        if(isInit) {
+          setLineHeight($($(currCreatedElement).children()[0]), value + 'px');
+        }else {
+          setLineHeight($($(currSelectedItem).children()[0]), value + 'px');
+        }
         return value + 'px';
       },
       _parse: function (value) {
@@ -535,7 +545,11 @@ $(document).ready(function ($) {
 
   $.widget("ui.letterspacingspinner", $.ui.spinner, {
       _format: function (value) {
-        setLetterSpacing($($(currSelectedItem).children()[0]), value + 'px');
+        if(isInit) {
+          setLetterSpacing($($(currCreatedElement).children()[0]), value + 'px');
+        }else {
+          setLetterSpacing($($(currSelectedItem).children()[0]), value + 'px');
+        }
         return value + 'px';
       },
       _parse: function (value) {
@@ -545,8 +559,11 @@ $(document).ready(function ($) {
 
   $.widget("ui.fontsizespinner", $.ui.spinner, {
       _format: function (value) {
-        // console.log('font size: ' + currSelectedItem)
-        setFontSize($($(currSelectedItem).children()[0]), value + 'px');
+        if(isInit) {
+          setFontSize($($(currCreatedElement).children()[0]), value + 'px');
+        }else {
+          setFontSize($($(currSelectedItem).children()[0]), value + 'px');
+        }
         return value + 'px';
       },
       _parse: function (value) {
