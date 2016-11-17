@@ -43,6 +43,8 @@ body {
   display: inline-block;
   position: absolute !important;
   cursor: move;
+  height: auto !important;
+  width: auto !important;
   // line-height:0;
 
   span.border-ball-one {
@@ -126,6 +128,7 @@ body {
   .sub-menu {
     cursor: default !important;
     display: none;
+    z-index: 16;
     position: absolute;
     top: -25px;
     right: calc(100% + 40px);
