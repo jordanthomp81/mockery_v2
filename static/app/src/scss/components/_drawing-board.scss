@@ -55,6 +55,14 @@ body {
   }
 }
 
+.button-container {
+  .sub-menu {
+    .ui-spinner:nth-of-type(3) {
+      margin-top: 13px;
+    }
+  }
+}
+
 .element-container {
   display: inline-block;
   position: absolute !important;
