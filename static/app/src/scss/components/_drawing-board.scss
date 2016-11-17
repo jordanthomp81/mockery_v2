@@ -39,6 +39,14 @@ body {
   }
 }
 
+.checkbox-container {
+  .sub-menu {
+    .ui-spinner:nth-of-type(3) {
+      margin-top: 13px;
+    }
+  }
+}
+
 .element-container {
   display: inline-block;
   position: absolute !important;
@@ -180,6 +188,7 @@ body {
     width: calc(94% - 58.6px);
     margin-top: 32px;
     background-color: white;
+    float: left;
     padding: 3px 0 3px 0;
     font-size: 10px;
     // // padding-left: 3px;
