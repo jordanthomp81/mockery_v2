@@ -1,22 +1,14 @@
-// 'use strict';
-//
-// const Hapi = require('hapi');
-// const Inert = require('inert');
-//
-// const server = new Hapi.Server();
-// server.connection({ port: 80 });
-//
-// server.start((err) => {
-//   if (err) {
-//     throw err;
-//   }
-//   console.log('Server running at: ', server.info.uri);
-// });
-//
-// server.route({
-//   method: 'GET',
-//   path: '/{name}',
-//   handler: function (req, res) {
-//     reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
-//   }
-// });
+var express = require('express');
+var app = express();
+var apirouter = require('../routes/apirouter');
+var webrouter = require('../routes/webrouter.js')
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://testuser:password@ds143767.mlab.com:43767/mockery_test');
+
+app.use(express.static('./static'));
+app.use('/api', apirouter);
+app.use('/', webrouter);
+
+app.listen(3000);
+console.log("Express server listening on port 3000");
