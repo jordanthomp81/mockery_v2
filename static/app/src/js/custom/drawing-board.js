@@ -192,9 +192,9 @@ $(document).ready(function ($) {
     start: function( event, ui ) {
       currDraggedElement = $(this);
       isDragging = true;
-      // console.log(currDraggedElement);
     },
     helper: function(e) {
+      // Fix for semi transparent clone being too wide on drag
       var original = $(e.target).hasClass("ui-draggable") ? $(e.target) : $(e.target).closest(".ui-draggable");
       return original.clone().css({
         width: original.width()
@@ -204,16 +204,28 @@ $(document).ready(function ($) {
       var winWidth = $(window).width();
       var winHeight = $(window).height();
       var os = navigator.platform;
-      dragPos.left = event.pageX;
+      // console.log("panActive: " + panActive);
+
       if (os.indexOf("Linux") >= 0) {
-        dragPos.top = event.pageY + 28;
+        var boardTopOffest = $('.drawing_board').offset().top -150;
+        var boardLeftOffset = $('.drawing_board').offset().left - 20;
+
+        if(panActive) {
+          dragPos.top = (event.pageY + 29) - boardTopOffest;
+          dragPos.left = event.pageX - boardLeftOffset;
+        }else {
+          dragPos.top = (event.pageY + 29) - boardTopOffest;
+          dragPos.left = event.pageX - boardLeftOffset;
+        }
       }else {
         dragPos.top = event.pageY;
+        dragPos.left = event.pageX;
       }
+
       var wasDragging = isDragging;
       isDragging = false;
       if (!wasDragging) {
-        // console.log('not dragged')
+        // was not dragged
       }else {
         var currElement = currDraggedElement.attr('data-element');
         var elementInitFunction = currElement + 'Init';

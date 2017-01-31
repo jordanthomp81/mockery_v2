@@ -1,9 +1,9 @@
+var panActive = false;
+
 $(document).ready(function ($) {
-  var panActive = false;
   var keys = {};
 
   function checkPan() {
-    console.log('pan tool')
     if(panActive) {
       $(".drawing_board").draggable('destroy');
       $('#pan').html('Pan (Ctrl + Alt + P)')
