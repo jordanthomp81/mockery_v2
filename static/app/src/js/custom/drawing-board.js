@@ -186,26 +186,38 @@ $(document).ready(function ($) {
   // Controls drag logic to create an elemenet based on selection from the elements side panel
   var isDragging = false;
   var dragPos = { top: -1, left: -1 };
-  $('.element-icon').mousedown(function() {
-    currDraggedElement = $(this);
-    isDragging = false;
-  }).mousemove(function() {
-    isDragging = true;
-  }).on("dragend", function(event){
-    dragPos.left = event.pageX;
-    dragPos.top = event.pageY;
-    var wasDragging = isDragging;
-    isDragging = false;
-    if (!wasDragging) {
-      // console.log('not dragged')
-    }else {
-      var currElement = currDraggedElement.attr('data-element');
-      var elementInitFunction = currElement + 'Init';
-      currElement = currElement + "Template";
-      currCreatedElement = createElement(window[currElement](), dragPos, true);
-      isInit = true;
-      window[elementInitFunction](currCreatedElement);
-      isInit = false;
+
+  $('.element-icon').draggable({
+    opacity: 0.7,
+    start: function( event, ui ) {
+      currDraggedElement = $(this);
+      isDragging = true;
+      console.log(currDraggedElement);
+    },
+    helper: function(e) {
+      var original = $(e.target).hasClass("ui-draggable") ? $(e.target) : $(e.target).closest(".ui-draggable");
+      return original.clone().css({
+        width: original.width()
+      });
+    },
+    stop: function(event, ui) {
+      var winWidth = $(window).width();
+      var winHeight = $(window).height();
+      dragPos.left = event.pageX;
+      dragPos.top = event.pageY + 27;
+      var wasDragging = isDragging;
+      isDragging = false;
+      if (!wasDragging) {
+        // console.log('not dragged')
+      }else {
+        var currElement = currDraggedElement.attr('data-element');
+        var elementInitFunction = currElement + 'Init';
+        currElement = currElement + "Template";
+        currCreatedElement = createElement(window[currElement](), dragPos, true);
+        isInit = true;
+        window[elementInitFunction](currCreatedElement);
+        isInit = false;
+      }
     }
   });
 
