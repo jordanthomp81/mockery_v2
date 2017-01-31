@@ -192,7 +192,7 @@ $(document).ready(function ($) {
     start: function( event, ui ) {
       currDraggedElement = $(this);
       isDragging = true;
-      console.log(currDraggedElement);
+      // console.log(currDraggedElement);
     },
     helper: function(e) {
       var original = $(e.target).hasClass("ui-draggable") ? $(e.target) : $(e.target).closest(".ui-draggable");
@@ -203,8 +203,13 @@ $(document).ready(function ($) {
     stop: function(event, ui) {
       var winWidth = $(window).width();
       var winHeight = $(window).height();
+      var os = navigator.platform;
       dragPos.left = event.pageX;
-      dragPos.top = event.pageY + 27;
+      if (os.indexOf("Linux") >= 0) {
+        dragPos.top = event.pageY + 28;
+      }else {
+        dragPos.top = event.pageY;
+      }
       var wasDragging = isDragging;
       isDragging = false;
       if (!wasDragging) {
