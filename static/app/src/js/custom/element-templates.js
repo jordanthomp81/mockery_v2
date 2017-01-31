@@ -78,6 +78,7 @@ function textInit(currEl) {
   var heightInput = $(currEl).find('.element-settings-line-height-input').lineheightspinner();
   var letterSpacingInput = $(currEl).find('.element-settings-letter-spacing-input').letterspacingspinner();
   var fontSizeInput = $(currEl).find('.element-settings-font-size-input').fontsizespinner();
+  console.log('text element created');
 }
 
 function imageTemplate() {
