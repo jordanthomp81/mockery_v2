@@ -201,31 +201,16 @@ $(document).ready(function ($) {
       });
     },
     stop: function(event, ui) {
-      var winWidth = $(window).width();
-      var winHeight = $(window).height();
-      var os = navigator.platform;
-      // console.log("panActive: " + panActive);
-
-      if (os.indexOf("Linux") >= 0) {
-        var boardTopOffest = $('.drawing_board').offset().top -150;
-        var boardLeftOffset = $('.drawing_board').offset().left - 20;
-
-        if(panActive) {
-          dragPos.top = (event.pageY + 29) - boardTopOffest;
-          dragPos.left = event.pageX - boardLeftOffset;
-        }else {
-          dragPos.top = (event.pageY + 29) - boardTopOffest;
-          dragPos.left = event.pageX - boardLeftOffset;
-        }
-      }else {
-        dragPos.top = event.pageY;
-        dragPos.left = event.pageX;
-      }
+      var boardTopOffest = $('.drawing_board').offset().top - 150;
+      var boardLeftOffset = $('.drawing_board').offset().left - 20;
+      dragPos.top = (event.pageY + 29) - boardTopOffest;
+      dragPos.left = event.pageX - boardLeftOffset;
 
       var wasDragging = isDragging;
       isDragging = false;
       if (!wasDragging) {
         // was not dragged
+        console.log('was not dragged');
       }else {
         var currElement = currDraggedElement.attr('data-element');
         var elementInitFunction = currElement + 'Init';
