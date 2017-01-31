@@ -204,7 +204,7 @@ $(document).ready(function ($) {
       var winWidth = $(window).width();
       var winHeight = $(window).height();
       dragPos.left = event.pageX;
-      dragPos.top = event.pageY;
+      dragPos.top = event.pageY + 27;
       var wasDragging = isDragging;
       isDragging = false;
       if (!wasDragging) {
