@@ -69,7 +69,51 @@ body {
   cursor: move;
   height: auto !important;
   width: auto !important;
-  // line-height:0;
+
+  &.shape {
+
+    span.border-ball-one {
+      top: -25px;
+      left: -25px;
+    }
+
+    span.border-ball-two {
+      top: -25px;
+      right: -25px;
+    }
+
+    span.border-ball-three {
+      bottom: -25px;
+      left: -25px;
+    }
+
+    span.border-ball-four {
+      bottom: -25px;
+      right: -25px;
+    }
+  }
+
+  &.content {
+    span.border-ball-one {
+      top: -27px;
+      left: -27px;
+    }
+
+    span.border-ball-two {
+      top: -27px;
+      right: -27px;
+    }
+
+    span.border-ball-three {
+      bottom: -27px;
+      left: -27px;
+    }
+
+    span.border-ball-four {
+      bottom: -27px;
+      right: -27px;
+    }
+  }
 
   span.border-ball-one {
     border-radius: 10px;
@@ -80,8 +124,8 @@ body {
     width: 9px;
     height: 9px;
     border: 2px solid #5FA9DD;
-    top: calc((-75% / 2) - 2px);
-    left: calc((-30% / 2) - 2px);
+    // top: calc((-75% / 2) - 2px);
+    // left: calc((-30% / 2) - 2px);
   }
 
   span.border-ball-two {
@@ -93,8 +137,8 @@ body {
     width: 9px;
     height: 9px;
     border: 2px solid #5FA9DD;
-    top: calc((-75% / 2) - 2px);
-    right: calc((-30% / 2) - 2px);
+    // top: calc((-75% / 2) - 2px);
+    // right: calc((-30% / 2) - 2px);
   }
   //
   span.border-ball-three {
@@ -106,8 +150,8 @@ body {
     width: 9px;
     height: 9px;
     border: 2px solid #5FA9DD;
-    bottom: calc((-75% / 2) - 2px);
-    left: calc((-30% / 2) - 2px);
+    // bottom: calc((-75% / 2) - 2px);
+    // left: calc((-30% / 2) - 2px);
   }
   //
   span.border-ball-four {
@@ -119,14 +163,28 @@ body {
     width: 9px;
     height: 9px;
     border: 2px solid #5FA9DD;
-    bottom: calc((-75% / 2) - 2px);
-    right: calc((-30% / 2) - 2px);
+    // bottom: calc((-75% / 2) - 2px);
+    // right: calc((-30% / 2) - 2px);
   }
 
   &.active {
 
     span {
       display: block;
+    }
+
+    &.shape {
+      &::after {
+        width: calc(100% + 45px);
+        height: calc(100% + 45px);
+      }
+    }
+
+    &.content {
+      &::after {
+        width: calc(100% + 50px);
+        height: calc(100% + 50px);
+      }
     }
 
     &::after {
@@ -136,8 +194,6 @@ body {
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
-      width: calc(100% + 30%);
-      height: calc(100% + 75%);
       border: 2px solid #47A1DC;
     }
 
