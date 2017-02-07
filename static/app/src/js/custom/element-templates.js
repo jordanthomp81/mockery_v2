@@ -94,7 +94,6 @@ function textInit(currEl) {
   var heightInput = $(currEl).find('.element-settings-line-height-input').lineheightspinner();
   var letterSpacingInput = $(currEl).find('.element-settings-letter-spacing-input').letterspacingspinner();
   var fontSizeInput = $(currEl).find('.element-settings-font-size-input').fontsizespinner();
-  // console.log('text element created');
 }
 
 function imageTemplate() {
@@ -166,10 +165,10 @@ function linkTemplate() {
   return element;
 }
 
-function linkInit() {
-  var heightInput = $('.element-settings-line-height-input').lineheightspinner();
-  var letterSpacingInput = $('.element-settings-letter-spacing-input').letterspacingspinner();
-  var fontSizeInput = $('.element-settings-font-size-input').fontsizespinner();
+function linkInit(currEl) {
+  var heightInput = $(currEl).find('.element-settings-line-height-input').lineheightspinner();
+  var letterSpacingInput = $(currEl).find('.element-settings-letter-spacing-input').letterspacingspinner();
+  var fontSizeInput = $(currEl).find('.element-settings-font-size-input').fontsizespinner();
 }
 
 function checkboxTemplate() {
@@ -231,10 +230,10 @@ function checkboxTemplate() {
   return element;
 }
 
-function checkboxInit() {
-  var heightInput = $('.element-settings-line-height-input').lineheightspinner();
-  var letterSpacingInput = $('.element-settings-letter-spacing-input').letterspacingspinner();
-  var fontSizeInput = $('.element-settings-font-size-input').fontsizespinner();
+function checkboxInit(currEl) {
+  var heightInput = $(currEl).find('.element-settings-line-height-input').lineheightspinner();
+  var letterSpacingInput = $(currEl).find('.element-settings-letter-spacing-input').letterspacingspinner();
+  var fontSizeInput = $(currEl).find('.element-settings-font-size-input').fontsizespinner();
 }
 
 function tableTemplate() {
@@ -250,10 +249,10 @@ function tableInit() {
 
 }
 
-function horizontalListInit() {
-  var heightInput = $('.element-settings-line-height-input').lineheightspinner();
-  var letterSpacingInput = $('.element-settings-letter-spacing-input').letterspacingspinner();
-  var fontSizeInput = $('.element-settings-font-size-input').fontsizespinner();
+function horizontalListInit(currEl) {
+  var heightInput = $(currEl).find('.element-settings-line-height-input').lineheightspinner();
+  var letterSpacingInput = $(currEl).find('.element-settings-letter-spacing-input').letterspacingspinner();
+  var fontSizeInput = $(currEl).find('.element-settings-font-size-input').fontsizespinner();
 }
 
 function horizontalListTemplate() {
@@ -373,10 +372,10 @@ function buttonTemplate() {
   return element;
 }
 
-function buttonInit() {
-  var heightInput = $('.element-settings-line-height-input').lineheightspinner();
-  var letterSpacingInput = $('.element-settings-letter-spacing-input').letterspacingspinner();
-  var fontSizeInput = $('.element-settings-font-size-input').fontsizespinner();
+function buttonInit(currEl) {
+  var heightInput = $(currEl).find('.element-settings-line-height-input').lineheightspinner();
+  var letterSpacingInput = $(currEl).find('.element-settings-letter-spacing-input').letterspacingspinner();
+  var fontSizeInput = $(currEl).find('.element-settings-font-size-input').fontsizespinner();
 }
 
 function bulletedListTemplate() {
@@ -438,8 +437,8 @@ function bulletedListTemplate() {
   return element;
 }
 
-function bulletedListInit() {
-  var heightInput = $('.element-settings-line-height-input').lineheightspinner();
-  var letterSpacingInput = $('.element-settings-letter-spacing-input').letterspacingspinner();
-  var fontSizeInput = $('.element-settings-font-size-input').fontsizespinner();
+function bulletedListInit(currEl) {
+  var heightInput = $(currEl).find('.element-settings-line-height-input').lineheightspinner();
+  var letterSpacingInput = $(currEl).find('.element-settings-letter-spacing-input').letterspacingspinner();
+  var fontSizeInput = $(currEl).find('.element-settings-font-size-input').fontsizespinner();
 }
