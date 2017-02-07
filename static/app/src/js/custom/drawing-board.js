@@ -53,6 +53,9 @@ $(document).ready(function ($) {
     e.stopPropagation();
     e.preventDefault();
     var curr = currSelectedItem.children()[0];
+    if($(currSelectedItem.children()[0]).children().length > 0) {
+      var curr = $(curr).children()[0];
+    }
     effectName = 'effect-' + effectName;
     if($(curr).hasClass(effectName)) {
       $(curr).removeClass(effectName);

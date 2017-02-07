@@ -4,7 +4,7 @@ body {
 }
 
 .effect-bold {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .effect-underline {
@@ -584,7 +584,7 @@ body {
     text-align: center;
   }
   & th {
-    background-color: red;
+    // background-color: red;
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
