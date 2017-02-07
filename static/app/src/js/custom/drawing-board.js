@@ -172,13 +172,25 @@ $(document).ready(function ($) {
       }
     }
 
-    if(multi) {
-      mousePos.top = parseInt(mousePos.top) - 198;
-      mousePos.left = parseInt(mousePos.left) - 110;
-      el.css('top', mousePos.top) // 198 is a random offset fix later
-      el.css('left', mousePos.left) // 110 is a random offset fix later
-    }
+    // visible
+    el.css('visibility', 'hidden');
     $(".drawing_board").append(el);
+
+    if(multi) {
+      var boardTopOffest = $('.drawing_board').offset().top;
+      var boardLeftOffset = $('.drawing_board').offset().left;
+
+      setTimeout(function() {
+        var elWidth = el.innerWidth() / 2;
+        var elHeight = el.innerHeight() / 2;
+        mousePos.top = (parseInt(mousePos.top) - boardTopOffest) - elHeight;
+        mousePos.left = (parseInt(mousePos.left) - boardLeftOffset) - elWidth;
+        el.css('top', mousePos.top);
+        el.css('left', mousePos.left);
+        el.css('visibility', 'visible');
+      }, 4);
+    }
+
     currId++;
     return el;
   }
@@ -203,8 +215,9 @@ $(document).ready(function ($) {
     stop: function(event, ui) {
       var boardTopOffest = $('.drawing_board').offset().top - 150;
       var boardLeftOffset = $('.drawing_board').offset().left - 20;
-      dragPos.top = (event.pageY + 29) - boardTopOffest;
-      dragPos.left = event.pageX - boardLeftOffset;
+
+      dragPos.top = event.pageY;
+      dragPos.left = event.pageX;
 
       var wasDragging = isDragging;
       isDragging = false;
