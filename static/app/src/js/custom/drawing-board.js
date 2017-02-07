@@ -172,7 +172,6 @@ $(document).ready(function ($) {
       }
     }
 
-    // visible
     el.css('visibility', 'hidden');
     $(".drawing_board").append(el);
 
