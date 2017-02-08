@@ -53,14 +53,17 @@ $(document).ready(function ($) {
     e.stopPropagation();
     e.preventDefault();
     var curr = currSelectedItem.children()[0];
-    if($(currSelectedItem.children()[0]).children().length > 0) {
-      var curr = $(curr).children()[0];
-    }
     effectName = 'effect-' + effectName;
     if($(curr).hasClass(effectName)) {
       $(curr).removeClass(effectName);
+      if($(curr).children().length > 0) {
+        $($(curr).children()[0]).removeClass(effectName);
+      }
     }else {
       $(curr).addClass(effectName);
+      if($(curr).children().length > 0) {
+        $($(curr).children()[0]).addClass(effectName);
+      }
     }
   }
 
@@ -589,8 +592,14 @@ $(document).ready(function ($) {
       _format: function (value) {
         if(isInit) {
           setFontSize($($(currCreatedElement).children()[0]), value + 'px');
+          if($($(currCreatedElement).children()[0]).children().length > 0) {
+            setFontSize($($(currCreatedElement).children()[0]).children('*'), value + 'px');
+          }
         }else {
           setFontSize($($(currSelectedItem).children()[0]), value + 'px');
+          if($($(currCreatedElement).children()[0]).children().length > 0) {
+            setFontSize($($(currCreatedElement).children()[0]).children('*'), value + 'px');
+          }
         }
         return value + 'px';
       },
@@ -601,5 +610,8 @@ $(document).ready(function ($) {
 
   $(document).on('change','.element-settings-character-dropdown', function(e) {
     $(currSelectedItem[0].firstChild).css('font-family', $($(currSelectedItem).children()[5]).find('.element-settings-character-dropdown option:selected').html())
+    if($(currSelectedItem[0].firstChild).children().length > 0) {
+      $($(currSelectedItem[0].firstChild).children('*')).css('font-family', $($(currSelectedItem).children()[5]).find('.element-settings-character-dropdown option:selected').html())
+    }
   });
 });
